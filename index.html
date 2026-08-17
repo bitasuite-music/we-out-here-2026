@@ -346,6 +346,53 @@ function saveFav(){
     localStorage.setItem('woh26fav',JSON.stringify(fav));
   }catch(e){}
 }
+/* ---- keep starred sets through a schedule update ----
+ * eid() bakes the stage and the start time into the key, so the moment the
+ * festival moves a set the old key stops matching and the star silently
+ * disappears - the worst kind of bug, because nothing looks broken. Every time
+ * data.json changes, list the keys that moved here. The tag stops it re-running.
+ */
+var FAVMOVED = {
+  '0|5|945':   '0|5|950',    // Manfredo Lament
+  '0|27|1030': '0|27|1020',  // MMM Presents: We Are Still Here
+  '1|2|1410':  '1|2|1380',   // Palms Trax
+  '1|4|1410':  '1|4|1380',   // Josey Rebelle
+  '1|2|1530':  '1|2|1500',   // Luke Una
+  '2|1|760':   '2|1|770',    // Kahil El'Zabar Ethnic Heritage Ensemble
+  '3|14|1080': '3|26|1080'   // La Rumba - moved to Near Mint Record Signings
+};
+function migrateFav(){
+  if(!STORE_OK)return;
+  /* Deliberately no "already migrated" flag. It is safe to run on every load
+     because an old key can never come back: stars are only ever created from
+     the current schedule via eid(). A flag was actively harmful - it got set on
+     the very first load, before there was anything to migrate, and pruneFav()
+     then deleted the stars the remap should have rescued. */
+  var moved=0;
+  for(var k in FAVMOVED){
+    var nk=FAVMOVED[k];
+    if(fav[k]){
+      if(!fav[nk]){fav[nk]=fav[k];moved++}
+      delete fav[k];
+      /* saveFav() merges anything untouched back off disk, so both the old and
+         the new key have to be marked or the old one returns immediately. */
+      touched[k]=1; touched[nk]=1;
+    }
+  }
+  if(moved)saveFav();
+}
+/* Drop stars whose set is no longer in the schedule. Without this the My Plan
+   badge keeps counting sets that have been cancelled and can never be shown. */
+function pruneFav(){
+  if(!STORE_OK)return;
+  if(!DATA||!DATA.length)return;              // never prune against no data
+  var live={},n=0;
+  for(var d=0;d<DATA.length;d++)
+    for(var i=0;i<DATA[d].ev.length;i++) live[eid(d,DATA[d].ev[i])]=1;
+  if(!Object.keys(live).length)return;
+  for(var k in fav) if(fav[k]&&!live[k]){delete fav[k];touched[k]=1;n++}
+  if(n)saveFav();
+}
 function loadFilt(){if(!STORE_OK)return;try{var v=JSON.parse(localStorage.getItem('woh26filt')||'null');
   if(v&&v.length===STAGES.length)on=v}catch(e){}}
 function saveFilt(){if(!STORE_OK)return;try{localStorage.setItem('woh26filt',JSON.stringify(on))}catch(e){}}
@@ -850,7 +897,7 @@ if(navigator.storage && navigator.storage.persist){
 }
 
 /* ===== boot ===== */
-loadFav(); loadFilt();
+loadFav(); migrateFav(); pruneFav(); loadFilt();
 var ld=liveDay(); if(ld>=0)day=ld;
 drawDays(); tick(); render();
 syncFiltPill();
