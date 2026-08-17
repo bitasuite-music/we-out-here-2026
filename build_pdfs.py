@@ -26,6 +26,7 @@ Usage:
 
 import argparse
 import asyncio
+import hashlib
 import json
 import os
 import re
@@ -409,9 +410,83 @@ def read_stamp_from_index():
     return date.today().strftime("%d %b")
 
 
+def publish(stamp_date):
+    """Give each release uniquely-named PDFs and point the app at them.
+
+    The PDF links open in a new top-level context (index.html sets
+    <base target="_blank">), so in an installed PWA they are handed to the
+    system browser - which has its own HTTP cache and sits outside the service
+    worker entirely. Bumping VER in sw.js cannot touch that cache, which is why
+    a rebuilt PDF under the same name keeps showing up stale. A filename the
+    browser has never requested is the only thing that is reliably fresh.
+
+    The stable filenames are kept as copies of the same content, so anyone
+    running a cached older index.html still gets the current PDF rather than a
+    404 or last week's times.
+    """
+    index_path = os.path.join(HERE, "index.html")
+    sw_path = os.path.join(HERE, "sw.js")
+    published = []
+
+    for var, pdf in (("PDF_SET", SET_TIMES_PDF), ("PDF_WIDER", WIDER_PDF)):
+        raw = open(pdf, "rb").read()
+        digest = hashlib.sha256(raw).hexdigest()[:8]
+        stem, ext = os.path.splitext(os.path.basename(pdf))
+        dated = f"{stem}-{stamp_date}{ext}"
+        with open(os.path.join(HERE, dated), "wb") as f:
+            f.write(raw)
+        published.append((var, os.path.basename(pdf), dated, digest))
+
+    with open(index_path, encoding="utf-8") as f:
+        html = f.read()
+    for var, _stable, dated, digest in published:
+        pattern = re.compile(rf"(var {var}\s*=\s*)'[^']*'")
+        html, n = pattern.subn(rf"\1'{dated}?v={digest}'", html)
+        if not n:
+            print(f"  ! could not find {var} in index.html - link not updated")
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(html)
+
+    # Precache both names, and bump the cache so the app itself refreshes.
+    with open(sw_path, encoding="utf-8") as f:
+        sw = f.read()
+    names = []
+    for _var, stable, dated, _d in published:
+        names += [stable, dated]
+    listing = "\n".join(f"  './{n}'," for n in names).rstrip(",")
+    sw = re.sub(r"(var ASSETS = \[\n)(?:.*?)(\n\];)",
+                lambda m: m.group(1) + SHELL_ASSETS + "\n" + listing + m.group(2),
+                sw, flags=re.DOTALL)
+    ver = hashlib.sha256(
+        html.encode("utf-8")
+        + open(SET_TIMES_PDF, "rb").read()
+        + open(WIDER_PDF, "rb").read()).hexdigest()[:10]
+    # consume the rest of the line too, or last release's comment piles up
+    sw = re.sub(r"var VER = '[0-9a-f]*';[^\n]*",
+                f"var VER = '{ver}';  // built {stamp_date}", sw)
+    with open(sw_path, "w", encoding="utf-8") as f:
+        f.write(sw)
+
+    for _var, stable, dated, digest in published:
+        print(f"  {dated}  (?v={digest})  + {stable} kept as a copy")
+    print(f"  service worker cache -> {ver}")
+
+
+SHELL_ASSETS = """  './',
+  './index.html',
+  './manifest.webmanifest',
+  './icon-192.png',
+  './icon-512.png',
+  './apple-touch-icon.png',
+  './icon-maskable-512.png',"""
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--stamp", help="override the 'times correct as of' text")
+    ap.add_argument("--date", help="filename date stamp, default today (YYYY-MM-DD)")
+    ap.add_argument("--no-publish", action="store_true",
+                    help="just build the PDFs, leave index.html and sw.js alone")
     args = ap.parse_args()
     stamp = args.stamp or read_stamp_from_index()
 
@@ -428,6 +503,11 @@ def main():
     for p in (SET_TIMES_PDF, WIDER_PDF):
         print(f"  wrote {os.path.basename(p)} "
               f"({os.path.getsize(p) / 1024:.0f} KB)")
+
+    if args.no_publish:
+        print("  --no-publish: index.html and sw.js left untouched")
+    else:
+        publish(args.date or date.today().isoformat())
 
 
 if __name__ == "__main__":
