@@ -1225,8 +1225,10 @@ function vNow(){
     h+='<div class="cd"><div class="n">'+(n>0?n:'—')+'</div><div class="l">'+
        (n>1?'days to go':n===1?'day to go':n===0?'today':'that’s a wrap')+'</div></div>';
     h+=stampHTML();
-    h+='<div class="note">'+(n>0?'The NOW screen goes live on Thursday 20 August.<br>':'')+
-       'Until then, browse the full line-up or build your plan.</div>';
+h+='<div class="note">'+(n>0?'The NOW screen goes live on Thursday 20 August.<br>':'')+
+   'When it does, you\'ll see what\'s playing right now across the whole festival – '+
+   'with a progress bar showing how long is left, plus everything starting in the next 90 minutes. '+
+   'Until then, browse the full line-up or build your plan.</div>';
     // Only show the "Add to home screen" box if NOT in standalone mode
     if(!STANDALONE){
       h+='<div class="keep" style="margin:8px 2px 14px"><b>Add to your home screen — do that first</b>'+
