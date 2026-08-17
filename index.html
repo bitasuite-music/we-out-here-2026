@@ -1134,7 +1134,7 @@ function ukNow(){
   if(!_tzOK) return {y:d.getFullYear(), mo:d.getMonth()+1, d:d.getDate(),
                      h:d.getHours(), mi:d.getMinutes()};
   var p = {};
-  _ukFmt.formatToParts(d).forEach(function(x){ p[x.type] = x.value });
+  _ukFmt.formatToParts(d).forEach(function(x){ p[x.type] = x.value }); 
   return {y:+p.year, mo:+p.month, d:+p.day, h:(+p.hour)%24, mi:+p.minute};
 }
 
