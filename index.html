@@ -225,6 +225,8 @@ nav .badge{position:absolute;top:5px;left:50%;margin-left:6px;background:var(--g
   box-shadow:0 6px 22px #0009;backdrop-filter:blur(10px);
   opacity:0;pointer-events:none;transition:opacity .28s,transform .28s}
 #offp.on{opacity:1;transform:translateX(-50%) translateY(0)}
+#offp.tapp{pointer-events:auto;cursor:pointer;border-color:var(--acc2)}
+#offp.tapp u{color:var(--acc2);text-decoration:none;border-bottom:1px solid currentColor}
 #offp b{color:var(--acc2);font-weight:700}
 #offp.warnp{border-radius:15px;padding:11px 16px;line-height:1.5;
   background:#241c14f2;border-color:#5c4a2c}
@@ -884,9 +886,30 @@ function offPill(msg,hold,cls){
   if(location.protocol!=='https:' && h!=='localhost' && h!=='127.0.0.1') return;
   var said=false;
   function ready(hold){ if(said) return; said=true; offPill('<b>✓ Ready to use offline</b>', hold) }
+
+  /* The worker is cache-first, so the page you are reading was served from the
+     old cache and a new version can only take effect on the next load. Saying
+     nothing made that look like the update had failed - the only pill was
+     "Ready to use offline", which appears at exactly the wrong moment. So when
+     the version actually changes, offer the reload instead. */
+  function updated(){
+    if(said) return; said=true;
+    offPill('<b>Updated set times</b> <u>Tap to refresh</u>', 15000, 'tapp');
+    var p=document.getElementById('offp');
+    if(p) p.addEventListener('click', function(){ location.reload() }, {once:true});
+  }
+  function seenVer(v){
+    var prev=null;
+    try{ prev=localStorage.getItem('woh26ver') }catch(e){}
+    try{ if(v) localStorage.setItem('woh26ver', v) }catch(e){}
+    // No stored version means this is a first install, not an update.
+    if(prev && v && prev!==v) updated(); else ready(5000);
+  }
   navigator.serviceWorker.addEventListener('message', function(e){
-    if(e.data && e.data.type==='offline-ready') ready(5000);
+    if(e.data && e.data.type==='offline-ready') seenVer(e.data.ver);
   });
+  // Belt and braces: a worker taking over mid-session is always an update.
+  navigator.serviceWorker.addEventListener('controllerchange', function(){ updated() });
   navigator.serviceWorker.register('sw.js').then(function(reg){
     if(navigator.serviceWorker.controller && reg.active) ready(3200);
   }).catch(function(){ /* nothing useful to tell the user */ });
