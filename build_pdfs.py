@@ -13,8 +13,9 @@ printing on a home printer:
 
 Print styling: event boxes are white with a coloured left rule rather than a
 shaded fill, so they stay crisp in greyscale and use a fraction of the ink.
-Hour lines are solid, half hours dotted, and every page carries the time
-gutter down both edges.
+There are no horizontal rules - each box states its own times and the hour
+labels run down both edges - and every page carries the time gutter on the
+left and the right.
 
 data.json is the single source of truth - run check-updates.py first, apply any
 changes, then re-run this.
@@ -141,10 +142,10 @@ def page_html(title, side_label, sub_label, events, stage_ids, stamp,
         f'<span>{hhmm(lo + h * 60)}</span></div>'
         for h in range(hours + 1))
 
-    lines = "".join(
-        f'<div class="{"hl" if (lo + m) % 60 == 0 else "hl half"}" '
-        f'style="top:{m * px_per_min:.2f}px"></div>'
-        for m in range(0, hours * 60 + 1, 30))
+    # No horizontal rules. Every box already carries its own start and end
+    # time, and the hour labels run down both edges, so the rules were only
+    # adding ink and visual noise behind the text.
+    lines = ""
 
     # 11 columns share the same width as 6, so the headings have to come down
     # a couple of points or the longer area names clip.
@@ -269,8 +270,6 @@ h1 { margin: 2px 0 0; font-size: 27px; letter-spacing: -0.4px; }
 .ch.blank { background: none; }
 .track { position: relative; border-right: 1px solid #d8d8d8; }
 .col:first-of-type .track { border-left: 1px solid #d8d8d8; }
-.hl { position: absolute; left: 0; right: 0; border-top: 1px solid #c9c9c9; }
-.hl.half { border-top: 1px dotted #e6e6e6; }
 .ev {
   position: absolute; background: #fff; border: 1px solid #b9b9b9;
   border-left-width: 3.5px; border-left-style: solid;
@@ -450,12 +449,25 @@ def publish(stamp_date):
     # Precache both names, and bump the cache so the app itself refreshes.
     with open(sw_path, encoding="utf-8") as f:
         sw = f.read()
-    names = []
+    # Keep every non-PDF entry exactly as it is - the shell, the icons, and
+    # anything added by hand such as the logo gif. Only the PDF entries are
+    # rewritten, so last release's dated filenames drop out and this one's go
+    # in. Regenerating the whole list from a hardcoded copy would quietly
+    # delete assets nobody remembered to add to this script.
+    block = re.search(r"var ASSETS = \[\n(.*?)\n\];", sw, re.DOTALL)
+    existing = re.findall(r"'([^']+)'", block.group(1)) if block else []
+    keep = [a for a in existing
+            if not re.search(r"we-out-here-2026-.*\.pdf$", a)]
+    names = keep[:]
     for _var, stable, dated, _d in published:
-        names += [stable, dated]
-    listing = "\n".join(f"  './{n}'," for n in names).rstrip(",")
+        names += ["./" + stable, "./" + dated]
+    seen, ordered = set(), []
+    for n in names:
+        if n not in seen:
+            seen.add(n); ordered.append(n)
+    listing = ",\n".join(f"  '{n}'" for n in ordered)
     sw = re.sub(r"(var ASSETS = \[\n)(?:.*?)(\n\];)",
-                lambda m: m.group(1) + SHELL_ASSETS + "\n" + listing + m.group(2),
+                lambda m: m.group(1) + listing + m.group(2),
                 sw, flags=re.DOTALL)
     ver = hashlib.sha256(
         html.encode("utf-8")
