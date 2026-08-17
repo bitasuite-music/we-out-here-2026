@@ -296,7 +296,10 @@ var SCRAPED = '17 Aug, 7pm';
 function stampHTML(){
   return '<div class="stamp">Times correct as of <b>'+SCRAPED+'</b> — the festival is still '+
     'changing them daily. Check the official website or '+
-    '<b>Woov</b> app for the latest.</div>';
+    '<b>Woov</b> app for the latest.<br>'+
+    'I\'ve updated the <b>printable set times</b> to match, and redesigned them to be '+
+    'easier to print — plain white boxes instead of shaded ones, so they\'re clearer on '+
+    'paper and go a lot easier on your ink.</div>';
 }
 // Placeholder logo – a tiny Melomaniacs-style diamond (gold on dark)
 var LOGO = 'icon-192.png';
@@ -523,11 +526,15 @@ function vLine(){
 
 function printLinks(){
   return '<div class="prints"><div class="ph">Want it on paper?</div>'+
-    '<div class="stamp" style="margin:0 0 12px 0;text-align:left;border-color:var(--live);">'+
-      '<b style="color:var(--live)">⚠️ Static snapshot as of 11 August</b><br>'+
-      'These PDFs were generated from the schedule available on 11 August and do NOT include recent changes. '+
-      'The interactive app has been updated, but these printouts are a fixed backup. '+
-      'For the absolute final live times, please use the official <b>Woov</b> app.'+
+    '<div class="stamp" style="margin:0 0 12px 0;text-align:left;border-color:var(--acc2);">'+
+      '<b style="color:var(--acc2)">Updated '+SCRAPED+' — these match the app</b><br>'+
+      'I\'ve rebuilt both printouts from the same schedule the app is using, so the times '+
+      'are the same. I\'ve also made them more print friendly — plain white boxes instead '+
+      'of shaded ones, so they\'re clearer on paper and use far less ink — and the wider '+
+      'programme now includes Action Station, The Sanctuary and the record signings.<br>'+
+      'They are still a fixed snapshot: if the festival moves something after this, the app '+
+      'will know and the paper won\'t. For live changes on the day, use the official '+
+      '<b>Woov</b> app.'+
     '</div>'+
     '<a href="we-out-here-2026-set-times.pdf" target="_blank" rel="noopener">'+
       'Printable set times<i>All the music · 8 pages, print double-sided</i></a>'+
