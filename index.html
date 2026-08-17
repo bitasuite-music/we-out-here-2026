@@ -1086,6 +1086,11 @@ function col(i){return COL[i%COL.length]}
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function hhmm(t){t=((t%1440)+1440)%1440;var h=(t/60)|0,m=t%60,a=h<12?'am':'pm',x=h%12||12;
   return m?x+':'+(m<10?'0':'')+m+a:x+a}
+ function progColor(leftMins){
+  if (leftMins <= 10) return 'var(--live)';   // Red – urgent
+  if (leftMins <= 30) return 'var(--gold)';   // Gold – warning
+  return 'var(--acc2)';                       // Teal – relaxed
+}
 
 /* ===== state ===== */
 var tab='now', day=0, view='t', on=STAGES.map(function(){return true}), fav={}, q='';
@@ -1196,7 +1201,7 @@ function rowHTML(d,e,opt){
     '<button class="star'+(fav[id]?' on':'')+'" data-f="'+id+'" type="button"'+
       ' aria-pressed="'+(fav[id]?'true':'false')+'" aria-label="'+esc(lbl)+'">'+
       (fav[id]?'★':'☆')+'</button>'+
-    (playing?'<i class="prog" style="width:'+pct+'%"></i>':'')+'</div>'}
+    (playing?'<i class="prog" style="width:'+pct+'%;background:'+progColor(e[1]-live)+'"></i>':'')+'</div>'}
 
 function bigHTML(d,e,live){
   var pct=Math.round((live-e[0])/(e[1]-e[0])*100), left=e[1]-live;
@@ -1208,8 +1213,8 @@ function bigHTML(d,e,live){
     (rec?'<div class="ours tip">★ Recommended — on now</div>':'')+
     '<div class="st" style="color:'+col(e[2])+'">'+esc(STAGES[e[2]])+'</div>'+
     '<div class="tm">'+hhmm(e[0])+' – '+hhmm(e[1])+'</div>'+
-    '<div class="bar"><i style="width:'+pct+'%"></i></div>'+
-    '<div class="left">'+left+' MIN LEFT'+(fav[id]?' · ★ ON YOUR PLAN':'')+'</div></div>'}
+    '<div class="bar"><i style="width:'+pct+'%;background:'+progColor(left)+'"></i></div>'+
+    '<div class="left" style="color:'+progColor(left)+'">'+left+' MIN LEFT'+(fav[id]?' · ★ ON YOUR PLAN':'')+'</div></div>'}
 
 /* ===== views ===== */
 function offCount(){var n=0;for(var i=0;i<on.length;i++)if(!on[i])n++;return n}
