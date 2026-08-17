@@ -162,23 +162,6 @@ def fetch_entries():
                 })
         browser.close()
 
-    # The site occasionally renders the same set twice in one column (e.g. THE
-    # MIGHTY ZAF, Friday, The Grove). Left in, each duplicate shows up as a
-    # phantom addition, so collapse exact repeats.
-    seen = set()
-    deduped = []
-    for e in entries:
-        key = (e["date"], e["stage_id"], e["start"], e["end"], e["artist"])
-        if key in seen:
-            warnings.append(
-                f"site lists {e['artist']!r} twice on {e['date']} "
-                f"{e['time_text']} - ignoring the duplicate"
-            )
-            continue
-        seen.add(key)
-        deduped.append(e)
-    entries = deduped
-
     unmapped = sorted({e["stage_id"] for e in entries if e["stage"] is None})
     if unmapped:
         warnings.append(
@@ -261,21 +244,6 @@ def fmt_range(start, end):
     return f"{fmt_minutes(start)}-{fmt_minutes(end)}"
 
 
-def describe_shift(l, s):
-    """Say which end actually moved - "+0 min" on a set that got half an hour
-    shorter was just confusing."""
-    d_start = s["start"] - l["start"]
-    d_end = s["end"] - l["end"]
-    if d_start and d_end == d_start:
-        return f"whole set {d_start:+d} min"
-    parts = []
-    if d_start:
-        parts.append(f"starts {d_start:+d} min")
-    if d_end:
-        parts.append(f"ends {d_end:+d} min")
-    return ", ".join(parts) or "no change"
-
-
 def stage_name(idx):
     if idx is None:
         return "unmapped stage"
@@ -296,28 +264,17 @@ def match_day(local, site):
       pass 1  same stage, same start and end     - name only has to be close-ish
       pass 2  same stage, overlapping slot       - catches a moved time
       pass 3  same day, any stage, strong name   - catches a moved stage
-      pass 4  same stage, same slot, any name    - reported as a name difference
-
-    Pass 4 exists because the app deliberately shortens some official names
-    ("MMM: The Radical Bookshelf" for "Make Music Matter present 'The Radical
-    Bookshelf' with ..."), which no name threshold will ever pair up. Same
-    stage and the exact same slot is strong enough evidence on its own, but it
-    could also be a genuine replacement, so these are listed separately for a
-    human to glance at rather than silently treated as unchanged.
 
     Anything still unpaired is genuinely new or genuinely gone.
     """
     local = [dict(x, _norm=normalize_name(x["artist"])) for x in local]
     site = [dict(x, _norm=normalize_name(x["artist"])) for x in site]
     matched = []
-    renamed = []
     lo, so = list(local), list(site)
 
-    def run(pred, threshold, bucket=None):
+    def run(pred, threshold):
         for s in list(so):
-            # -1 so that a zero-similarity pair is still a candidate; the
-            # threshold decides whether it counts, not the initial value.
-            best, best_ratio = None, -1.0
+            best, best_ratio = None, 0.0
             for l in lo:
                 if not pred(l, s):
                     continue
@@ -325,21 +282,18 @@ def match_day(local, site):
                 if ratio > best_ratio:
                     best, best_ratio = l, ratio
             if best is not None and best_ratio >= threshold:
-                (bucket if bucket is not None else matched).append((best, s))
+                matched.append((best, s))
                 lo.remove(best)
                 so.remove(s)
 
     same_stage = lambda l, s: s["stage"] is not None and l["stage"] == s["stage"]
-    same_slot = lambda l, s: (same_stage(l, s)
-                              and l["start"] == s["start"] and l["end"] == s["end"])
-    run(same_slot, 0.55)
+    run(lambda l, s: same_stage(l, s)
+        and l["start"] == s["start"] and l["end"] == s["end"], 0.55)
     run(lambda l, s: same_stage(l, s)
         and l["start"] < s["end"] and s["start"] < l["end"], 0.72)
     run(lambda l, s: True, 0.86)
-    run(same_slot, 0.0, bucket=renamed)
 
-    return {"matched": matched, "renamed": renamed,
-            "local_only": lo, "site_only": so}
+    return {"matched": matched, "local_only": lo, "site_only": so}
 
 
 def load_existing():
@@ -355,7 +309,7 @@ def compare(existing_days, scraped):
         scraped_by_date[e["date"]].append(e)
 
     report = {"days": [], "added": [], "removed": [], "time_changed": [],
-              "stage_changed": [], "renamed": [], "unknown_days": []}
+              "stage_changed": [], "unknown_days": []}
 
     known_dates = {d.get("date") for d in existing_days}
     for date in sorted(set(scraped_by_date) - known_dates):
@@ -387,7 +341,7 @@ def compare(existing_days, scraped):
                     "stage": stage_name(l["stage"]),
                     "old": fmt_range(l["start"], l["end"]),
                     "new": fmt_range(s["start"], s["end"]),
-                    "shift": describe_shift(l, s),
+                    "shift": s["start"] - l["start"],
                 })
             if s["stage"] is not None and l["stage"] != s["stage"]:
                 report["stage_changed"].append({
@@ -395,13 +349,6 @@ def compare(existing_days, scraped):
                     "old": stage_name(l["stage"]),
                     "new": stage_name(s["stage"]),
                 })
-
-        for l, s in pairs["renamed"]:
-            report["renamed"].append({
-                "day": label, "stage": stage_name(l["stage"]),
-                "time": fmt_range(l["start"], l["end"]),
-                "app": l["artist"], "site": s["artist"],
-            })
 
         for s in pairs["site_only"]:
             report["added"].append({
@@ -498,14 +445,9 @@ def main():
          lambda r: f"{r['day']}  {r['time']}  {r['stage']}  {r['artist']}")
     show(report["time_changed"], "TIME CHANGES",
          lambda t: f"{t['day']}  {t['artist']}  {t['old']} -> {t['new']}"
-                   f"  ({t['shift']})")
+                   f"  ({t['shift']:+d} min)")
     show(report["stage_changed"], "STAGE CHANGES",
          lambda s: f"{s['day']}  {s['artist']}  {s['old']} -> {s['new']}")
-    show(report["renamed"],
-         "SAME SLOT, DIFFERENT NAME (usually just your shorter wording)",
-         lambda n: f"{n['day']}  {n['time']}  {n['stage']}\n"
-                   f"        app:  {n['app']}\n"
-                   f"        site: {n['site']}")
 
     changes = sum(len(report[k]) for k in
                   ("added", "removed", "time_changed", "stage_changed"))
