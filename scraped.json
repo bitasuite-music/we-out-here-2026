@@ -1,0 +1,7492 @@
+[
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1280,
+    "end": 1380,
+    "artist": "HVYWGHT & THE OUTLOOK ORCHESTRA",
+    "time_text": "9:20pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1160,
+    "end": 1230,
+    "artist": "Digable Planets",
+    "time_text": "7:20pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Butcher Brown",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 960,
+    "end": 1010,
+    "artist": "Tom Skinner",
+    "time_text": "4:00pm - 4:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 880,
+    "end": 930,
+    "artist": "The Zawose Queens",
+    "time_text": "2:40pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 800,
+    "end": 840,
+    "artist": "Kotoa",
+    "time_text": "1:20pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1220,
+    "end": 1280,
+    "artist": "Actress",
+    "time_text": "8:20pm - 9:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1100,
+    "end": 1160,
+    "artist": "Speakers Corner Quartet Celebrates The Music of Arthur Russell",
+    "time_text": "6:20pm - 7:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1010,
+    "end": 1060,
+    "artist": "Keiyaa",
+    "time_text": "4:50pm - 5:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 920,
+    "end": 980,
+    "artist": "Audrey Powne",
+    "time_text": "3:20pm - 4:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 840,
+    "end": 880,
+    "artist": "SETWUN",
+    "time_text": "2:00pm - 2:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1230,
+    "end": 1350,
+    "artist": "Juls",
+    "time_text": "8:30pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 840,
+    "end": 990,
+    "artist": "REEK0 & CAMILLE MUNN",
+    "time_text": "2:00pm - 4:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1350,
+    "end": 1440,
+    "artist": "Jamz Supernova",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1110,
+    "end": 1230,
+    "artist": "Femi Koleoso",
+    "time_text": "6:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 990,
+    "end": 1110,
+    "artist": "Lefto Early Bird (Live AV)",
+    "time_text": "4:30pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1380,
+    "end": 1440,
+    "artist": "BARKER (LIVE)",
+    "time_text": "11:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1080,
+    "end": 1230,
+    "artist": "POWDER",
+    "time_text": "6:00pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1320,
+    "end": 1380,
+    "artist": "LONE",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1230,
+    "end": 1320,
+    "artist": "Ehua",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1140,
+    "end": 1320,
+    "artist": "BRADLEY ZERO",
+    "time_text": "7:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 960,
+    "end": 1050,
+    "artist": "MARVIN JUPITER",
+    "time_text": "4:00pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 900,
+    "end": 960,
+    "artist": "THE RETURN OF SHE",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1320,
+    "end": 1440,
+    "artist": "Glenn Underground",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1050,
+    "end": 1140,
+    "artist": "Toribio",
+    "time_text": "5:30pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1380,
+    "end": 1440,
+    "artist": "DJ LOVELLIOUS B2B ALLEXA NAVA",
+    "time_text": "11:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1330,
+    "end": 1380,
+    "artist": "FUTURE BUBBLERS SHOWCASE",
+    "time_text": "10:10pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1260,
+    "end": 1305,
+    "artist": "LARA JONES",
+    "time_text": "9:00pm - 9:45pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 900,
+    "end": 930,
+    "artist": "SHADOW & THE SOL",
+    "time_text": "3:00pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 850,
+    "end": 880,
+    "artist": "KNEIL",
+    "time_text": "2:10pm - 2:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 800,
+    "end": 830,
+    "artist": "NATHANIEL TABERNER",
+    "time_text": "1:20pm - 1:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1050,
+    "end": 1095,
+    "artist": "Noah Ojumu",
+    "time_text": "5:30pm - 6:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1120,
+    "end": 1165,
+    "artist": "Naima Adams",
+    "time_text": "6:40pm - 7:25pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1190,
+    "end": 1235,
+    "artist": "Genevieve Namazzi",
+    "time_text": "7:50pm - 8:35pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 950,
+    "end": 985,
+    "artist": "Manfredo Lament",
+    "time_text": "3:50pm - 4:25pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1005,
+    "end": 1030,
+    "artist": "Yasmina Sadiki",
+    "time_text": "4:45pm - 5:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 900,
+    "end": 960,
+    "artist": "JULIET CROMWELL",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 960,
+    "end": 1050,
+    "artist": "LEVI BUSSUE & CHRIS WELCH",
+    "time_text": "4:00pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 810,
+    "end": 900,
+    "artist": "ANNIE NOLAN",
+    "time_text": "1:30pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1350,
+    "end": 1440,
+    "artist": "Atjazz",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1200,
+    "end": 1350,
+    "artist": "Giles Smith & Alexander Nut",
+    "time_text": "8:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1110,
+    "end": 1200,
+    "artist": "SORCHA BRIDGE B2B MIKE",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Fairhurst",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1200,
+    "end": 1440,
+    "artist": "TROJAN SOUND SYSTEM B2B NIGHTMARES ON WAX B2B DADDY G WITH VERY SPECIAL GUESTS: KILLA P, HOPEPA (FAT FREDDYS DROP), SUPA4 CREATION & CHUCKY BANTON",
+    "time_text": "8:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1110,
+    "end": 1200,
+    "artist": "Danniella Dee",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1020,
+    "end": 1110,
+    "artist": "Benny Salvador",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 900,
+    "end": 1020,
+    "artist": "ARI (PIRATE MATERIAL) B2B LILA (RINSE FM)",
+    "time_text": "3:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 900,
+    "end": 990,
+    "artist": "LEMON LOUNGE PLAYERS",
+    "time_text": "3:00pm - 4:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1320,
+    "end": 1380,
+    "artist": "DJ Plead",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1230,
+    "end": 1320,
+    "artist": "Sosi & Maxwell Owin",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1170,
+    "end": 1230,
+    "artist": "AliA",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1080,
+    "end": 1170,
+    "artist": "Soph & Annida",
+    "time_text": "6:00pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 990,
+    "end": 1080,
+    "artist": "Iko Chérie",
+    "time_text": "4:30pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 840,
+    "end": 930,
+    "artist": "MAGDALENA MOURSY & ALEXANDEROS",
+    "time_text": "2:00pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 930,
+    "end": 1020,
+    "artist": "ZAEREO",
+    "time_text": "3:30pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1230,
+    "end": 1320,
+    "artist": "KOSHARI",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1170,
+    "end": 1230,
+    "artist": "JAMES ALEXANDER BRIGHT (LIVE)",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1320,
+    "end": 1440,
+    "artist": "Melomaniacs",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1080,
+    "end": 1170,
+    "artist": "LOVE SUN DAYS",
+    "time_text": "6:00pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Natural Information Society (LIVE)",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1320,
+    "end": 1380,
+    "artist": "Blissy E: Plastic People – The blueprint of London’s Great Club Scene",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1260,
+    "end": 1320,
+    "artist": "TILDA: Jungle, Pirate Radio & the Sound of Resistance Presented",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Jacob Robinson: Loud in the Dark: Queer Culture and the Village Section 28 Couldn’t Silence",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1140,
+    "end": 1200,
+    "artist": "BBE with Karim Bitar Meet In The MIDI: Exploring BBE (30 Years of Breaking Even)",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Mariam: Iran’s Underground Sound of Resistance",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Kate Hutchinson: No Wave – The Scene That Shook Up the NYC Underground Presented",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 840,
+    "end": 900,
+    "artist": "Ellie Talebian: From the Streets to the Studio: Building Hope through Music",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 960,
+    "end": 1020,
+    "artist": "Pia Collada: Skate, Surf & Sound",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 900,
+    "end": 960,
+    "artist": "Rohan Rakhit: PIND",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 780,
+    "end": 840,
+    "artist": "Rishi & Ishani: Folk’s Queer Cradles Presented",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 720,
+    "end": 780,
+    "artist": "Future Bubblers: It Takes A Village to Build an Artist with Bobby Brown",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 600,
+    "end": 720,
+    "artist": "Gilles Peterson: The Road To We Out Here",
+    "time_text": "10:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1320,
+    "end": 1440,
+    "artist": "ANZ B2B COMMODO",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1230,
+    "end": 1320,
+    "artist": "HENRY GREENLEAF",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1140,
+    "end": 1230,
+    "artist": "INTROSPEKT",
+    "time_text": "7:00pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1050,
+    "end": 1140,
+    "artist": "MYSTIC STATE",
+    "time_text": "5:30pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 960,
+    "end": 1050,
+    "artist": "V.I.V.E.K",
+    "time_text": "4:00pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 840,
+    "end": 960,
+    "artist": "RE:NI & BIGGABUSH",
+    "time_text": "2:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 720,
+    "end": 840,
+    "artist": "WIP (Carhartt Team)",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1320,
+    "end": 1440,
+    "artist": "TORNADO WALLACE",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1200,
+    "end": 1320,
+    "artist": "SARAHTONIN",
+    "time_text": "8:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1080,
+    "end": 1200,
+    "artist": "RUF DUG",
+    "time_text": "6:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 960,
+    "end": 1080,
+    "artist": "AL WOOTTON",
+    "time_text": "4:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 840,
+    "end": 960,
+    "artist": "SONIDO TUPINAMBA",
+    "time_text": "2:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1260,
+    "end": 1380,
+    "artist": "IRFAN RAINY",
+    "time_text": "9:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1050,
+    "end": 1260,
+    "artist": "THE MIGHTY ZAF, JAKE LOVE VINYL, ST LUKEZ",
+    "time_text": "5:30pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1005,
+    "end": 1050,
+    "artist": "YASMIN RAI (LIVE)",
+    "time_text": "4:45pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1320,
+    "end": 1440,
+    "artist": "TIMO-G & BEN GC",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1260,
+    "end": 1320,
+    "artist": "ROBERT LUIS",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1200,
+    "end": 1260,
+    "artist": "ME GUSTA COLLECTIVE",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1080,
+    "end": 1200,
+    "artist": "GROOVE JUNCTION",
+    "time_text": "6:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Jelly Records",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 960,
+    "end": 1020,
+    "artist": "Al Richards",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 900,
+    "end": 960,
+    "artist": "Nae Style",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 840,
+    "end": 900,
+    "artist": "Plays At 45",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 780,
+    "end": 840,
+    "artist": "NVV Dj",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1320,
+    "end": 1380,
+    "artist": "HSWRK",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1230,
+    "end": 1320,
+    "artist": "STICKY RICKY",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1140,
+    "end": 1230,
+    "artist": "DAN FORMLESS",
+    "time_text": "7:00pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1020,
+    "end": 1140,
+    "artist": "GILES HANH",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 960,
+    "end": 1020,
+    "artist": "JOE MUGGS",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 870,
+    "end": 960,
+    "artist": "DAN MEDHURST",
+    "time_text": "2:30pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 780,
+    "end": 870,
+    "artist": "FRANKSON",
+    "time_text": "1:00pm - 2:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 660,
+    "end": 840,
+    "artist": "DAVE ELMER",
+    "time_text": "11:00am - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 900,
+    "end": 960,
+    "artist": "Barry’s Here",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1200,
+    "end": 1260,
+    "artist": "ANDREW DEVINE",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1080,
+    "end": 1140,
+    "artist": "JO DRESSLER",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1140,
+    "end": 1200,
+    "artist": "AN LAWTON",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 960,
+    "end": 1020,
+    "artist": "TAXI",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1020,
+    "end": 1080,
+    "artist": "MOLLY POP",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1380,
+    "end": 1440,
+    "artist": "MISSY A",
+    "time_text": "11:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1320,
+    "end": 1380,
+    "artist": "MIKE BC",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1260,
+    "end": 1320,
+    "artist": "KEV MAC",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-20",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 840,
+    "end": 900,
+    "artist": "BROTHER JAMES",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1190,
+    "end": 1250,
+    "artist": "Joy Crookes",
+    "time_text": "7:50pm - 8:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1090,
+    "end": 1150,
+    "artist": "Anaiis",
+    "time_text": "6:10pm - 7:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1000,
+    "end": 1050,
+    "artist": "corto.alto",
+    "time_text": "4:40pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 890,
+    "end": 960,
+    "artist": "Dave Okumu presents DVTN: A Prayer For D'Angelo",
+    "time_text": "2:50pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 805,
+    "end": 855,
+    "artist": "Cleo Reed",
+    "time_text": "1:25pm - 2:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1300,
+    "end": 1370,
+    "artist": "Thundercat",
+    "time_text": "9:40pm - 10:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 740,
+    "end": 780,
+    "artist": "Bel Cobain",
+    "time_text": "12:20pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1340,
+    "end": 1380,
+    "artist": "ROGÊ",
+    "time_text": "10:20pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1240,
+    "end": 1310,
+    "artist": "ADAM F",
+    "time_text": "8:40pm - 9:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1150,
+    "end": 1200,
+    "artist": "Sampa The Great",
+    "time_text": "7:10pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1050,
+    "end": 1100,
+    "artist": "Yukimi",
+    "time_text": "5:30pm - 6:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 960,
+    "end": 1010,
+    "artist": "John Glacier",
+    "time_text": "4:00pm - 4:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 850,
+    "end": 910,
+    "artist": "The Heliocentrics",
+    "time_text": "2:10pm - 3:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 770,
+    "end": 810,
+    "artist": "Olive Jones",
+    "time_text": "12:50pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1500,
+    "end": 1680,
+    "artist": "LUKE UNA",
+    "time_text": "1:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1380,
+    "end": 1500,
+    "artist": "PALMS TRAX",
+    "time_text": "11:00pm - 1:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1230,
+    "end": 1380,
+    "artist": "TAMA SUMO & LAKUTI",
+    "time_text": "8:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1140,
+    "end": 1230,
+    "artist": "Nightmares On Wax",
+    "time_text": "7:00pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1050,
+    "end": 1140,
+    "artist": "MARCIA CARR",
+    "time_text": "5:30pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 960,
+    "end": 1050,
+    "artist": "Greentea Selecta",
+    "time_text": "4:00pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 900,
+    "end": 960,
+    "artist": "Yoofee",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1380,
+    "end": 1470,
+    "artist": "THE MIGHTY ZAF",
+    "time_text": "11:00pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1380,
+    "end": 1470,
+    "artist": "THE MIGHTY ZAF",
+    "time_text": "11:00pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1590,
+    "end": 1680,
+    "artist": "JOHNNY RECKLESS",
+    "time_text": "2:30am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1470,
+    "end": 1590,
+    "artist": "KENNY DOPE",
+    "time_text": "12:30am - 2:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1290,
+    "end": 1380,
+    "artist": "PETE BBE",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1200,
+    "end": 1290,
+    "artist": "JEFF HIGGINS",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1590,
+    "end": 1680,
+    "artist": "Tasha",
+    "time_text": "2:30am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1470,
+    "end": 1590,
+    "artist": "Facta & K-LONE",
+    "time_text": "12:30am - 2:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1380,
+    "end": 1470,
+    "artist": "JOSEY REBELLE",
+    "time_text": "11:00pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1290,
+    "end": 1380,
+    "artist": "PARIAH",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1140,
+    "end": 1290,
+    "artist": "BEATRICE M. & ALIA",
+    "time_text": "7:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1020,
+    "end": 1140,
+    "artist": "SIMON SCOTT W/ CHUNKY",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 900,
+    "end": 1020,
+    "artist": "IRATION STEPPAS",
+    "time_text": "3:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 780,
+    "end": 900,
+    "artist": "Channel One",
+    "time_text": "1:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 660,
+    "end": 780,
+    "artist": "Gilles Peterson",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1560,
+    "end": 1680,
+    "artist": "Wookie",
+    "time_text": "2:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1470,
+    "end": 1560,
+    "artist": "WINONA",
+    "time_text": "12:30am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1380,
+    "end": 1470,
+    "artist": "DJ Perception",
+    "time_text": "11:00pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1190,
+    "end": 1240,
+    "artist": "Plumm",
+    "time_text": "7:50pm - 8:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1260,
+    "end": 1305,
+    "artist": "Knats",
+    "time_text": "9:00pm - 9:45pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1125,
+    "end": 1170,
+    "artist": "NU ESTABLISHMENT",
+    "time_text": "6:45pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1055,
+    "end": 1095,
+    "artist": "Jobsearch",
+    "time_text": "5:35pm - 6:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 985,
+    "end": 1025,
+    "artist": "C-sé",
+    "time_text": "4:25pm - 5:05pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 920,
+    "end": 960,
+    "artist": "LOWXND",
+    "time_text": "3:20pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 855,
+    "end": 895,
+    "artist": "Holly Reinhardt",
+    "time_text": "2:15pm - 2:55pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 790,
+    "end": 830,
+    "artist": "JAM",
+    "time_text": "1:10pm - 1:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 740,
+    "end": 770,
+    "artist": "Finka",
+    "time_text": "12:20pm - 12:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 690,
+    "end": 720,
+    "artist": "THE CLORE",
+    "time_text": "11:30am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 930,
+    "end": 990,
+    "artist": "JIMPSTER",
+    "time_text": "3:30pm - 4:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1620,
+    "end": 1680,
+    "artist": "SONIDO TUPINAMBA",
+    "time_text": "3:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1500,
+    "end": 1620,
+    "artist": "Mr. Disco Kid",
+    "time_text": "1:00am - 3:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1410,
+    "end": 1500,
+    "artist": "Love Injection",
+    "time_text": "11:30pm - 1:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1320,
+    "end": 1410,
+    "artist": "BRISTOL NORTHERN SOUL CLUB",
+    "time_text": "10:00pm - 11:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1200,
+    "end": 1320,
+    "artist": "BIG SQUEEZE SOUL",
+    "time_text": "8:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1140,
+    "end": 1200,
+    "artist": "OTRA",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1080,
+    "end": 1140,
+    "artist": "CHRIS ASTROJAZZ",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 990,
+    "end": 1080,
+    "artist": "ROSIE FROM THE BLOCK",
+    "time_text": "4:30pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 870,
+    "end": 930,
+    "artist": "RED CITY SOLIDARITY DISCO",
+    "time_text": "2:30pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 810,
+    "end": 870,
+    "artist": "LOVE WINS",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 750,
+    "end": 810,
+    "artist": "SOPHIE CALLIS",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 660,
+    "end": 750,
+    "artist": "HANNAH SHERLOCK (LITM)",
+    "time_text": "11:00am - 12:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1590,
+    "end": 1680,
+    "artist": "SAMMSEED",
+    "time_text": "2:30am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1470,
+    "end": 1590,
+    "artist": "Shy One",
+    "time_text": "12:30am - 2:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1350,
+    "end": 1470,
+    "artist": "Errol & Alex Rita",
+    "time_text": "10:30pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1260,
+    "end": 1350,
+    "artist": "Blissy E & DREY",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 900,
+    "end": 1260,
+    "artist": "Mr Scruff, DJ Spinna & Vanessa Freeman",
+    "time_text": "3:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 780,
+    "end": 900,
+    "artist": "Alexander Nut",
+    "time_text": "1:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 660,
+    "end": 780,
+    "artist": "LÉNA C",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1320,
+    "end": 1380,
+    "artist": "Yushh",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1260,
+    "end": 1320,
+    "artist": "Bruce",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Lagoon",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1110,
+    "end": 1200,
+    "artist": "ZWANA B2B JOE COTCH",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 990,
+    "end": 1050,
+    "artist": "Chunky",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Credable & MC Stiffler",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 930,
+    "end": 990,
+    "artist": "Danniella Dee",
+    "time_text": "3:30pm - 4:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 840,
+    "end": 930,
+    "artist": "Kay Suzuki",
+    "time_text": "2:00pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 780,
+    "end": 840,
+    "artist": "FRASER THE ERASER",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 720,
+    "end": 780,
+    "artist": "ZAWOSE QUEENS (LIVE)",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 660,
+    "end": 720,
+    "artist": "ZESTY ZUMBA",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1440,
+    "end": 1560,
+    "artist": "ELLIE & NAIMA ADAMS",
+    "time_text": "12:00am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1350,
+    "end": 1440,
+    "artist": "Matthew Herbert",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1260,
+    "end": 1350,
+    "artist": "Lil' MInx",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1200,
+    "end": 1260,
+    "artist": "YUKIMI (LIVE)",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1110,
+    "end": 1200,
+    "artist": "Cosmo Sofi & Sanoy",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1020,
+    "end": 1110,
+    "artist": "KATE HUTCHINSON",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 960,
+    "end": 1020,
+    "artist": "Speakers Corner Quartet Plus Guests",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 870,
+    "end": 960,
+    "artist": "ራሄል (RACHEL)",
+    "time_text": "2:30pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 810,
+    "end": 870,
+    "artist": "Zena (LIVE)",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 660,
+    "end": 720,
+    "artist": "BALEARADELICA (RSL) (LIVE)",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 720,
+    "end": 810,
+    "artist": "Claudia TCZ",
+    "time_text": "12:00pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1320,
+    "end": 1380,
+    "artist": "Donut",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1260,
+    "end": 1320,
+    "artist": "Zuri: 15 years of Príncipe Discos",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Home Radio with Scenius: Mapping the Evolutions of Broken Beat and Jungle",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1140,
+    "end": 1200,
+    "artist": "Felix Mufti: Protect Scouse Dolls",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Kabom (Bolts & Jazzin’ the Park): Wealth Redistribution through Crate Diggin’",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Gaby D’Annunzio: Sounds from Afghanistan",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 960,
+    "end": 1020,
+    "artist": "SOPHIA: Music Beyond the Buffer Zone",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 900,
+    "end": 960,
+    "artist": "Emma Warren: Sounds Like Unity",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 840,
+    "end": 900,
+    "artist": "Bubble Club: Radically Inclusive Nightlife",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 780,
+    "end": 840,
+    "artist": "Tomorrow’s Warriors: Jazz moving through generations with Gabriel Starkey",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 660,
+    "end": 780,
+    "artist": "Luke Una: A Worldwide Breakfast",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1470,
+    "end": 1560,
+    "artist": "ZORA JONES",
+    "time_text": "12:30am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1410,
+    "end": 1470,
+    "artist": "160 UNITY: KHADIJA AL HANAFI",
+    "time_text": "11:30pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1350,
+    "end": 1410,
+    "artist": "160 UNITY: DJ SPINN",
+    "time_text": "10:30pm - 11:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1260,
+    "end": 1350,
+    "artist": "160 UNITY: CRAIC DAVID, SOHOTSOSPICY & SEB",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1200,
+    "end": 1260,
+    "artist": "THEMPRESS",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1110,
+    "end": 1200,
+    "artist": "DJ POLO",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1020,
+    "end": 1110,
+    "artist": "GBOSA; COCOBOPS",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 900,
+    "end": 1020,
+    "artist": "ANOTHER PLACE",
+    "time_text": "3:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 810,
+    "end": 900,
+    "artist": "ISHA",
+    "time_text": "1:30pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 720,
+    "end": 810,
+    "artist": "WIP (Carhartt Team)",
+    "time_text": "12:00pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 720,
+    "end": 840,
+    "artist": "ROOM SERVICE",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1440,
+    "end": 1560,
+    "artist": "YU SU",
+    "time_text": "12:00am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1320,
+    "end": 1440,
+    "artist": "ALEX KASSIAN",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1200,
+    "end": 1320,
+    "artist": "BABYSCHÖN",
+    "time_text": "8:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1080,
+    "end": 1200,
+    "artist": "NADIA KSAIBA",
+    "time_text": "6:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 960,
+    "end": 1080,
+    "artist": "DJ SUBARU",
+    "time_text": "4:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 840,
+    "end": 960,
+    "artist": "WASTED SPACE & GRACE",
+    "time_text": "2:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1290,
+    "end": 1380,
+    "artist": "Giles Smith",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1200,
+    "end": 1290,
+    "artist": "Heléna Star",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1110,
+    "end": 1200,
+    "artist": "KOJAY & P LUCAS",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1020,
+    "end": 1110,
+    "artist": "ECHO JULIET",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 960,
+    "end": 1020,
+    "artist": "AUNTIE FLO (PLANTS CAN DANCE – LIVE SET)",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1590,
+    "end": 1680,
+    "artist": "EVA MAY & ALEX ATTIAS",
+    "time_text": "2:30am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1500,
+    "end": 1590,
+    "artist": "Handson Family",
+    "time_text": "1:00am - 2:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1440,
+    "end": 1500,
+    "artist": "Dom Servini",
+    "time_text": "12:00am - 1:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1350,
+    "end": 1440,
+    "artist": "Sarah Love",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1260,
+    "end": 1350,
+    "artist": "DJ BOBAFATT",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1170,
+    "end": 1260,
+    "artist": "DRU SKILLZ",
+    "time_text": "7:30pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1080,
+    "end": 1170,
+    "artist": "GO SISTA",
+    "time_text": "6:00pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Chris P Cuts",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 960,
+    "end": 1020,
+    "artist": "Jeff Daniels",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 900,
+    "end": 960,
+    "artist": "Matt Baila",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 840,
+    "end": 900,
+    "artist": "WSA Records",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 780,
+    "end": 840,
+    "artist": "Don Nelson",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 720,
+    "end": 780,
+    "artist": "Bodie and Andy Pyett",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 660,
+    "end": 720,
+    "artist": "Art of Soul",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 840,
+    "end": 900,
+    "artist": "SOCIAL DJS – DAVE O, CHARLIE BECK & SI FI",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1320,
+    "end": 1380,
+    "artist": "METRODOME",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1260,
+    "end": 1320,
+    "artist": "IL BOSCO (Red Laser / Dj Absolutely Shit)",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1200,
+    "end": 1260,
+    "artist": "IL BOSCO",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1140,
+    "end": 1200,
+    "artist": "KATH MCDERMOTT",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1080,
+    "end": 1140,
+    "artist": "MISS JACKSON",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1020,
+    "end": 1080,
+    "artist": "KICKIN PIGEON",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 960,
+    "end": 1020,
+    "artist": "JIMMY TURNBULL",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 900,
+    "end": 960,
+    "artist": "MATT TRIGGS & LOZ TRIGGS",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 780,
+    "end": 840,
+    "artist": "STEVE TAYLOR",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 720,
+    "end": 780,
+    "artist": "DJ EMERALD (Disco Mums)",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 720,
+    "end": 780,
+    "artist": "STOATY",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1500,
+    "end": 1560,
+    "artist": "NISHA DUGGAL",
+    "time_text": "1:00am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1560,
+    "end": 1620,
+    "artist": "TEKIN",
+    "time_text": "2:00am - 3:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1620,
+    "end": 1680,
+    "artist": "WOODY",
+    "time_text": "3:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1380,
+    "end": 1500,
+    "artist": "MONOBROW (Sound Records, Stroud)",
+    "time_text": "11:00pm - 1:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1320,
+    "end": 1380,
+    "artist": "SWEETPEA",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1260,
+    "end": 1320,
+    "artist": "NONI MOUSE",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Chris Wheatley",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1140,
+    "end": 1200,
+    "artist": "KSLICE",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1080,
+    "end": 1140,
+    "artist": "MARK BROADBENT",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1020,
+    "end": 1080,
+    "artist": "SIOFRA MCCOMB",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 960,
+    "end": 1020,
+    "artist": "ANTI SOCIAL JAZZ CLUB",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 900,
+    "end": 960,
+    "artist": "NO FAKIN’",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 840,
+    "end": 900,
+    "artist": "CONDUIT",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 780,
+    "end": 840,
+    "artist": "NI MAXINE (DJ SET)",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-21",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 660,
+    "end": 720,
+    "artist": "SAM HAUGHTON",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1300,
+    "end": 1370,
+    "artist": "Peven Everett",
+    "time_text": "9:40pm - 10:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1180,
+    "end": 1260,
+    "artist": "ARTHUR VEROCAI WITH NU CIVILISATION ORCHESTRA",
+    "time_text": "7:40pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1070,
+    "end": 1130,
+    "artist": "MUSCLECARS (LIVE)",
+    "time_text": "5:50pm - 6:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 980,
+    "end": 1040,
+    "artist": "Jazzanova (Live)",
+    "time_text": "4:20pm - 5:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 890,
+    "end": 950,
+    "artist": "Jamie Woon",
+    "time_text": "2:50pm - 3:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 810,
+    "end": 860,
+    "artist": "Momoko Gill",
+    "time_text": "1:30pm - 2:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 720,
+    "end": 770,
+    "artist": "Amaro Freitas",
+    "time_text": "12:00pm - 12:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1230,
+    "end": 1290,
+    "artist": "Kofi Stone",
+    "time_text": "8:30pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1130,
+    "end": 1190,
+    "artist": "Mike",
+    "time_text": "6:50pm - 7:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1020,
+    "end": 1080,
+    "artist": "GENA FEAT. LIV.E & KARRIEM RIGGINS",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 940,
+    "end": 990,
+    "artist": "Aja Monet",
+    "time_text": "3:40pm - 4:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 850,
+    "end": 900,
+    "artist": "Steam Down",
+    "time_text": "2:10pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 770,
+    "end": 820,
+    "artist": "KAHIL EL’ZABAR ETHNIC HERITAGE ENSEMBLE",
+    "time_text": "12:50pm - 1:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 700,
+    "end": 740,
+    "artist": "BARNEY KEEN",
+    "time_text": "11:40am - 12:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1590,
+    "end": 1680,
+    "artist": "Ivy Lab",
+    "time_text": "2:30am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1470,
+    "end": 1590,
+    "artist": "CALIBRE FT. SP:MC",
+    "time_text": "12:30am - 2:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1350,
+    "end": 1470,
+    "artist": "ALIX PEREZ FT. SP:MC",
+    "time_text": "10:30pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1260,
+    "end": 1350,
+    "artist": "SILVA SNIPA",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1140,
+    "end": 1260,
+    "artist": "DJ Flight",
+    "time_text": "7:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1020,
+    "end": 1140,
+    "artist": "SWEETPEA",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 900,
+    "end": 1020,
+    "artist": "SELECTACEE",
+    "time_text": "3:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1200,
+    "end": 1320,
+    "artist": "I-SHA",
+    "time_text": "8:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1380,
+    "end": 1500,
+    "artist": "RE:NI",
+    "time_text": "11:00pm - 1:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1320,
+    "end": 1380,
+    "artist": "SHACKLETON (LIVE)",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1560,
+    "end": 1680,
+    "artist": "NONO GIGSTA",
+    "time_text": "2:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1500,
+    "end": 1560,
+    "artist": "BLAWAN (LIVE)",
+    "time_text": "1:00am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1560,
+    "end": 1680,
+    "artist": "Sadar Bahar",
+    "time_text": "2:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1380,
+    "end": 1560,
+    "artist": "GE-OLOGY",
+    "time_text": "11:00pm - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1290,
+    "end": 1380,
+    "artist": "LEV & FARO",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1200,
+    "end": 1290,
+    "artist": "BRIGHTER DAYS FAMILY",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1020,
+    "end": 1200,
+    "artist": "King Britt",
+    "time_text": "5:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 930,
+    "end": 1020,
+    "artist": "Shy One",
+    "time_text": "3:30pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 840,
+    "end": 930,
+    "artist": "Scientist",
+    "time_text": "2:00pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1560,
+    "end": 1680,
+    "artist": "RROXYMORE",
+    "time_text": "2:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1380,
+    "end": 1560,
+    "artist": "LUCY LOCKET & MICHAEL UPSON",
+    "time_text": "11:00pm - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1340,
+    "end": 1380,
+    "artist": "SALIMATA",
+    "time_text": "10:20pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1260,
+    "end": 1315,
+    "artist": "Elliott Skinner",
+    "time_text": "9:00pm - 9:55pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1200,
+    "end": 1240,
+    "artist": "THE CJP BAND",
+    "time_text": "8:00pm - 8:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1125,
+    "end": 1170,
+    "artist": "Mali Sheard",
+    "time_text": "6:45pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1050,
+    "end": 1095,
+    "artist": "KASSA GJ QUARTET",
+    "time_text": "5:30pm - 6:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 980,
+    "end": 1025,
+    "artist": "Cube Legacy Band",
+    "time_text": "4:20pm - 5:05pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 890,
+    "end": 950,
+    "artist": "BXL x LDN INTERPLAY III",
+    "time_text": "2:50pm - 3:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 820,
+    "end": 860,
+    "artist": "Klara Devlin",
+    "time_text": "1:40pm - 2:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 755,
+    "end": 795,
+    "artist": "CIARA O SEXTET",
+    "time_text": "12:35pm - 1:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 690,
+    "end": 730,
+    "artist": "Tomorrow's Warriors Frontline",
+    "time_text": "11:30am - 12:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1560,
+    "end": 1680,
+    "artist": "DJ TARA",
+    "time_text": "2:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1470,
+    "end": 1560,
+    "artist": "JKriv",
+    "time_text": "12:30am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1380,
+    "end": 1470,
+    "artist": "Cosmo Sofi",
+    "time_text": "11:00pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1290,
+    "end": 1380,
+    "artist": "Brown Excellence",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1200,
+    "end": 1290,
+    "artist": "GENA DJ SET FEAT. LIV.E & KARRIEM RIGGINS",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1080,
+    "end": 1200,
+    "artist": "JMG COLLECTIVE",
+    "time_text": "6:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 960,
+    "end": 1020,
+    "artist": "WOODY BOASE",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 900,
+    "end": 960,
+    "artist": "Táina",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 840,
+    "end": 900,
+    "artist": "NAM",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1020,
+    "end": 1080,
+    "artist": "AVI DEL MONO",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 780,
+    "end": 840,
+    "artist": "RHYS BAKER",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 720,
+    "end": 780,
+    "artist": "MAFE MARACUYEAH",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 660,
+    "end": 720,
+    "artist": "POLYMAAS",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1530,
+    "end": 1680,
+    "artist": "DJ Nori",
+    "time_text": "1:30am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1380,
+    "end": 1530,
+    "artist": "Colleen 'Cosmo' Murphy",
+    "time_text": "11:00pm - 1:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1260,
+    "end": 1380,
+    "artist": "Toribio",
+    "time_text": "9:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1140,
+    "end": 1260,
+    "artist": "EVES’DROP COLLECTIVE",
+    "time_text": "7:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 1020,
+    "end": 1140,
+    "artist": "Rohan Rakhit",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 900,
+    "end": 1020,
+    "artist": "Poly-Ritmo",
+    "time_text": "3:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 780,
+    "end": 900,
+    "artist": "TRAFFORD (Nick Williams Celebration Set)",
+    "time_text": "1:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 660,
+    "end": 780,
+    "artist": "Love Injection",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1290,
+    "end": 1380,
+    "artist": "CEEPHAX ACID CREW (LIVE)",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1230,
+    "end": 1290,
+    "artist": "★",
+    "time_text": "8:30pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1170,
+    "end": 1230,
+    "artist": "DJ SPANISH FLY (LIVE)",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1080,
+    "end": 1170,
+    "artist": "ALICIA",
+    "time_text": "6:00pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Lightfoot",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 960,
+    "end": 1020,
+    "artist": "Coco Maria",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 900,
+    "end": 960,
+    "artist": "Mr Gibbon",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 840,
+    "end": 900,
+    "artist": "Alexander Nut",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 780,
+    "end": 840,
+    "artist": "LINETT KAMALA (DJ)",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 720,
+    "end": 780,
+    "artist": "LINETT KAMALA (TALK)",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 660,
+    "end": 720,
+    "artist": "AFROMERM (LIVE)",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1440,
+    "end": 1560,
+    "artist": "IZCO",
+    "time_text": "12:00am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1350,
+    "end": 1440,
+    "artist": "Rohan Rakhit",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1260,
+    "end": 1350,
+    "artist": "Marina & Yazmin Lacey",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1200,
+    "end": 1260,
+    "artist": "YOUR BROTHERS KEEPER (W/GARY BARTZ )",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1125,
+    "end": 1200,
+    "artist": "In Flames",
+    "time_text": "6:45pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1095,
+    "end": 1125,
+    "artist": "ISAIAH COLLIER",
+    "time_text": "6:15pm - 6:45pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1020,
+    "end": 1095,
+    "artist": "TYSON & Selassie TBC",
+    "time_text": "5:00pm - 6:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 960,
+    "end": 1020,
+    "artist": "Bel Cobain",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 870,
+    "end": 960,
+    "artist": "Valentine Comar",
+    "time_text": "2:30pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 840,
+    "end": 870,
+    "artist": "DONUT",
+    "time_text": "2:00pm - 2:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 780,
+    "end": 840,
+    "artist": "Dave Okumu & Tom Skinner",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 720,
+    "end": 780,
+    "artist": "SOPH",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 660,
+    "end": 720,
+    "artist": "Alex Intas",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1260,
+    "end": 1380,
+    "artist": "Lovie: 1976",
+    "time_text": "9:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Tasha: Neighbourhood",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1140,
+    "end": 1200,
+    "artist": "Kate Magic: Free party/rave",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Neighbourhood: Notes from Belfast",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1020,
+    "end": 1080,
+    "artist": "LUPINI: We Live Here",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 960,
+    "end": 1020,
+    "artist": "Amaka: A story of how Nigerian communities found solace in highlife",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 900,
+    "end": 960,
+    "artist": "Giovanna Boffa: What’s the Point? with Kahil El’Zabar & Peven Everett",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 780,
+    "end": 840,
+    "artist": "Santa Leticia: Radio Against Silence Underground Pirate Radio from Spain",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 840,
+    "end": 900,
+    "artist": "Admin, Living Room Dance Club & Yadava: Liv Togevver, Britfunk and the sounds of multi-cultural Britain.",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 660,
+    "end": 780,
+    "artist": "Colleen 'Cosmo' Murphy: Balearic Breakfast",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1470,
+    "end": 1560,
+    "artist": "Guedra Guedra",
+    "time_text": "12:30am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1380,
+    "end": 1470,
+    "artist": "DJ LAG",
+    "time_text": "11:00pm - 12:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1290,
+    "end": 1380,
+    "artist": "JD REID",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1200,
+    "end": 1290,
+    "artist": "BUSHBBY",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1110,
+    "end": 1200,
+    "artist": "NORSICAA",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1020,
+    "end": 1110,
+    "artist": "LAGOON",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 930,
+    "end": 1020,
+    "artist": "ARCHITECT",
+    "time_text": "3:30pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 810,
+    "end": 930,
+    "artist": "STONE",
+    "time_text": "1:30pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 720,
+    "end": 810,
+    "artist": "THEMPRESS",
+    "time_text": "12:00pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 720,
+    "end": 840,
+    "artist": "ROOM SERVICE",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1440,
+    "end": 1560,
+    "artist": "PAULA TAPE",
+    "time_text": "12:00am - 2:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1320,
+    "end": 1440,
+    "artist": "MAKE A DANCE",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1200,
+    "end": 1320,
+    "artist": "ESA",
+    "time_text": "8:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1080,
+    "end": 1200,
+    "artist": "Macca",
+    "time_text": "6:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 960,
+    "end": 1080,
+    "artist": "CAMI LAYÉ OKÚN",
+    "time_text": "4:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 840,
+    "end": 960,
+    "artist": "Selassie TBC",
+    "time_text": "2:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1290,
+    "end": 1380,
+    "artist": "MICKY & RICH (Passenger)",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1215,
+    "end": 1290,
+    "artist": "LIMINAL PEOPLE",
+    "time_text": "8:15pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1140,
+    "end": 1215,
+    "artist": "TIER (SHAKARA SOUL)",
+    "time_text": "7:00pm - 8:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1080,
+    "end": 1140,
+    "artist": "RACHEL CRADDOCK",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1020,
+    "end": 1080,
+    "artist": "BOB HILL",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 960,
+    "end": 1020,
+    "artist": "MARYSIA OSU (LIVE)",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1605,
+    "end": 1680,
+    "artist": "JON PACKMAN",
+    "time_text": "2:45am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1530,
+    "end": 1605,
+    "artist": "KARL ROSCOE",
+    "time_text": "1:30am - 2:45am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1350,
+    "end": 1530,
+    "artist": "OVERJOYED: MR THING, GILLA & RUSS RYAN",
+    "time_text": "10:30pm - 1:30am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1290,
+    "end": 1350,
+    "artist": "CAMI LAYÉ OKÚN",
+    "time_text": "9:30pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1200,
+    "end": 1290,
+    "artist": "DANIELE MIZAR (CAM Soundsystem)",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1140,
+    "end": 1200,
+    "artist": "RUBY FRANCIS",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1080,
+    "end": 1140,
+    "artist": "DAVE FORDE",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Jungalice",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 960,
+    "end": 1020,
+    "artist": "Alfie Panaiotis & Tall Nico",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 900,
+    "end": 960,
+    "artist": "Liberation Records",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 840,
+    "end": 900,
+    "artist": "J Felix",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 780,
+    "end": 840,
+    "artist": "DJ Himitsu",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 720,
+    "end": 780,
+    "artist": "VDS London x Tokyo",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 660,
+    "end": 720,
+    "artist": "jim-R",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 930,
+    "end": 1020,
+    "artist": "TINTIN",
+    "time_text": "3:30pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 840,
+    "end": 930,
+    "artist": "WILL ROWE B2B DJ EMMA",
+    "time_text": "2:00pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 720,
+    "end": 840,
+    "artist": "Big Fish Little Fish [Family Rave]",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1290,
+    "end": 1380,
+    "artist": "LIZE",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1200,
+    "end": 1290,
+    "artist": "FAIDE B2B REJ",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1110,
+    "end": 1200,
+    "artist": "ANONYMOUS FUNK ODYSSEY",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1020,
+    "end": 1110,
+    "artist": "DIPOD",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1500,
+    "end": 1680,
+    "artist": "JOE MUGGS’ AMBIENT ZONE",
+    "time_text": "1:00am - 4:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1380,
+    "end": 1500,
+    "artist": "Daksh",
+    "time_text": "11:00pm - 1:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1200,
+    "end": 1380,
+    "artist": "Shai Space LDN Deep Listening Takeover SHAI SPACE LDN",
+    "time_text": "8:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1140,
+    "end": 1200,
+    "artist": "Jeet",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1080,
+    "end": 1140,
+    "artist": "NIIX",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Sway of the Verses",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 960,
+    "end": 1020,
+    "artist": "SI KILMO (HUSH CLUB)",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 840,
+    "end": 960,
+    "artist": "LEEWOK, CURLY WATERS & FANTA SHANDY (Strange Brew, Bristol)",
+    "time_text": "2:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-22",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 720,
+    "end": 840,
+    "artist": "EUAN MCGINTY (Time Capsule Records)",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 990,
+    "end": 1050,
+    "artist": "ANA FRANGO ELÉTRICO",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1275,
+    "end": 1350,
+    "artist": "GARY BARTZ",
+    "time_text": "9:15pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1170,
+    "end": 1230,
+    "artist": "Stereolab",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 1080,
+    "end": 1140,
+    "artist": "KAHIL EL'ZABAR PRESENTS A LOVE SUPREME",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 810,
+    "end": 870,
+    "artist": "Joshua Idehen",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 720,
+    "end": 780,
+    "artist": "Da Lata",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "40",
+    "stage": 0,
+    "start": 900,
+    "end": 960,
+    "artist": "ZENA x MEREBA x KIBROM BIRHANE",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1230,
+    "end": 1290,
+    "artist": "Yazmin Lacey",
+    "time_text": "8:30pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1140,
+    "end": 1190,
+    "artist": "James K",
+    "time_text": "7:00pm - 7:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 1040,
+    "end": 1100,
+    "artist": "HERBERT & MOMOKO",
+    "time_text": "5:20pm - 6:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 950,
+    "end": 1000,
+    "artist": "Shabaka",
+    "time_text": "3:50pm - 4:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 860,
+    "end": 910,
+    "artist": "Natural Information Society",
+    "time_text": "2:20pm - 3:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "42",
+    "stage": 1,
+    "start": 770,
+    "end": 820,
+    "artist": "PAPAYA NOON",
+    "time_text": "12:50pm - 1:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1380,
+    "end": 1440,
+    "artist": "Gilles Peterson & Friends",
+    "time_text": "11:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1260,
+    "end": 1380,
+    "artist": "Special Guest",
+    "time_text": "9:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1140,
+    "end": 1260,
+    "artist": "SALUTE",
+    "time_text": "7:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 1035,
+    "end": 1140,
+    "artist": "LADY PASSION",
+    "time_text": "5:15pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 930,
+    "end": 1035,
+    "artist": "Dr Banana",
+    "time_text": "3:30pm - 5:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "43",
+    "stage": 2,
+    "start": 810,
+    "end": 930,
+    "artist": "Ella Knight",
+    "time_text": "1:30pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1380,
+    "end": 1440,
+    "artist": "dBridge",
+    "time_text": "11:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1320,
+    "end": 1380,
+    "artist": "MANTRA",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1230,
+    "end": 1320,
+    "artist": "BRYAN GEE (OLD SKOOL SET)",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1170,
+    "end": 1230,
+    "artist": "DOUBLE O",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "77",
+    "stage": 3,
+    "start": 1080,
+    "end": 1170,
+    "artist": "WINSTON HAZEL & JOSEY REBELLE & MC CHICKABOO",
+    "time_text": "6:00pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1350,
+    "end": 1440,
+    "artist": "MAD PROFESSOR",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1260,
+    "end": 1350,
+    "artist": "Selassie TBC",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1180,
+    "end": 1260,
+    "artist": "Emma-Jean Thackray",
+    "time_text": "7:40pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 1060,
+    "end": 1180,
+    "artist": "EVES’DROP COLLECTIVE",
+    "time_text": "5:40pm - 7:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 970,
+    "end": 1060,
+    "artist": "TONE B. NIMBLE",
+    "time_text": "4:10pm - 5:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 890,
+    "end": 970,
+    "artist": "LOVIE",
+    "time_text": "2:50pm - 4:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "45",
+    "stage": 4,
+    "start": 780,
+    "end": 890,
+    "artist": "Charlie Dark",
+    "time_text": "1:00pm - 2:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1340,
+    "end": 1380,
+    "artist": "Georgie Sweet",
+    "time_text": "10:20pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1265,
+    "end": 1305,
+    "artist": "LIIM",
+    "time_text": "9:05pm - 9:45pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1200,
+    "end": 1240,
+    "artist": "MADELEINE",
+    "time_text": "8:00pm - 8:40pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1110,
+    "end": 1170,
+    "artist": "A Grime Supreme",
+    "time_text": "6:30pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 1030,
+    "end": 1070,
+    "artist": "Tomorrow's Warriors Big Band",
+    "time_text": "5:10pm - 5:50pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 945,
+    "end": 990,
+    "artist": "WARRIORS ALUMNI JAM",
+    "time_text": "3:45pm - 4:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 875,
+    "end": 920,
+    "artist": "CHRIST-STÉPHANE BOIZI",
+    "time_text": "2:35pm - 3:20pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 810,
+    "end": 850,
+    "artist": "Tomorrow's Warriors Youth Ensemble",
+    "time_text": "1:30pm - 2:10pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 745,
+    "end": 785,
+    "artist": "Tomorrow’s Warriors Junior Band",
+    "time_text": "12:25pm - 1:05pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "82",
+    "stage": 5,
+    "start": 690,
+    "end": 720,
+    "artist": "New Gen Jazz",
+    "time_text": "11:30am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1320,
+    "end": 1440,
+    "artist": "LOU HAYTER",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1230,
+    "end": 1320,
+    "artist": "Greg Wilson",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1140,
+    "end": 1230,
+    "artist": "JONJO JURY",
+    "time_text": "7:00pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 1020,
+    "end": 1140,
+    "artist": "DRIFTY B2B ELL.IOT",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 960,
+    "end": 1020,
+    "artist": "Lily London",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 900,
+    "end": 960,
+    "artist": "Mithun",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 840,
+    "end": 900,
+    "artist": "LOZ TRACK",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 780,
+    "end": 840,
+    "artist": "PEGASVS",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 720,
+    "end": 780,
+    "artist": "DEAN SUNSHINE SMITH",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "83",
+    "stage": 6,
+    "start": 660,
+    "end": 720,
+    "artist": "Miss Mash",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "44",
+    "stage": 7,
+    "start": 660,
+    "end": 1440,
+    "artist": "Another Sunday Afternoon At Dingwall's",
+    "time_text": "11:00am - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1320,
+    "end": 1380,
+    "artist": "UK Hunky",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1230,
+    "end": 1320,
+    "artist": "MI-EL",
+    "time_text": "8:30pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1170,
+    "end": 1230,
+    "artist": "Ri Mistry",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1110,
+    "end": 1170,
+    "artist": "Romaal Kultan",
+    "time_text": "6:30pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1080,
+    "end": 1110,
+    "artist": "THE RUB",
+    "time_text": "6:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Borge",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 960,
+    "end": 1020,
+    "artist": "Shy One",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 870,
+    "end": 960,
+    "artist": "Dare Balogun",
+    "time_text": "2:30pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 810,
+    "end": 870,
+    "artist": "Rikette Genesis",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 720,
+    "end": 810,
+    "artist": "CLUB WIP (TALK)",
+    "time_text": "12:00pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "84",
+    "stage": 8,
+    "start": 660,
+    "end": 720,
+    "artist": "BEHOLDER (LIVE)",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 780,
+    "end": 840,
+    "artist": "KLASH AND BROWN",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1350,
+    "end": 1440,
+    "artist": "JOE LYE & KATIE BARBER",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1260,
+    "end": 1350,
+    "artist": "Paul Camo",
+    "time_text": "9:00pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Ana Frango Elétrico",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1140,
+    "end": 1200,
+    "artist": "Santa Leticia",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Tambourine Hands",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Oscar Jerome",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 930,
+    "end": 1020,
+    "artist": "KAMAR",
+    "time_text": "3:30pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 840,
+    "end": 930,
+    "artist": "PAPAOUL",
+    "time_text": "2:00pm - 3:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 720,
+    "end": 780,
+    "artist": "Roberta Cutolo",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "78",
+    "stage": 9,
+    "start": 660,
+    "end": 720,
+    "artist": "ANDREA TROUT & CYNDI (Handson Family)",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 840,
+    "end": 900,
+    "artist": "Aneesha Kotwani : Behind Every Women, a village",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1320,
+    "end": 1380,
+    "artist": "Lady Passion: Raised on Rewind",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1260,
+    "end": 1320,
+    "artist": "yeahitsRenee: Soca & The Sound of Home",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1200,
+    "end": 1260,
+    "artist": "Aethher & Josh Aitman: It Takes A Village to Fight The Aids Crisis",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1140,
+    "end": 1200,
+    "artist": "WADE DAO & WHILES: Melting Part – Surrounded by Water",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Kamar: Under the Hood of Post-Punk Dub",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Zaereo: Polska scena feat. Albert Karch & Igor Wiśniewsk",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 960,
+    "end": 1020,
+    "artist": "Fen: Sawtuha – Arabic Women & Resistance",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 900,
+    "end": 960,
+    "artist": "Mo Ayoub & Muzikawi: Censored Ethiopian Rare Groove – Music From the Shadow of the Revolution",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 780,
+    "end": 840,
+    "artist": "Hélena Star: THERAPY PRESENTS – An Ode to Parents",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "79",
+    "stage": 10,
+    "start": 660,
+    "end": 780,
+    "artist": "Coco Maria: A Worldwide Breakfast",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1350,
+    "end": 1440,
+    "artist": "Dr Banana",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1290,
+    "end": 1350,
+    "artist": "SILVA SNIPA",
+    "time_text": "9:30pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1170,
+    "end": 1290,
+    "artist": "BAILE IJÓ",
+    "time_text": "7:30pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1110,
+    "end": 1170,
+    "artist": "Ivy Lab",
+    "time_text": "6:30pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 1020,
+    "end": 1110,
+    "artist": "WILFY D",
+    "time_text": "5:00pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 900,
+    "end": 1020,
+    "artist": "NINA YAMADA",
+    "time_text": "3:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 810,
+    "end": 900,
+    "artist": "Shakti Jazz",
+    "time_text": "1:30pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "101",
+    "stage": 11,
+    "start": 720,
+    "end": 810,
+    "artist": "WIP (Carhartt Team)",
+    "time_text": "12:00pm - 1:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 720,
+    "end": 840,
+    "artist": "ROOM SERVICE",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1320,
+    "end": 1440,
+    "artist": "PROSUMER",
+    "time_text": "10:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1200,
+    "end": 1320,
+    "artist": "LOW LIFE WITH BILL BREWSTER & FRANK BROUGHTON",
+    "time_text": "8:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 1080,
+    "end": 1200,
+    "artist": "Ruby Savage",
+    "time_text": "6:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 960,
+    "end": 1080,
+    "artist": "Coco Maria",
+    "time_text": "4:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "387",
+    "stage": 12,
+    "start": 840,
+    "end": 960,
+    "artist": "UNITED FREEDOM COLLECTIVE",
+    "time_text": "2:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1320,
+    "end": 1380,
+    "artist": "Mr Redley",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1260,
+    "end": 1320,
+    "artist": "PLENTYPPL",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1200,
+    "end": 1260,
+    "artist": "ORII CLUB",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1110,
+    "end": 1200,
+    "artist": "ALMASS BADAT",
+    "time_text": "6:30pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 1050,
+    "end": 1110,
+    "artist": "SADEEDO",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "388",
+    "stage": 13,
+    "start": 990,
+    "end": 1050,
+    "artist": "TARA LILY (LIVE)",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1350,
+    "end": 1440,
+    "artist": "DANCE REGULAR W/ EVM128 & MATICA",
+    "time_text": "10:30pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1290,
+    "end": 1350,
+    "artist": "WHEEL UP",
+    "time_text": "9:30pm - 10:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1230,
+    "end": 1290,
+    "artist": "LEVI BUSUE",
+    "time_text": "8:30pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1170,
+    "end": 1230,
+    "artist": "STEFFI BRICKS",
+    "time_text": "7:30pm - 8:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Aidy West",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 960,
+    "end": 1020,
+    "artist": "sammybennis",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 900,
+    "end": 960,
+    "artist": "Kieran Jandu b2b Silasthedon",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 840,
+    "end": 900,
+    "artist": "Rhys Baker",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 780,
+    "end": 840,
+    "artist": "Fingaz",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 720,
+    "end": 780,
+    "artist": "Leroy from Kudos",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "86",
+    "stage": 14,
+    "start": 660,
+    "end": 720,
+    "artist": "Euan McGinty",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "394",
+    "stage": 26,
+    "start": 1080,
+    "end": 1170,
+    "artist": "LA RUMBA",
+    "time_text": "6:00pm - 7:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1290,
+    "end": 1380,
+    "artist": "E DOUBLE D",
+    "time_text": "9:30pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 1200,
+    "end": 1290,
+    "artist": "MIKEY D.O.N",
+    "time_text": "8:00pm - 9:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 975,
+    "end": 1110,
+    "artist": "TAYO & FRANK TOPE",
+    "time_text": "4:15pm - 6:30pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 900,
+    "end": 975,
+    "artist": "JAIME ROSSO",
+    "time_text": "3:00pm - 4:15pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 840,
+    "end": 900,
+    "artist": "JACANA PEOPLE",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "87",
+    "stage": 15,
+    "start": 720,
+    "end": 840,
+    "artist": "Activate [DJ Competition Final]",
+    "time_text": "12:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1380,
+    "end": 1440,
+    "artist": "DJ CUTTERZ",
+    "time_text": "11:00pm - 12:00am"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1320,
+    "end": 1380,
+    "artist": "PAMOJA DISCO CLUB",
+    "time_text": "10:00pm - 11:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1260,
+    "end": 1320,
+    "artist": "LOVE SUN DAYS",
+    "time_text": "9:00pm - 10:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1200,
+    "end": 1260,
+    "artist": "El Fadil",
+    "time_text": "8:00pm - 9:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1140,
+    "end": 1200,
+    "artist": "ROSE",
+    "time_text": "7:00pm - 8:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 1020,
+    "end": 1140,
+    "artist": "HAZE",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 960,
+    "end": 1020,
+    "artist": "AETHHER (SUN PALACE SOUNDSYSTEM)",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 900,
+    "end": 960,
+    "artist": "Casual Max",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 840,
+    "end": 900,
+    "artist": "TRIXIMO",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 780,
+    "end": 840,
+    "artist": "NATHAN WORM (Hot Wax Bristol / Worm Disco Club)",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "music",
+    "date": "2026-08-23",
+    "stage_id": "88",
+    "stage": 16,
+    "start": 660,
+    "end": 780,
+    "artist": "THROB HALL (Soundsystem Residents)",
+    "time_text": "11:00am - 1:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 900,
+    "end": 960,
+    "artist": "Open Ceremony : Feeling Held with Frankie Rechere",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 975,
+    "end": 1035,
+    "artist": "The Sanctuary of the Heart",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 1040,
+    "end": 1080,
+    "artist": "Embodied Breath: Posture, Presence & Liberation",
+    "time_text": "5:20pm - 6:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 840,
+    "end": 930,
+    "artist": "Banner Painting with Ellen (Green New Deal Rising)",
+    "time_text": "2:00pm - 3:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 945,
+    "end": 1005,
+    "artist": "Ethical Consumer Magazine: No ethical listening under capitalism? with Ruairidh Hamilton, Harry Ruxton and Oliver Boyle",
+    "time_text": "3:45pm - 4:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 1020,
+    "end": 1115,
+    "artist": "Make Music Matter present We Are Still Here: Collage A Reflection To Students In Gaza with Rebecca Webber and Laura Otaqui",
+    "time_text": "5:00pm - 6:35pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 1130,
+    "end": 1160,
+    "artist": "Make Music Matter present Rawan Roshni LIVE",
+    "time_text": "6:50pm - 7:20pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 975,
+    "end": 1035,
+    "artist": "Home and Abroad: Political Lessons from Migration, Movement and Music",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 1050,
+    "end": 1125,
+    "artist": "Hidden Poets Collective",
+    "time_text": "5:30pm - 6:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 900,
+    "end": 960,
+    "artist": "Is Mental Health A Disability",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 960,
+    "end": 1020,
+    "artist": "Yoga",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 900,
+    "end": 960,
+    "artist": "News From the Future: Talk & Workshop with Futuremaker Benita Matofska",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 960,
+    "end": 990,
+    "artist": "Author Signing: Micha Frazer-Carroll",
+    "time_text": "4:00pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 990,
+    "end": 1050,
+    "artist": "The BookLove Community Cookbook: Every Recipe Tells a Story",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1050,
+    "end": 1110,
+    "artist": "The Nun Who Nurtured Reggae",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-20",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1125,
+    "end": 1170,
+    "artist": "Meet the Poets – Poetry Extravaganza",
+    "time_text": "6:45pm - 7:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "103",
+    "stage": 24,
+    "start": 855,
+    "end": 915,
+    "artist": "Eye to Eye",
+    "time_text": "2:15pm - 3:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "103",
+    "stage": 24,
+    "start": 930,
+    "end": 990,
+    "artist": "Healing Sounds",
+    "time_text": "3:30pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "103",
+    "stage": 24,
+    "start": 690,
+    "end": 750,
+    "artist": "Nuff Yoga",
+    "time_text": "11:30am - 12:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "103",
+    "stage": 24,
+    "start": 780,
+    "end": 840,
+    "artist": "We Earth ~ Raw Pigment Painting",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "103",
+    "stage": 24,
+    "start": 555,
+    "end": 600,
+    "artist": "Sound Heal Grow: Restorative Sound Journeys",
+    "time_text": "9:15am - 10:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "103",
+    "stage": 24,
+    "start": 615,
+    "end": 675,
+    "artist": "Thai Yoga Massage",
+    "time_text": "10:15am - 11:15am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 930,
+    "end": 990,
+    "artist": "Yoga In the Wild",
+    "time_text": "3:30pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 780,
+    "end": 840,
+    "artist": "Mindful Creative Writing",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 840,
+    "end": 900,
+    "artist": "Seed Ball Workshop",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 600,
+    "end": 660,
+    "artist": "5k Run",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 660,
+    "end": 750,
+    "artist": "‘Water Works’ – A Moment to Pause, Reflect and Connect",
+    "time_text": "11:00am - 12:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 870,
+    "end": 930,
+    "artist": "COMMUNITEA with Basima’s Kitchen",
+    "time_text": "2:30pm - 3:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 930,
+    "end": 990,
+    "artist": "Lola Olufemi and Carys Afoko in conversation",
+    "time_text": "3:30pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 1005,
+    "end": 1065,
+    "artist": "Make Music Matter present ‘The Radical Bookshelf’ with Amy Abdelnoor, Courttia Newland and Nadia Quadami (chair)",
+    "time_text": "4:45pm - 5:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 1080,
+    "end": 1140,
+    "artist": "The Nerve present ‘Radical Women and Resistance – Using your Voice to Urge Change.’ with Laetitia Sadier (Stereolab), Emma Dabiri, Sarah Donaldson (Editor in Chief @ The Nerve), Imogen Carter (Co-Founder of The Nerve and chair)",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 735,
+    "end": 795,
+    "artist": "Fairtrade Foundation and Adeche Atelier present ‘Fair Futures’: Mural Painting Workshop with Adwoa and Solomon",
+    "time_text": "12:15pm - 1:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 810,
+    "end": 870,
+    "artist": "Conversations with the Far Right with Adam Brichto, Daniel Trilling, Samira Ali, Milly Blue (host)",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 600,
+    "end": 660,
+    "artist": "Seeds of Revolution: Guerrilla Tactics for a People’s Garden with Ikaay Ebi",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 690,
+    "end": 720,
+    "artist": "Make Music Matter present Marwan Halabi LIVE",
+    "time_text": "11:30am - 12:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 900,
+    "end": 960,
+    "artist": "Seeds Of Change: Food, Purpose and Restoration",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 975,
+    "end": 1035,
+    "artist": "Casual Readers Club: Read + Reflect",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Soft Skills, Hard Truths: Power, Survival and Self-hood in Creative Spaces",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 1125,
+    "end": 1185,
+    "artist": "Undergrond Resistance: Ageing and Visibility For Women DJ’s",
+    "time_text": "6:45pm - 7:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 825,
+    "end": 885,
+    "artist": "Around Sound (Live Recording) Crafting A Visual Language with Anaiis & Tayo Rapaport",
+    "time_text": "1:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 675,
+    "end": 735,
+    "artist": "Bush Magic: Sonic Hunger",
+    "time_text": "11:15am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 750,
+    "end": 810,
+    "artist": "Developing A Care Practice with Black Fish and Baytna",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 600,
+    "end": 660,
+    "artist": "Revive The Dancefloor: Reimagining Future Dancefloor Communities",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 870,
+    "end": 975,
+    "artist": "Rag Crochet with Raggedy Nannie",
+    "time_text": "2:30pm - 4:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 990,
+    "end": 1050,
+    "artist": "Lino Print with Olivia Bell",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 795,
+    "end": 855,
+    "artist": "Analogue Collage Club with Kinship Club",
+    "time_text": "1:15pm - 2:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 600,
+    "end": 660,
+    "artist": "Life Drawing with Studio Eden",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 675,
+    "end": 765,
+    "artist": "Nerikomi Pottery with Plop Pottery",
+    "time_text": "11:15am - 12:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 975,
+    "end": 1035,
+    "artist": "A Lemon Called Quest: Hunt for the Hidden Squeeze",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Date my Mate",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 900,
+    "end": 960,
+    "artist": "Zesty Mosaic",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 600,
+    "end": 660,
+    "artist": "Yoga",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 675,
+    "end": 735,
+    "artist": "FOUND presents ~ Get Pressed! Make your own seaweed pressing from Dorset’s briney deep",
+    "time_text": "11:15am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 750,
+    "end": 810,
+    "artist": "The Lemon Lounge Fan Club",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 825,
+    "end": 885,
+    "artist": "DIY Pleasure Workshop",
+    "time_text": "1:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1050,
+    "end": 1065,
+    "artist": "Author signing: Benita Matofska",
+    "time_text": "5:30pm - 5:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1065,
+    "end": 1095,
+    "artist": "Author Signing: Amy Abdelnoor",
+    "time_text": "5:45pm - 6:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1005,
+    "end": 1050,
+    "artist": "Generation Share",
+    "time_text": "4:45pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 810,
+    "end": 820,
+    "artist": "Author Signing: Speech Debelle",
+    "time_text": "1:30pm - 1:40pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 825,
+    "end": 840,
+    "artist": "Author and Signing: Amy Abdelnoor",
+    "time_text": "1:45pm - 2:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 840,
+    "end": 900,
+    "artist": "Meet the Author and signing: Amman Brar",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 900,
+    "end": 960,
+    "artist": "Dance Workshop: ‘On The Move’",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 960,
+    "end": 990,
+    "artist": "Author Signing: Aneifiok Ekpoudom",
+    "time_text": "4:00pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 990,
+    "end": 1005,
+    "artist": "Author Signing: Lola Olufemi",
+    "time_text": "4:30pm - 4:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 660,
+    "end": 690,
+    "artist": "Author Signing: Colleen Cosmo Murphy",
+    "time_text": "11:00am - 11:30am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 690,
+    "end": 735,
+    "artist": "BookLove x Crafty Fox Market: Meet the Makers",
+    "time_text": "11:30am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 735,
+    "end": 810,
+    "artist": "Meet the Author: Amy Abdelnoor",
+    "time_text": "12:15pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 600,
+    "end": 660,
+    "artist": "Songwriting Workshop with Rifka",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 900,
+    "end": 960,
+    "artist": "Point Blank Music School: Beginners Guide to DJ’ing",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 960,
+    "end": 1020,
+    "artist": "Point Blank Music School: Reese’s In Pieces workshop",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Point Blank Music School: Creative DJ Techniques",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Qobuz presents: Homeland To Here ft Eat Ethio",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 840,
+    "end": 900,
+    "artist": "Industry Insider Discussion: Future of Music Consumption",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 600,
+    "end": 660,
+    "artist": "Kankyō Ongaku: Japanese Ambient Hour",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 660,
+    "end": 720,
+    "artist": "Digit Music: Accessibility Music Workshop",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 720,
+    "end": 780,
+    "artist": "Audio-Technica and Time Capsule Present: Geinoh Yamashirogumi – Ecophony Rinne",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 780,
+    "end": 840,
+    "artist": "Point Blank Music School: Break the Break workshop",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-21",
+    "stage_id": "395",
+    "stage": 21,
+    "start": 765,
+    "end": 885,
+    "artist": "Weave Out Here with Freya Gronow",
+    "time_text": "12:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "394",
+    "stage": 26,
+    "start": 1020,
+    "end": 1050,
+    "artist": "Aja Monet [ Record Signing ]",
+    "time_text": "5:00pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "394",
+    "stage": 26,
+    "start": 960,
+    "end": 990,
+    "artist": "IZCO [ Record Signing ]",
+    "time_text": "4:00pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "394",
+    "stage": 26,
+    "start": 900,
+    "end": 930,
+    "artist": "Matthew Herbert [ Record Signing ]",
+    "time_text": "3:00pm - 3:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 945,
+    "end": 1005,
+    "artist": "Bass InCarnate: Somatic Dance Journey",
+    "time_text": "3:45pm - 4:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 810,
+    "end": 870,
+    "artist": "Ambient Arkana Ritual – Heart Opening Yoga",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 870,
+    "end": 930,
+    "artist": "sweet-thang zine curates: zine-making and Black feminist jazz with Candice Hoyes",
+    "time_text": "2:30pm - 3:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 615,
+    "end": 675,
+    "artist": "Somatic Restorative Yoga",
+    "time_text": "10:15am - 11:15am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 690,
+    "end": 750,
+    "artist": "Jiggle For Joy",
+    "time_text": "11:30am - 12:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "104",
+    "stage": 23,
+    "start": 540,
+    "end": 600,
+    "artist": "Gong Bath Meditation",
+    "time_text": "9:00am - 10:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 975,
+    "end": 1035,
+    "artist": "Capoeira",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 690,
+    "end": 750,
+    "artist": "Orakle Qi Gong",
+    "time_text": "11:30am - 12:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 810,
+    "end": 870,
+    "artist": "Stretch & Restore Yoga",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 900,
+    "end": 960,
+    "artist": "Portals of Care Singing Circle",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "389",
+    "stage": 25,
+    "start": 600,
+    "end": 660,
+    "artist": "Stength, Power, Flow",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 810,
+    "end": 870,
+    "artist": "COMMUNITEA & Tawlah Workshop with Neha Shah, Chris Rose, Samir Eskanda, Nyah Clarke (host)",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 900,
+    "end": 960,
+    "artist": "Behind the Campaign with Neha Shah, Chris Rose, Samir Eskanda, Nyah Clarke (host)",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 975,
+    "end": 1035,
+    "artist": "The Future of a Free Palestine with Samer Jaber",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 600,
+    "end": 660,
+    "artist": "Kites4Palestine Kite Making and Flying Workshop with Kites4Palestine & Amos Trust",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 690,
+    "end": 780,
+    "artist": "Gaza Biennale with Jinnaah UK",
+    "time_text": "11:30am - 1:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 900,
+    "end": 960,
+    "artist": "What We Keep: Archiving and the Legacy of Objects",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 975,
+    "end": 1035,
+    "artist": "Each One Teach One with Where Are The Black Designers?",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Escaping Babylon: How Thirty Years of Black Music Reshaped Britain",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 1125,
+    "end": 1185,
+    "artist": "How to Exist in Anti-Culture Capture with Dance Policy and Huck Magazine",
+    "time_text": "6:45pm - 7:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 750,
+    "end": 810,
+    "artist": "Casual Readers Club: Read + Reflect",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 825,
+    "end": 885,
+    "artist": "Community Radio and Social Power",
+    "time_text": "1:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 600,
+    "end": 660,
+    "artist": "Pleasure Land: Reclaiming Joy, Desire and Collective Well-Being",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 660,
+    "end": 675,
+    "artist": "We Out Here Wander [Meeting Time]",
+    "time_text": "11:00am - 11:15am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 675,
+    "end": 735,
+    "artist": "Finding Albion: Searching for the Spirit of Britain",
+    "time_text": "11:15am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 600,
+    "end": 660,
+    "artist": "Magical Moths & Face Painting with Four Acre Farm",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 675,
+    "end": 765,
+    "artist": "Zine-Making with Pier Journal",
+    "time_text": "11:15am - 12:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 795,
+    "end": 855,
+    "artist": "Life Drawing with Studio Eden",
+    "time_text": "1:15pm - 2:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 885,
+    "end": 975,
+    "artist": "Heatpressing 101 with Beth Brickman",
+    "time_text": "2:45pm - 4:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 990,
+    "end": 1050,
+    "artist": "Paper Flower-Making with shiftED",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 675,
+    "end": 735,
+    "artist": "Roots in the Cup: Connecting to Ancestral Wisdom",
+    "time_text": "11:15am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 750,
+    "end": 810,
+    "artist": "Dopamine Menu Zine-Making w/ sweet-thang zine",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 825,
+    "end": 885,
+    "artist": "Flash Folk",
+    "time_text": "1:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 900,
+    "end": 960,
+    "artist": "All things Dabke with Juzour Dance Collective",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 975,
+    "end": 1035,
+    "artist": "Lemons Den: Business Inzestments",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 1050,
+    "end": 1110,
+    "artist": "How Low Can You Go? Lemon Limbo",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 600,
+    "end": 660,
+    "artist": "Yoga",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 735,
+    "end": 765,
+    "artist": "Author Signing: Zakia Sewell",
+    "time_text": "12:15pm - 12:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 765,
+    "end": 825,
+    "artist": "Back To The Rave",
+    "time_text": "12:45pm - 1:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 825,
+    "end": 855,
+    "artist": "Author Signing: Sara Kenney",
+    "time_text": "1:45pm - 2:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 915,
+    "end": 975,
+    "artist": "What Does Music Look Like?",
+    "time_text": "3:15pm - 4:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1110,
+    "end": 1140,
+    "artist": "Author Signings: Jesse Bernard and Lanre Bakare",
+    "time_text": "6:30pm - 7:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1140,
+    "end": 1185,
+    "artist": "Kids Bedtime Yoga with Spectral Floetry",
+    "time_text": "7:00pm - 7:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1185,
+    "end": 1215,
+    "artist": "Book at Bedtime with BookLove",
+    "time_text": "7:45pm - 8:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 600,
+    "end": 660,
+    "artist": "COMIC BOOK TAKEOVER!",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 660,
+    "end": 705,
+    "artist": "Comics, Ska and Tragdey: The Don Drummond Story",
+    "time_text": "11:00am - 11:45am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 705,
+    "end": 735,
+    "artist": "Author Signing: Adam Reeves",
+    "time_text": "11:45am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 960,
+    "end": 1020,
+    "artist": "Point Blank Music School: Pokesamples, Gotta Catch ‘Em All",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 1020,
+    "end": 1080,
+    "artist": "Audio-Technica and Time Capsule Present: A Brief History of Japanese Reggae Pop",
+    "time_text": "5:00pm - 6:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Qobuz Presents: Music from my Homeland Series 2",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 1140,
+    "end": 1260,
+    "artist": "Audio Gold DJ’s",
+    "time_text": "7:00pm - 9:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 600,
+    "end": 660,
+    "artist": "Kankyō Ongaku: Japanese Ambient Hour",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 660,
+    "end": 720,
+    "artist": "Digit Music: Accessibility Music Workshop",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 720,
+    "end": 780,
+    "artist": "Point Blank Music School: Beginners Guide to DJ’ing",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 780,
+    "end": 840,
+    "artist": "King Britt in conversation with Sope Soetan",
+    "time_text": "1:00pm - 2:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 840,
+    "end": 900,
+    "artist": "Audio-Technica Presents: ‘How to Build a Sound System’ with Sun Palace and Audio Gold",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 900,
+    "end": 960,
+    "artist": "Point Blank Music School: Creative DJ Techniques",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-22",
+    "stage_id": "395",
+    "stage": 21,
+    "start": 765,
+    "end": 885,
+    "artist": "Weave Out Here with Freya Gronow",
+    "time_text": "12:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 1080,
+    "end": 1140,
+    "artist": "Make Music Matter present Censorship: Navigating the British cultural sector’s silencing of support for Palestine with Jen Brister (chair), Matthew Collings, Mohamed Shalaby, Tasnima Uddin, Anna Ost, Fedja Klikovac",
+    "time_text": "6:00pm - 7:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 930,
+    "end": 990,
+    "artist": "Palestine, power and protest: Why are we being attacked? with Chris Nineham, Lex DOJ, @yoUsaama and Vanessa Brier (@Art4aFreePalestine)",
+    "time_text": "3:30pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 1005,
+    "end": 1065,
+    "artist": "Make Music Matter present Activism on the Front Line with Sophie Cowen, Gail Bradbrook, Mari and JuJu, Lili Roseveare",
+    "time_text": "4:45pm - 5:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 600,
+    "end": 660,
+    "artist": "Protest Song Session with Genevieve Dawson, Zahra Fatehrani",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 660,
+    "end": 720,
+    "artist": "PACBI Workshop w Samir Eskanda",
+    "time_text": "11:00am - 12:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 735,
+    "end": 795,
+    "artist": "Resistance is a Right and a Duty with Lex Korte",
+    "time_text": "12:15pm - 1:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 810,
+    "end": 870,
+    "artist": "Together Alliance Workshop – Women Must Lead the Fight Against Racism with Samira Ali, Chantelle Lund",
+    "time_text": "1:30pm - 2:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "397",
+    "stage": 27,
+    "start": 870,
+    "end": 930,
+    "artist": "COMMUNITEA feat. Letter Writing with Lex DOJ and Vanessa Brier (Art4aFreePalestine)",
+    "time_text": "2:30pm - 3:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 825,
+    "end": 900,
+    "artist": "Hammer and Tongue Poetry Slam",
+    "time_text": "1:45pm - 3:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 915,
+    "end": 975,
+    "artist": "Ladies Music Pub: Radical care in the music industry: what does this look like?",
+    "time_text": "3:15pm - 4:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 990,
+    "end": 1050,
+    "artist": "Raising The Culture: Shaping Music Futures Across Generations",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 1065,
+    "end": 1125,
+    "artist": "What Makes Us, Us? An Anlo-Ewe Intercultural Experience",
+    "time_text": "5:45pm - 6:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 750,
+    "end": 810,
+    "artist": "Trans In Words: Resisting In Literature",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "108",
+    "stage": 17,
+    "start": 675,
+    "end": 735,
+    "artist": "The Log Books: Voices of Queer Britain and the Helpline That Listened",
+    "time_text": "11:15am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 885,
+    "end": 975,
+    "artist": "Pinch Pot Pottery with Plop Pottery",
+    "time_text": "2:45pm - 4:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 990,
+    "end": 1050,
+    "artist": "Life Drawing with Studio Eden",
+    "time_text": "4:30pm - 5:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 600,
+    "end": 660,
+    "artist": "Carnival Ready: Wear Your Heritage with Working Studio",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 675,
+    "end": 765,
+    "artist": "Gelli Printing with Painted Palms",
+    "time_text": "11:15am - 12:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "105",
+    "stage": 20,
+    "start": 795,
+    "end": 855,
+    "artist": "Still Life Pastels with Kinship Club",
+    "time_text": "1:15pm - 2:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 600,
+    "end": 660,
+    "artist": "Calibraid: Morning Meditation / Breathwork",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 675,
+    "end": 735,
+    "artist": "Yoga",
+    "time_text": "11:15am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 750,
+    "end": 810,
+    "artist": "Roda de Capoeira",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 825,
+    "end": 885,
+    "artist": "‘DIY PANTS’ with EL BRAS",
+    "time_text": "1:45pm - 2:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 900,
+    "end": 960,
+    "artist": "Pin It With Purpose: Resistance Badge Workshop",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 975,
+    "end": 1035,
+    "artist": "Community radio and you!",
+    "time_text": "4:15pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "106",
+    "stage": 22,
+    "start": 1050,
+    "end": 1110,
+    "artist": "Crafting Connections",
+    "time_text": "5:30pm - 6:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 990,
+    "end": 1035,
+    "artist": "Poetry Reading with Sam Berkson and Keith Jarret",
+    "time_text": "4:30pm - 5:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 1050,
+    "end": 1080,
+    "artist": "BookLove Bedtime Story",
+    "time_text": "5:30pm - 6:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 915,
+    "end": 975,
+    "artist": "Write it out: Protest Poetry Workshop",
+    "time_text": "3:15pm - 4:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 975,
+    "end": 990,
+    "artist": "Author Signing: Mira Mookerjee",
+    "time_text": "4:15pm - 4:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 750,
+    "end": 810,
+    "artist": "Meet the Author: Courttia Newland",
+    "time_text": "12:30pm - 1:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 810,
+    "end": 825,
+    "artist": "Author Signings: Travis Alabanza and Dylin Hardcastle",
+    "time_text": "1:30pm - 1:45pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 825,
+    "end": 840,
+    "artist": "Author Signing: Courttia Newland",
+    "time_text": "1:45pm - 2:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 840,
+    "end": 870,
+    "artist": "More Tomorrows: Prostate Preservation – Taking Charge After A Diagnosis",
+    "time_text": "2:00pm - 2:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 870,
+    "end": 915,
+    "artist": "BookLove x Crafty Fox Market: Meet the Makers",
+    "time_text": "2:30pm - 3:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 705,
+    "end": 735,
+    "artist": "BookLove Mission: Why Multicultural Books STILL matter",
+    "time_text": "11:45am - 12:15pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 735,
+    "end": 750,
+    "artist": "Author Signings: Tash Walker, Adam Zmith and Liv Little",
+    "time_text": "12:15pm - 12:30pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 600,
+    "end": 660,
+    "artist": "Seeing the Big Picture with Helen Sanson",
+    "time_text": "10:00am - 11:00am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "107",
+    "stage": 19,
+    "start": 660,
+    "end": 705,
+    "artist": "It’s Better To Travel",
+    "time_text": "11:00am - 11:45am"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 900,
+    "end": 960,
+    "artist": "The Audio-Technica J-Jazz Hour",
+    "time_text": "3:00pm - 4:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 960,
+    "end": 1020,
+    "artist": "Qobuz Presents: Music from my Homeland Series 3",
+    "time_text": "4:00pm - 5:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 1020,
+    "end": 1140,
+    "artist": "Audio Gold DJ’s",
+    "time_text": "5:00pm - 7:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 720,
+    "end": 780,
+    "artist": "How To Make A Catalogue Contemporary with Cam Records and Bodie Cameron",
+    "time_text": "12:00pm - 1:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 840,
+    "end": 900,
+    "artist": "Digit Music: Interactive Live Production Workshop",
+    "time_text": "2:00pm - 3:00pm"
+  },
+  {
+    "programme": "wider",
+    "date": "2026-08-23",
+    "stage_id": "109",
+    "stage": 18,
+    "start": 660,
+    "end": 720,
+    "artist": "Kankyō Ongaku: Japanese Ambient Hour",
+    "time_text": "11:00am - 12:00pm"
+  }
+]

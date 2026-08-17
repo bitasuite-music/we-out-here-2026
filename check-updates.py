@@ -1,20 +1,76 @@
 #!/usr/bin/env python3
 """
-We Out Here 2026 - Set Times Scraper & Update Checker
-Fetches the latest schedule from the official website and compares it
-with the DATA already in your index.html.
+Check the official We Out Here set times against local data.json.
+
+The old version scraped body.innerText, which only ever returned the day tab
+that happened to be visible - so three days out of four came back empty and
+every artist on them looked "removed".
+
+The site actually puts ALL four days in the DOM at once, inside
+  .scheduleCalendarWrap[data-schedule-day="DD/MM/YYYY"]
+with one .scheduleCalendar__column[data-stage-id] per stage and one
+  .scheduleCalendar__listing
+per set. So there is no need to click day tabs at all - we read the DOM
+directly, which also gives us the day and the stage for every entry.
+
+There are two schedule pages (music programme and wider programme); both use
+the same markup. Both are scraped.
+
+Usage:
+    python3 check-updates.py                 # report only
+    python3 check-updates.py --json out.json # also dump what was scraped
 """
 
-import re
-import requests
+import argparse
+import difflib
 import json
-from datetime import datetime
+import os
+import re
+import sys
 from collections import defaultdict
 
-# The URL to scrape
-URL = "https://weoutherefestival.com/set-times/"
+URLS = [
+    ("music", "https://weoutherefestival.com/set-times/"),
+    ("wider", "https://weoutherefestival.com/wider-programme-set-times/"),
+]
 
-# Stage name mapping (the app uses these exact names)
+HERE = os.path.dirname(os.path.abspath(__file__))
+DATA_FILE = os.path.join(HERE, "data.json")
+
+# Site stage id -> index into the STAGES array in index.html.
+# If the site adds a stage, the scraper reports it as unmapped rather than
+# silently dropping it.
+STAGE_ID_TO_INDEX = {
+    "40": 0,    # Main Stage
+    "42": 1,    # Lush Life
+    "43": 2,    # Rhythm Corner
+    "77": 3,    # The Grove
+    "45": 4,    # The Bowl
+    "82": 5,    # Tomorrow's Warriors Big Top
+    "83": 6,    # Roller Rink
+    "44": 7,    # Love Dancin'
+    "84": 8,    # Lemon Lounge
+    "78": 9,    # Brawnswood
+    "79": 10,   # Worldwide FM presents : WOH Radio
+    "101": 11,  # Carhartt WIP
+    "387": 12,  # Beat Hotel x Ilegal Mezcal
+    "388": 13,  # Passenger Presents: Ground Tempo
+    "86": 14,   # Near Mint Record Store
+    "87": 15,   # Love-Serve Bar
+    "88": 16,   # Once In A Blue Moon
+    "108": 17,  # Talks Tent
+    "109": 18,  # The Knowledge
+    "107": 19,  # booklove
+    "105": 20,  # Craftwerk
+    "395": 21,  # Craftwerk : Outdoors
+    "106": 22,  # Lemon Lounge Workshops
+    "104": 23,  # The Sanctuary Wider Activities
+    "103": 24,  # Wellbeing Tent
+    "389": 25,  # Wellness Tent : The Clearing
+    "394": 26,  # Near Mint Record Signings
+    "397": 27,  # Action Station
+}
+
 STAGE_NAMES = [
     "Main Stage", "Lush Life", "Rhythm Corner", "The Grove", "The Bowl",
     "Tomorrow's Warriors Big Top", "Roller Rink", "Love Dancin'",
@@ -24,337 +80,442 @@ STAGE_NAMES = [
     "Talks Tent", "The Knowledge", "BookLove", "Craftwerk",
     "Craftwerk: Outdoors", "Lemon Lounge Workshops", "The Sanctuary",
     "Wellbeing Tent", "Wellness Tent: The Clearing",
-    "Near Mint Record Signings", "Action Station"
+    "Near Mint Record Signings", "Action Station",
 ]
 
-# Stage index mapping (we'll try to infer these from the page)
-STAGE_INDEX_MAP = {name: i for i, name in enumerate(STAGE_NAMES)}
+# The festival day runs ~09:00 to ~04:00 the following morning. Anything
+# earlier than 09:00 is an after-midnight set and belongs to the previous
+# day's listing, so it gets +24h - which is how data.json already stores them
+# (max value 1680 = 4:00am).
+DAY_START_MINUTES = 540
+
+# Extraction runs inside the page. Returns [day, stageId, timeText, name].
+EXTRACT_JS = """
+() => {
+  const rows = [];
+  document.querySelectorAll('.scheduleCalendarWrap').forEach(wrap => {
+    const day = wrap.dataset.scheduleDay;
+    wrap.querySelectorAll('.scheduleCalendar__column[data-stage-id]').forEach(col => {
+      const stageId = col.dataset.stageId;
+      col.querySelectorAll('.scheduleCalendar__listing').forEach(listing => {
+        const timeEl = listing.querySelector('.scheduleCalendar__performanceTime');
+        const titleEl = listing.querySelector('h4');
+        if (!timeEl || !titleEl) return;
+        const time = timeEl.textContent.replace(/\\s+/g, ' ').trim();
+        const name = titleEl.textContent.replace(/\\s+/g, ' ').trim();
+        if (time && name) rows.push([day, stageId, time, name]);
+      });
+    });
+  });
+  return rows;
+}
+"""
+
+TIME_RE = re.compile(
+    r'^(\d{1,2})(?::(\d{2}))?\s*(am|pm)\s*[-–—]\s*'
+    r'(\d{1,2})(?::(\d{2}))?\s*(am|pm)$',
+    re.IGNORECASE,
+)
 
 
-def fetch_page():
-    """Fetch the set times page."""
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
-    }
-    try:
-        response = requests.get(URL, headers=headers, timeout=15)
-        response.raise_for_status()
-        return response.text
-    except requests.RequestException as e:
-        print(f"❌ Failed to fetch page: {e}")
-        return None
+# ---------------------------------------------------------------- scraping
 
+def fetch_entries():
+    """Scrape both schedule pages. Returns (entries, warnings)."""
+    from playwright.sync_api import sync_playwright
 
-def parse_artist_entries(html):
-    """
-    Parse artist entries from the page text.
-    The page uses a pattern like: "9:20pm - 11:00pm #### HVYWGHT & THE OUTLOOK ORCHESTRA"
-    """
-    # Extract the main content - the page is mostly plain text
-    # Look for time patterns with #### as separators
-    pattern = r'(\d{1,2}:\d{2}(?:am|pm))\s*-\s*(\d{1,2}:\d{2}(?:am|pm))\s*####\s*([^#\n]+?)(?=\s*\d{1,2}:\d{2}(?:am|pm)\s*-|$)'
-    
-    matches = re.findall(pattern, html, re.IGNORECASE)
-    
     entries = []
-    for start_time, end_time, artist in matches:
-        artist = artist.strip()
-        # Skip if it looks like a time or header
-        if re.match(r'^\d{1,2}:\d{2}', artist):
-            continue
-        entries.append({
-            'start': start_time.strip(),
-            'end': end_time.strip(),
-            'artist': artist
-        })
-    
-    return entries
+    warnings = []
 
-
-def time_to_minutes(time_str):
-    """Convert "9:20pm" to minutes since midnight."""
-    time_str = time_str.lower().strip()
-    is_pm = 'pm' in time_str
-    is_am = 'am' in time_str
-    # Remove am/pm
-    time_str = time_str.replace('am', '').replace('pm', '').strip()
-    
-    if ':' in time_str:
-        h, m = map(int, time_str.split(':'))
-    else:
-        h = int(time_str)
-        m = 0
-    
-    if is_pm and h != 12:
-        h += 12
-    if is_am and h == 12:
-        h = 0
-    
-    return h * 60 + m
-
-
-def convert_to_app_format(entries, day_index=0):
-    """
-    Convert scraped entries to the app's DATA format.
-    Returns a list of events in the format: [start_min, end_min, stage_index, artist_name]
-    """
-    events = []
-    
-    # The page doesn't clearly indicate which stage each artist is on.
-    # We need to either:
-    # 1. Infer from the position in the page (complex)
-    # 2. Use a lookup table (maintain manually)
-    # 3. Leave stage as a placeholder and let the user map them
-    
-    # For now, we'll use a simple heuristic:
-    # - If the artist appears in your existing DATA, keep their stage
-    # - Otherwise, assign a default stage (you'll need to map manually)
-    
-    # We'll just extract the raw entries and let you map them
-    raw_events = []
-    for entry in entries:
-        try:
-            start_mins = time_to_minutes(entry['start'])
-            end_mins = time_to_minutes(entry['end'])
-            # Handle overnight sets (e.g., 11:00pm - 12:00am)
-            if end_mins < start_mins:
-                end_mins += 1440
-            
-            raw_events.append({
-                'start': start_mins,
-                'end': end_mins,
-                'artist': entry['artist'],
-                'start_str': entry['start'],
-                'end_str': entry['end']
-            })
-        except Exception as e:
-            print(f"⚠️ Could not parse: {entry} - {e}")
-    
-    return raw_events
-
-
-def load_existing_data():
-    """Load the DATA array from your index.html file."""
-    try:
-        with open('index.html', 'r', encoding='utf-8') as f:
-            content = f.read()
-        
-        # Find the DATA array - it's a large block
-        # Look for "var DATA = [" and then find the matching closing bracket
-        start_pattern = r'var DATA\s*=\s*\['
-        match = re.search(start_pattern, content)
-        if not match:
-            print("❌ Could not find DATA array in index.html")
-            return None
-        
-        start_pos = match.start()
-        # Find the matching closing bracket - we need to count brackets
-        bracket_count = 0
-        end_pos = None
-        in_string = False
-        escape = False
-        
-        for i in range(match.end(), len(content)):
-            char = content[i]
-            if escape:
-                escape = False
-                continue
-            if char == '\\':
-                escape = True
-                continue
-            if char == '"' or char == "'":
-                in_string = not in_string
-                continue
-            if in_string:
-                continue
-            if char == '[':
-                bracket_count += 1
-            elif char == ']':
-                if bracket_count == 0:
-                    end_pos = i + 1
-                    break
-                bracket_count -= 1
-        
-        if end_pos is None:
-            print("❌ Could not find end of DATA array")
-            return None
-        
-        data_str = content[start_pos:end_pos]
-        # Remove the "var DATA = " prefix
-        data_str = data_str.replace('var DATA = ', '', 1)
-        
-        # Parse the JSON
-        try:
-            data = json.loads(data_str)
-            return data
-        except json.JSONDecodeError as e:
-            print(f"❌ Could not parse DATA array: {e}")
-            # Try a more lenient approach - eval (use with caution)
-            try:
-                # This is a fallback - the DATA array uses JavaScript syntax
-                # which is mostly JSON-compatible except for trailing commas
-                # and comments. We'll clean it up.
-                import ast
-                # Convert JS to Python-compatible format
-                cleaned = data_str
-                # Remove comments
-                cleaned = re.sub(r'//.*?$', '', cleaned, flags=re.MULTILINE)
-                # Remove trailing commas
-                cleaned = re.sub(r',\s*\]', ']', cleaned)
-                cleaned = re.sub(r',\s*}', '}', cleaned)
-                data = json.loads(cleaned)
-                return data
-            except Exception as e2:
-                print(f"❌ Fallback parsing failed: {e2}")
-                return None
-                
-    except FileNotFoundError:
-        print("❌ index.html not found in current directory")
-        return None
-    except Exception as e:
-        print(f"❌ Error loading index.html: {e}")
-        return None
-
-
-def compare_data(existing, scraped_events):
-    """Compare existing DATA with scraped events and report differences."""
-    # Flatten existing events into a lookup by artist name
-    existing_lookup = {}
-    for day in existing:
-        for event in day.get('ev', []):
-            # event format: [start, end, stage_index, artist_name]
-            artist = event[3].lower().strip()
-            if artist not in existing_lookup:
-                existing_lookup[artist] = []
-            existing_lookup[artist].append({
-                'start': event[0],
-                'end': event[1],
-                'stage': event[2],
-                'day': day.get('dn', 'Unknown')
-            })
-    
-    # Build a lookup from scraped events
-    scraped_lookup = {}
-    for event in scraped_events:
-        artist = event['artist'].lower().strip()
-        scraped_lookup[artist] = {
-            'start': event['start'],
-            'end': event['end'],
-            'start_str': event['start_str'],
-            'end_str': event['end_str']
-        }
-    
-    # Find differences
-    differences = {
-        'added': [],
-        'removed': [],
-        'time_changed': [],
-        'stage_changed': []
-    }
-    
-    # Check for new artists
-    for artist, scraped_info in scraped_lookup.items():
-        if artist not in existing_lookup:
-            differences['added'].append({
-                'artist': artist,
-                'scraped_time': f"{scraped_info['start_str']} - {scraped_info['end_str']}"
-            })
-    
-    # Check for removed artists
-    for artist in existing_lookup:
-        if artist not in scraped_lookup:
-            differences['removed'].append({'artist': artist})
-    
-    # Check for time changes
-    for artist, scraped_info in scraped_lookup.items():
-        if artist in existing_lookup:
-            existing_info = existing_lookup[artist][0]  # Take first match
-            if existing_info['start'] != scraped_info['start'] or existing_info['end'] != scraped_info['end']:
-                differences['time_changed'].append({
-                    'artist': artist,
-                    'old': f"{existing_info['start']//60:02d}:{existing_info['start']%60:02d} - {existing_info['end']//60:02d}:{existing_info['end']%60:02d}",
-                    'new': f"{scraped_info['start_str']} - {scraped_info['end_str']}"
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        page = browser.new_page()
+        for label, url in URLS:
+            print(f"  loading {label} programme ...")
+            page.goto(url, wait_until="networkidle", timeout=90000)
+            page.wait_for_selector(".scheduleCalendarWrap", timeout=30000)
+            rows = page.evaluate(EXTRACT_JS)
+            wraps = page.eval_on_selector_all(
+                ".scheduleCalendarWrap",
+                "els => els.map(e => e.dataset.scheduleDay)",
+            )
+            print(f"    {len(wraps)} day blocks, {len(rows)} listings")
+            if not rows:
+                warnings.append(
+                    f"{label}: page loaded but no listings found - markup may have changed"
+                )
+            for day, stage_id, time_text, name in rows:
+                parsed = parse_time_range(time_text)
+                if not parsed:
+                    warnings.append(f"{label}: unparsed time {time_text!r} for {name!r}")
+                    continue
+                start, end = parsed
+                entries.append({
+                    "programme": label,
+                    "date": site_day_to_iso(day),
+                    "stage_id": stage_id,
+                    "stage": STAGE_ID_TO_INDEX.get(stage_id),
+                    "start": start,
+                    "end": end,
+                    "artist": name,
+                    "time_text": time_text,
                 })
-    
-    return differences
+        browser.close()
+
+    # The site occasionally renders the same set twice in one column (e.g. THE
+    # MIGHTY ZAF, Friday, The Grove). Left in, each duplicate shows up as a
+    # phantom addition, so collapse exact repeats.
+    seen = set()
+    deduped = []
+    for e in entries:
+        key = (e["date"], e["stage_id"], e["start"], e["end"], e["artist"])
+        if key in seen:
+            warnings.append(
+                f"site lists {e['artist']!r} twice on {e['date']} "
+                f"{e['time_text']} - ignoring the duplicate"
+            )
+            continue
+        seen.add(key)
+        deduped.append(e)
+    entries = deduped
+
+    unmapped = sorted({e["stage_id"] for e in entries if e["stage"] is None})
+    if unmapped:
+        warnings.append(
+            "unmapped stage ids on the site (add them to STAGE_ID_TO_INDEX and "
+            f"to STAGES in index.html): {', '.join(unmapped)}"
+        )
+    return entries, warnings
+
+
+def site_day_to_iso(day):
+    """'20/08/2026' -> '2026-08-20'."""
+    d, m, y = day.split("/")
+    return f"{y}-{m}-{d}"
+
+
+def parse_time_range(text):
+    m = TIME_RE.match(text.strip())
+    if not m:
+        return None
+    start = to_minutes(m.group(1), m.group(2), m.group(3))
+    end = to_minutes(m.group(4), m.group(5), m.group(6))
+    if start < DAY_START_MINUTES:
+        start += 1440
+    if end < DAY_START_MINUTES:
+        end += 1440
+    if end < start:
+        end += 1440
+    return start, end
+
+
+def to_minutes(hour, minute, meridiem):
+    h = int(hour)
+    mi = int(minute or 0)
+    if meridiem.lower() == "pm" and h != 12:
+        h += 12
+    if meridiem.lower() == "am" and h == 12:
+        h = 0
+    return h * 60 + mi
+
+
+# ---------------------------------------------------------------- matching
+
+FILLER_RE = re.compile(
+    r'\b(?:presents?|presented\sby|live|dj\sset|b2b|ft|feat|featuring|with|'
+    r'very\sspecial\sguests?|special\sguests?|closing\sset|opening\sset)\b',
+    re.IGNORECASE,
+)
+
+
+def normalize_name(name):
+    base = name.lower().strip().replace("&amp;", "&").replace("&", " and ")
+    stripped = ' '.join(re.sub(r'[^a-z0-9\s]', ' ', FILLER_RE.sub(" ", base)).split())
+    if stripped:
+        return stripped
+    # Names made entirely of filler or punctuation ("Special Guest", "*") would
+    # normalise to nothing and then never match anything. Keep them comparable.
+    return ' '.join(re.sub(r'[^a-z0-9\s]', ' ', base).split()) or base.strip()
+
+
+def name_score(a, b):
+    """Similarity of two normalised names, 0-1.
+
+    The site frequently wraps a name ("X" -> "Someone presents X (LIVE)"),
+    which tanks a plain character ratio, so a clean containment of one name in
+    the other is treated as a strong match in its own right.
+    """
+    ratio = difflib.SequenceMatcher(None, a, b).ratio()
+    if a and b and (a in b or b in a):
+        shorter, longer = sorted((len(a), len(b)))
+        if shorter >= 3:
+            ratio = max(ratio, 0.5 + 0.5 * (shorter / longer))
+    return ratio
+
+
+def fmt_minutes(m):
+    return f"{(m // 60) % 24:02d}:{m % 60:02d}"
+
+
+def fmt_range(start, end):
+    return f"{fmt_minutes(start)}-{fmt_minutes(end)}"
+
+
+def describe_shift(l, s):
+    """Say which end actually moved - "+0 min" on a set that got half an hour
+    shorter was just confusing."""
+    d_start = s["start"] - l["start"]
+    d_end = s["end"] - l["end"]
+    if d_start and d_end == d_start:
+        return f"whole set {d_start:+d} min"
+    parts = []
+    if d_start:
+        parts.append(f"starts {d_start:+d} min")
+    if d_end:
+        parts.append(f"ends {d_end:+d} min")
+    return ", ".join(parts) or "no change"
+
+
+def stage_name(idx):
+    if idx is None:
+        return "unmapped stage"
+    if 0 <= idx < len(STAGE_NAMES):
+        return STAGE_NAMES[idx]
+    return f"stage {idx}"
+
+
+# ---------------------------------------------------------------- comparison
+
+def match_day(local, site):
+    """Pair up one day's local entries with the site's, most confident first.
+
+    Name-only fuzzy matching was never going to be reliable on names like
+    "Speakers Corner Quartet Celebrates The Music of Arthur Russell", so the
+    stage and the slot do most of the work:
+
+      pass 1  same stage, same start and end     - name only has to be close-ish
+      pass 2  same stage, overlapping slot       - catches a moved time
+      pass 3  same day, any stage, strong name   - catches a moved stage
+      pass 4  same stage, same slot, any name    - reported as a name difference
+
+    Pass 4 exists because the app deliberately shortens some official names
+    ("MMM: The Radical Bookshelf" for "Make Music Matter present 'The Radical
+    Bookshelf' with ..."), which no name threshold will ever pair up. Same
+    stage and the exact same slot is strong enough evidence on its own, but it
+    could also be a genuine replacement, so these are listed separately for a
+    human to glance at rather than silently treated as unchanged.
+
+    Anything still unpaired is genuinely new or genuinely gone.
+    """
+    local = [dict(x, _norm=normalize_name(x["artist"])) for x in local]
+    site = [dict(x, _norm=normalize_name(x["artist"])) for x in site]
+    matched = []
+    renamed = []
+    lo, so = list(local), list(site)
+
+    def run(pred, threshold, bucket=None):
+        for s in list(so):
+            # -1 so that a zero-similarity pair is still a candidate; the
+            # threshold decides whether it counts, not the initial value.
+            best, best_ratio = None, -1.0
+            for l in lo:
+                if not pred(l, s):
+                    continue
+                ratio = name_score(s["_norm"], l["_norm"])
+                if ratio > best_ratio:
+                    best, best_ratio = l, ratio
+            if best is not None and best_ratio >= threshold:
+                (bucket if bucket is not None else matched).append((best, s))
+                lo.remove(best)
+                so.remove(s)
+
+    same_stage = lambda l, s: s["stage"] is not None and l["stage"] == s["stage"]
+    same_slot = lambda l, s: (same_stage(l, s)
+                              and l["start"] == s["start"] and l["end"] == s["end"])
+    run(same_slot, 0.55)
+    run(lambda l, s: same_stage(l, s)
+        and l["start"] < s["end"] and s["start"] < l["end"], 0.72)
+    run(lambda l, s: True, 0.86)
+    run(same_slot, 0.0, bucket=renamed)
+
+    return {"matched": matched, "renamed": renamed,
+            "local_only": lo, "site_only": so}
+
+
+def load_existing():
+    with open(DATA_FILE, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+
+def compare(existing_days, scraped):
+    """Match day by day, so a missing day is obvious instead of looking like
+    a few hundred removals."""
+    scraped_by_date = defaultdict(list)
+    for e in scraped:
+        scraped_by_date[e["date"]].append(e)
+
+    report = {"days": [], "added": [], "removed": [], "time_changed": [],
+              "stage_changed": [], "renamed": [], "unknown_days": []}
+
+    known_dates = {d.get("date") for d in existing_days}
+    for date in sorted(set(scraped_by_date) - known_dates):
+        report["unknown_days"].append(
+            {"date": date, "count": len(scraped_by_date[date])}
+        )
+
+    for day in existing_days:
+        date = day.get("date")
+        label = f"{day.get('dn', '?')} {day.get('dd', '')}".strip()
+        local = [
+            {"start": ev[0], "end": ev[1], "stage": ev[2], "artist": ev[3]}
+            for ev in day.get("ev", [])
+        ]
+        site = scraped_by_date.get(date, [])
+        report["days"].append({
+            "label": label, "date": date,
+            "local": len(local), "site": len(site),
+        })
+        if not site:
+            continue
+
+        pairs = match_day(local, site)
+
+        for l, s in pairs["matched"]:
+            if l["start"] != s["start"] or l["end"] != s["end"]:
+                report["time_changed"].append({
+                    "day": label, "artist": l["artist"],
+                    "stage": stage_name(l["stage"]),
+                    "old": fmt_range(l["start"], l["end"]),
+                    "new": fmt_range(s["start"], s["end"]),
+                    "shift": describe_shift(l, s),
+                })
+            if s["stage"] is not None and l["stage"] != s["stage"]:
+                report["stage_changed"].append({
+                    "day": label, "artist": l["artist"],
+                    "old": stage_name(l["stage"]),
+                    "new": stage_name(s["stage"]),
+                })
+
+        for l, s in pairs["renamed"]:
+            report["renamed"].append({
+                "day": label, "stage": stage_name(l["stage"]),
+                "time": fmt_range(l["start"], l["end"]),
+                "app": l["artist"], "site": s["artist"],
+            })
+
+        for s in pairs["site_only"]:
+            report["added"].append({
+                "day": label, "artist": s["artist"],
+                "stage": stage_name(s["stage"]),
+                "time": fmt_range(s["start"], s["end"]),
+            })
+
+        for l in pairs["local_only"]:
+            report["removed"].append({
+                "day": label, "artist": l["artist"],
+                "stage": stage_name(l["stage"]),
+                "time": fmt_range(l["start"], l["end"]),
+            })
+
+    return report
+
+
+# ---------------------------------------------------------------- reporting
+
+def show(items, heading, line, limit=40):
+    if not items:
+        return
+    print(f"\n{heading} ({len(items)})")
+    for it in items[:limit]:
+        print("  " + line(it))
+    if len(items) > limit:
+        print(f"  ... and {len(items) - limit} more")
 
 
 def main():
-    print("🔄 Fetching latest set times from", URL)
-    html = fetch_page()
-    if not html:
-        return
-    
-    print("📝 Parsing artist entries...")
-    entries = parse_artist_entries(html)
-    print(f"✅ Found {len(entries)} artist entries")
-    
-    # Show a sample of what was found
-    print("\n📋 Sample entries found:")
-    for entry in entries[:10]:
-        print(f"  {entry['start']} - {entry['end']}: {entry['artist']}")
-    
-    if len(entries) > 10:
-        print(f"  ... and {len(entries) - 10} more")
-    
-    # Convert to app format (without stage info for now)
-    scraped_events = convert_to_app_format(entries)
-    print(f"\n🔄 Converted {len(scraped_events)} events to minutes format")
-    
-    # Load existing data
-    print("\n📂 Loading existing DATA from index.html...")
-    existing = load_existing_data()
-    if not existing:
-        print("⚠️ Could not load existing DATA. Run this script in the same folder as index.html")
-        return
-    
-    # Compare
-    print("\n🔍 Comparing with existing DATA...")
-    diff = compare_data(existing, scraped_events)
-    
-    # Report
-    print("\n" + "=" * 60)
-    print("📊 UPDATE REPORT")
-    print("=" * 60)
-    
-    if diff['added']:
-        print(f"\n➕ NEW ARTISTS ADDED ({len(diff['added'])}):")
-        for item in diff['added'][:20]:
-            print(f"  • {item['artist']} — {item['scraped_time']}")
-        if len(diff['added']) > 20:
-            print(f"  ... and {len(diff['added']) - 20} more")
-    
-    if diff['removed']:
-        print(f"\n➖ ARTISTS REMOVED ({len(diff['removed'])}):")
-        for item in diff['removed'][:20]:
-            print(f"  • {item['artist']}")
-        if len(diff['removed']) > 20:
-            print(f"  ... and {len(diff['removed']) - 20} more")
-    
-    if diff['time_changed']:
-        print(f"\n🕐 TIME CHANGES ({len(diff['time_changed'])}):")
-        for item in diff['time_changed'][:20]:
-            print(f"  • {item['artist']}: {item['old']} → {item['new']}")
-        if len(diff['time_changed']) > 20:
-            print(f"  ... and {len(diff['time_changed']) - 20} more")
-    
-    if not any(diff.values()):
-        print("\n✅ No changes detected! Your DATA is up to date.")
-    
-    # Show how to update
-    print("\n" + "=" * 60)
-    print("📝 HOW TO UPDATE YOUR APP")
-    print("=" * 60)
-    print("""
-1. The scraped data above shows what's changed.
-2. To update your index.html, you'll need to manually edit the DATA array.
-3. The DATA array is near the top of index.html, after "var DATA = ["
-4. Each event follows this format:
-     [start_minutes, end_minutes, stage_index, "Artist Name"]
-5. Update the affected entries and commit/push to GitHub.
-6. Cloudflare will auto-deploy the changes in 1-2 minutes.
-    """)
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--json", metavar="FILE",
+                    help="write the scraped entries to FILE")
+    args = ap.parse_args()
+
+    print("Fetching official set times ...")
+    try:
+        scraped, warnings = fetch_entries()
+    except Exception as exc:
+        print(f"\nCould not scrape the site: {exc}")
+        return 1
+
+    print(f"\nScraped {len(scraped)} listings in total.")
+    for w in warnings:
+        print(f"  ! {w}")
+
+    if not scraped:
+        print("Nothing scraped - stopping rather than reporting false removals.")
+        return 1
+
+    if args.json:
+        with open(args.json, "w", encoding="utf-8") as f:
+            json.dump(scraped, f, indent=2, ensure_ascii=False)
+        print(f"Scraped entries written to {args.json}")
+
+    try:
+        existing = load_existing()
+    except FileNotFoundError:
+        print(f"{DATA_FILE} not found.")
+        return 1
+    except json.JSONDecodeError as exc:
+        print(f"Could not parse {DATA_FILE}: {exc}")
+        return 1
+
+    report = compare(existing, scraped)
+
+    print("\n" + "=" * 64)
+    print("SET TIMES CHECK")
+    print("=" * 64)
+
+    print("\nPer day (app vs site):")
+    empty_days = []
+    for d in report["days"]:
+        flag = ""
+        if d["site"] == 0:
+            flag = "  <- nothing scraped for this day"
+            empty_days.append(d["label"])
+        print(f"  {d['label']:<8} {d['date']}   app {d['local']:>3}   site {d['site']:>3}{flag}")
+
+    for u in report["unknown_days"]:
+        print(f"  ! site has a day the app doesn't: {u['date']} ({u['count']} listings)")
+
+    if empty_days:
+        print(f"\nNo listings scraped for: {', '.join(empty_days)}.")
+        print("Removals for those days are suppressed - fix the scrape first.")
+        report["removed"] = [
+            r for r in report["removed"] if r["day"] not in empty_days
+        ]
+
+    show(report["added"], "NEW ON THE SITE",
+         lambda a: f"{a['day']}  {a['time']}  {a['stage']}  {a['artist']}")
+    show(report["removed"], "IN THE APP BUT NOT ON THE SITE",
+         lambda r: f"{r['day']}  {r['time']}  {r['stage']}  {r['artist']}")
+    show(report["time_changed"], "TIME CHANGES",
+         lambda t: f"{t['day']}  {t['artist']}  {t['old']} -> {t['new']}"
+                   f"  ({t['shift']})")
+    show(report["stage_changed"], "STAGE CHANGES",
+         lambda s: f"{s['day']}  {s['artist']}  {s['old']} -> {s['new']}")
+    show(report["renamed"],
+         "SAME SLOT, DIFFERENT NAME (usually just your shorter wording)",
+         lambda n: f"{n['day']}  {n['time']}  {n['stage']}\n"
+                   f"        app:  {n['app']}\n"
+                   f"        site: {n['site']}")
+
+    changes = sum(len(report[k]) for k in
+                  ("added", "removed", "time_changed", "stage_changed"))
+    if changes == 0:
+        print("\nNo changes - the app matches the official site.")
+    else:
+        print(f"\n{changes} difference(s) to review, then edit data.json.")
+
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

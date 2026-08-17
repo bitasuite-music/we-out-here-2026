@@ -203,8 +203,8 @@
         "Zaereo"
       ],
       [
-        945,
-        990,
+        950,
+        985,
         5,
         "Manfredo Lament"
       ],
@@ -767,7 +767,7 @@
         "Ethical Consumer Magazine: No Ethical Listening Under Capitalism?"
       ],
       [
-        1030,
+        1020,
         1115,
         27,
         "Make Music Matter [MMM] Presents: We Are Still Here: Collage a Reflection to Students in Gaza"
@@ -777,6 +777,12 @@
         1160,
         27,
         "MMM: Rawan Roshni Live"
+      ],
+      [
+        850,
+        880,
+        5,
+        "KNEIL"
       ]
     ]
   },
@@ -1777,7 +1783,7 @@
       ],
       [
         1230,
-        1410,
+        1380,
         2,
         "Tama Sumo & Lakuti"
       ],
@@ -1849,7 +1855,7 @@
       ],
       [
         1290,
-        1410,
+        1380,
         4,
         "Pariah"
       ],
@@ -1950,13 +1956,13 @@
         "Monobrow (Sound Records, Stroud)"
       ],
       [
-        1410,
-        1530,
+        1380,
+        1500,
         2,
         "Palms Trax"
       ],
       [
-        1410,
+        1380,
         1470,
         4,
         "Josey Rebelle"
@@ -2040,7 +2046,7 @@
         "Nisha Duggal"
       ],
       [
-        1530,
+        1500,
         1680,
         2,
         "Luke Una"
@@ -2092,12 +2098,6 @@
         1680,
         16,
         "Woody"
-      ],
-      [
-        900,
-        960,
-        13,
-        "Talk: TBC"
       ],
       [
         600,
@@ -3391,14 +3391,8 @@
         "Jon Packman"
       ],
       [
-        900,
-        960,
-        13,
-        "Talk: TBC"
-      ],
-      [
-        760,
-        800,
+        770,
+        820,
         1,
         "Kahil El'Zabar Ethnic Heritage Ensemble"
       ],
@@ -3433,10 +3427,10 @@
         "The Future of a Free Palestine"
       ],
       [
-        1050,
-        1110,
-        27,
-        "The Art of Resistance"
+        1020,
+        1080,
+        1,
+        "GENA FEAT. LIV.E & KARRIEM RIGGINS"
       ]
     ]
   },
@@ -4143,8 +4137,8 @@
       ],
       [
         1080,
-        1140,
-        14,
+        1170,
+        26,
         "La Rumba"
       ],
       [
@@ -4466,18 +4460,6 @@
         "DJ Cutterz"
       ],
       [
-        900,
-        960,
-        13,
-        "Talk: TBC"
-      ],
-      [
-        1110,
-        1200,
-        15,
-        "Saige Sounds"
-      ],
-      [
         600,
         660,
         27,
@@ -4506,6 +4488,30 @@
         1140,
         27,
         "MMM: Censorship: Navigating the British Cultural Sector's Silencing of Support for Palestine"
+      ],
+      [
+        1230,
+        1290,
+        14,
+        "LEVI BUSUE"
+      ],
+      [
+        660,
+        720,
+        27,
+        "PACBI Workshop w Samir Eskanda"
+      ],
+      [
+        735,
+        795,
+        27,
+        "Resistance is a Right and a Duty with Lex Korte"
+      ],
+      [
+        810,
+        870,
+        27,
+        "Together Alliance Workshop – Women Must Lead the Fight Against Racism with Samira Ali, Chantelle Lund"
       ]
     ]
   }
