@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0f0d12">
+<title>We Out Here 2026</title>
+<meta name="author" content="Bitasuite">
+<meta name="generator" content="Bitasuite">
+<meta name="apple-mobile-web-app-title" content="We Out Here">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="icon-192.png" sizes="192x192">
+<style>
+:root{
+  --bg:#0f0d12; --bg2:#171420; --card:#1c1826; --card2:#25203180; --line:#2e2839;
+  --ink:#f5f1f7; --dim:#a096ab; --dim2:#6f6779;
+  --acc:#ef6fae; --acc2:#5ad9c8; --live:#ff5f57; --gold:#ffc861;
+  --nav:74px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);overscroll-behavior-y:none;
+  font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+button{font:inherit;color:inherit;background:none;border:0;padding:0}
+.hide{display:none!important}
+
+/* ---------- top bar ---------- */
+header{position:sticky;top:0;z-index:30;background:rgba(15,13,18,.94);
+  backdrop-filter:saturate(150%) blur(14px);border-bottom:1px solid var(--line);
+  padding-top:env(safe-area-inset-top)}
+.top{display:flex;align-items:center;gap:10px;padding:11px 15px 10px}
+.top h1{margin:0;font-size:13px;font-weight:800;letter-spacing:2px}
+.top h1 b{color:var(--acc);font-weight:800}
+.clock{margin-left:auto;font-variant-numeric:tabular-nums;font-size:13px;font-weight:700;
+  color:var(--dim);letter-spacing:.5px}
+.clock.live{color:var(--live)}
+.clock.live::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;
+  background:var(--live);margin-right:6px;vertical-align:1px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+@keyframes spin{100%{transform:rotate(360deg)}}
+
+/* ---------- day chips ---------- */
+.days{display:flex;gap:7px;padding:0 12px 10px}
+.day{flex:1;padding:8px 2px 9px;border-radius:12px;background:var(--card);
+  border:1px solid var(--line);text-align:center;line-height:1.1}
+.day .dn{font-size:10px;font-weight:800;letter-spacing:1.3px;color:var(--dim);text-transform:uppercase}
+.day .dd{font-size:19px;font-weight:800;margin-top:2px}
+.day.on{background:var(--acc);border-color:var(--acc);color:#22060f}
+.day.on .dn{color:#5c1236}
+
+.subbar{display:flex;gap:8px;padding:0 12px 11px;align-items:center}
+.seg{display:flex;background:var(--card);border:1px solid var(--line);border-radius:11px;overflow:hidden}
+.seg button{padding:9px 14px;font-size:12.5px;font-weight:650;color:var(--dim);letter-spacing:.2px}
+.seg button.on{background:#2c2638;color:var(--ink)}
+.pill{margin-left:auto;background:var(--card);border:1px solid var(--line);border-radius:11px;
+  padding:9px 13px;font-size:12.5px;font-weight:650}
+.pill.act{border-color:var(--acc2);color:var(--acc2)}
+
+/* ---------- content ---------- */
+main{padding:8px 12px calc(var(--nav) + env(safe-area-inset-bottom) + 26px)}
+.hh{position:sticky;top:0;z-index:6;margin:16px 0 7px;padding:6px 2px;
+  font-size:11.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--acc2);
+  background:linear-gradient(var(--bg) 68%,rgba(15,13,18,0))}
+.hh.grey{color:var(--dim2)}
+.sect{margin:18px 0 8px;font-size:12px;font-weight:800;letter-spacing:2px;
+  text-transform:uppercase;color:var(--dim)}
+.sect.live{color:var(--live)}
+
+.row{display:flex;align-items:flex-start;gap:11px;padding:11px 12px;margin-bottom:6px;
+  background:var(--card);border-radius:13px;border-left:3px solid var(--sc,#666);position:relative;
+  overflow:hidden}
+.row .tm{flex:0 0 60px;padding-top:1px}
+.row .tm b{display:block;font-size:13.5px;font-weight:750;letter-spacing:-.2px}
+.row .tm i{font-style:normal;font-size:11.5px;color:var(--dim)}
+.row .bd{flex:1;min-width:0}
+.row .nm{font-size:15px;font-weight:650;letter-spacing:-.2px;word-wrap:break-word}
+.row .mt{font-size:11.5px;margin-top:3px;color:var(--dim)}
+.row .mt b{font-weight:650}
+.row.past{opacity:.4}
+.row.playing{background:#2a2136;box-shadow:inset 0 0 0 1px rgba(255,95,87,.4)}
+.prog{position:absolute;left:0;bottom:0;height:2px;background:var(--live);border-radius:0 2px 2px 0}
+.star{flex:0 0 34px;height:34px;margin:-3px -4px 0 0;border-radius:50%;font-size:17px;
+  line-height:34px;text-align:center;color:var(--dim2)}
+.star.on{color:var(--gold)}
+/* the Melomaniacs' own set */
+.row.melo{background:linear-gradient(100deg,#2b2338,#1c1826);
+  box-shadow:inset 0 0 0 1px rgba(255,200,97,.38)}
+.row.melo .nm{color:var(--gold)}
+.big.melo{position:relative;border-color:rgba(255,200,97,.45)}
+.big.melo .nm{color:var(--gold)}
+.mb{width:23px;height:23px;vertical-align:-4px;margin-right:7px;opacity:.95}
+.big-mb{position:absolute;top:14px;right:14px;width:44px;height:44px;opacity:.5;margin:0}
+.ours{margin-top:4px;font-size:10.5px;font-weight:800;letter-spacing:1.7px;
+  text-transform:uppercase;color:var(--gold);opacity:.9}
+.prints{margin:26px 0 4px;padding:15px 15px 13px;border:1px solid var(--line);
+  border-radius:14px;background:var(--card)}
+.ph{font-size:11px;font-weight:800;letter-spacing:1.9px;text-transform:uppercase;
+  color:var(--dim);margin-bottom:11px}
+.prints a{display:block;padding:11px 13px;margin-bottom:8px;border-radius:11px;
+  background:var(--bg);border:1px solid var(--line);text-decoration:none;
+  color:var(--ink);font-size:14.5px;font-weight:700}
+.prints a i{display:block;margin-top:3px;font-style:normal;font-size:12px;
+  font-weight:400;color:var(--dim)}
+.pn{font-size:11.5px;color:var(--dim);line-height:1.5;margin-top:10px}
+/* recommended — a quieter version of the same idea, no logo */
+.row.rec{box-shadow:inset 0 0 0 1px rgba(120,200,190,.34)}
+.row.rec .nm,.big.rec .nm{color:#8fd8cc}
+.big.rec{border-color:rgba(120,200,190,.42)}
+.ours.tip{color:#8fd8cc}
+.clash{margin-top:5px;font-size:11px;font-weight:700;color:var(--live);letter-spacing:.3px}
+.clash.soft{color:var(--gold);opacity:.85}
+.ics{display:block;width:100%;margin:18px 0 4px;background:var(--card2);
+  border:1px solid var(--acc2);color:var(--acc2);border-radius:12px;padding:14px;
+  font-size:14px;font-weight:700;letter-spacing:.2px}
+.ics:active{background:var(--acc2);color:#0d2320}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:2px}
+
+.big{background:linear-gradient(150deg,#2b2038,#1c1826);border-radius:16px;padding:15px 15px 14px;
+  margin-bottom:8px;border:1px solid var(--line);border-left:3px solid var(--sc,#666)}
+.big .nm{font-size:20px;font-weight:750;letter-spacing:-.4px;line-height:1.2}
+.big .st{font-size:13px;font-weight:650;margin-top:5px}
+.big .tm{font-size:12.5px;color:var(--dim);margin-top:3px}
+.big .bar{margin-top:11px;height:4px;background:#3a3348;border-radius:4px;overflow:hidden}
+.big .bar i{display:block;height:100%;background:var(--live)}
+.big .left{font-size:11px;color:var(--dim);margin-top:6px;letter-spacing:.4px}
+
+.hid{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  margin:14px 0 2px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;
+  background:var(--card);color:var(--dim);font-size:12.5px}
+.hid button{flex:none;border:0;border-radius:99px;padding:7px 13px;font:inherit;
+  font-weight:700;background:var(--acc);color:#fff;cursor:pointer;-webkit-appearance:none}
+.jump{display:block;width:100%;margin:2px 0 4px;padding:14px;border:1px solid var(--line);
+  border-radius:14px;background:var(--card);color:var(--ink);font:inherit;font-size:14.5px;
+  font-weight:700;letter-spacing:.3px;cursor:pointer;-webkit-appearance:none}
+.jump:active{background:var(--line)}
+.note{text-align:center;color:var(--dim);font-size:13.5px;padding:38px 22px;line-height:1.65}
+.note b{color:var(--ink);display:block;font-size:17px;margin-bottom:7px;font-weight:700}
+.cd{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px;
+  text-align:center;margin:14px 0 4px}
+.cd .n{font-size:34px;font-weight:800;letter-spacing:-1px;color:var(--acc)}
+.cd .l{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);margin-top:3px}
+
+.srch{display:flex;gap:9px;padding:0 12px 11px}
+.srch input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:12px 14px;color:var(--ink);font-size:15px;outline:none}
+.srch input:focus{border-color:var(--acc)}
+.srch input::placeholder{color:var(--dim2)}
+
+/* ---------- filter sheet ---------- */
+.sheet{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.6);display:none}
+.sheet.open{display:block}
+.sheet .in{position:absolute;left:0;right:0;bottom:0;max-height:86%;overflow:auto;background:var(--bg2);
+  border-radius:18px 18px 0 0;border-top:1px solid var(--line);
+  padding:16px 12px calc(20px + env(safe-area-inset-bottom))}
+.sheet h3{margin:2px 2px 12px;font-size:15px;font-weight:700}
+.quick{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px}
+.quick button{flex:1 1 28%;background:var(--card);border:1px solid var(--line);border-radius:10px;
+  padding:11px 6px;font-size:12.5px;font-weight:650}
+.grp{margin:14px 2px 8px;font-size:10.5px;font-weight:800;letter-spacing:1.6px;
+  text-transform:uppercase;color:var(--dim2)}
+.grp:first-child{margin-top:0}
+.chk{display:flex;align-items:center;gap:11px;padding:12px;margin-bottom:6px;background:var(--card);
+  border-radius:11px;font-size:14px}
+.chk i{width:10px;height:10px;border-radius:3px;flex:0 0 auto}
+.chk b{margin-left:auto;color:var(--acc2);font-size:16px;visibility:hidden}
+.chk.on b{visibility:visible}
+.chk:not(.on){opacity:.42}
+.done{position:sticky;bottom:0;width:100%;background:var(--acc);color:#22060f;border-radius:12px;
+  padding:14px;font-size:14.5px;font-weight:800;margin-top:10px}
+
+/* ---------- bottom nav ---------- */
+nav{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;
+  background:rgba(15,13,18,.96);backdrop-filter:saturate(150%) blur(14px);
+  border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;padding:9px 2px 8px;color:var(--dim2);position:relative}
+nav button .ic{display:block;height:22px;font-size:19px;line-height:22px}
+nav button .lb{display:block;font-size:10px;font-weight:700;letter-spacing:.6px;margin-top:2px}
+nav button.on{color:var(--acc)}
+nav .badge{position:absolute;top:5px;left:50%;margin-left:6px;background:var(--gold);color:#241703;
+  font-size:9.5px;font-weight:800;border-radius:9px;padding:1px 5px;line-height:1.5}
+.foot{color:var(--dim2);font-size:11px;text-align:center;padding:26px 18px 6px;line-height:1.7}
+/* shown only when scripts are blocked — e.g. a phone's file preview window */
+.nojs{margin:26px 4px;padding:22px 20px;background:var(--card);border-radius:14px;
+  border-left:3px solid var(--gold);color:var(--dim);font-size:14.5px;line-height:1.6}
+.nojs b{display:block;color:var(--gold);font-size:17px;font-weight:700;margin-bottom:10px}
+.nojs p{margin:0 0 12px}
+.nojs strong{color:var(--ink)}
+.nojs em{font-style:normal;color:var(--acc2)}
+.nojs .sm{font-size:12.5px;color:var(--dim2);margin:0}
+.stamp{margin:14px 2px 12px;padding:11px 13px;border-radius:11px;
+  background:#251d16;border:1px solid #4a3a24;
+  font-size:12px;line-height:1.55;color:#c2ab8a;text-align:center}
+.stamp b{color:var(--gold);font-weight:750}
+.keep{margin:16px 2px 4px;padding:16px 16px 18px;background:var(--card);border-radius:13px;
+  border-left:3px solid var(--gold);font-size:12.5px;line-height:1.65;color:var(--dim)}
+.keep b{display:block;color:var(--gold);font-size:13px;letter-spacing:.4px;margin-bottom:6px}
+.keep b:not(.in) + br{display:none}
+.keep b.in{display:inline;font-size:inherit;letter-spacing:0;margin:0}
+.keep .sep{margin:0 7px;color:var(--dim2)}
+.keep.warn{border-left-color:var(--live)}
+.keep.warn b{color:#ff8a84}
+
+.made{display:block;text-align:center;padding:20px 18px 6px;text-decoration:none}
+.made img{width:58px;height:58px;display:block;margin:0 auto 9px;opacity:.5}
+.made span{display:block;font-size:9.5px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:#4e4757;line-height:1.7}
+.made i{font-style:normal;color:var(--acc);opacity:.8}
+.made em{font-style:normal;color:#8f8899}
+.made a{color:#f5f1f7;text-decoration:none}
+.made a:hover{text-decoration:underline}
+.made .mx{margin-top:7px;font-size:9px;letter-spacing:1.1px;text-transform:none;color:var(--acc2);opacity:.7}
+.made .mx a{color:var(--acc2);text-decoration:none;opacity:1}
+.made span i a{color:var(--acc);text-decoration:none;opacity:1}
+.made:active img{opacity:.85}
+.made:active .mx{opacity:1}
+
+/* ---------- offline-ready pill ---------- */
+#offp{position:fixed;left:50%;transform:translateX(-50%) translateY(14px);
+  bottom:calc(var(--nav) + 14px + env(safe-area-inset-bottom));z-index:60;
+  width:max-content;max-width:calc(100% - 28px);padding:9px 15px;border-radius:999px;
+  background:#1c1826f2;border:1px solid var(--line);color:var(--ink);
+  font-size:12px;font-weight:600;letter-spacing:.2px;text-align:center;
+  box-shadow:0 6px 22px #0009;backdrop-filter:blur(10px);
+  opacity:0;pointer-events:none;transition:opacity .28s,transform .28s}
+#offp.on{opacity:1;transform:translateX(-50%) translateY(0)}
+#offp b{color:var(--acc2);font-weight:700}
+#offp.warnp{border-radius:15px;padding:11px 16px;line-height:1.5;
+  background:#241c14f2;border-color:#5c4a2c}
+#offp.warnp b{display:block;color:var(--gold);margin-bottom:2px}
+</style><base target="_blank">
+</head><body>
+
+<header>
+  <div class="top">
+    <h1>WE OUT HERE <b>2026</b></h1>
+    <div class="clock" id="clock"></div>
+  </div>
+  <div class="days hide" id="days"></div>
+  <div class="subbar hide" id="subbar">
+    <div class="seg"><button id="vTime" class="on">By time</button><button id="vStage">By stage</button></div>
+    <button class="pill" id="filt">Areas</button>
+  </div>
+  <div class="srch hide" id="srchbar">
+    <input id="q" type="search" placeholder="Search artist, DJ or area…" autocomplete="off">
+  </div>
+</header>
+
+<main id="view"><noscript><div class="nojs">
+  <b>This needs opening as a web link</b>
+  <p>You're seeing the frame but not the line-up, because a file preview
+  window won't run the part that draws it. That's a phone limitation, not
+  a broken file.</p>
+  <p><strong>On iPhone:</strong> a downloaded file can't run properly — ask
+  whoever sent this for the <em>web link</em> version and open that in Safari.</p>
+  <p><strong>On Android:</strong> open the file from the Files app and choose
+  <em>Chrome</em> when it asks, rather than a preview.</p>
+  <p class="sm">Once it's open properly it works with no signal at all.</p>
+</div></noscript></main>
+
+<div class="sheet" id="sheet"><div class="in">
+  <h3>Which areas to show?</h3>
+  <div class="quick">
+    <button id="qAll">Everything</button><button id="qMain">Main 6</button
+    ><button id="qMusic">Music</button><button id="qWider">Wider</button
+    ><button id="qNone">Clear</button>
+  </div>
+  <div id="chks"></div>
+  <button class="done" id="qDone">Done</button>
+</div></div>
+
+<nav id="nav">
+  <button data-t="now" class="on"><span class="ic">◉</span><span class="lb">NOW</span></button>
+  <button data-t="line"><span class="ic">▤</span><span class="lb">LINE-UP</span></button>
+  <button data-t="plan"><span class="ic">★</span><span class="lb">MY PLAN</span><span class="badge hide" id="planBadge">0</span></button>
+  <button data-t="print"><span class="ic">⎙</span><span class="lb">PRINT</span></button>
+  <button data-t="find"><span class="ic">⌕</span><span class="lb">SEARCH</span></button>
+</nav>
+
+<div id="offp" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== data injected at build time ===== */
+var DATA = [
+  {
+    "dn": "Thu",
+    "dd": "20",
+    "date": "2026-08-20",
+    "ev": [
+      [600,720,10,"Gilles Peterson: The Road To We Out Here"],
+      [660,840,16,"Dave Elmer"],
+      [720,780,10,"Future Bubblers: It Takes A Village w/ Bobby Brown"],
+      [720,840,11,"WIP (Carhartt Team)"],
+      [780,840,10,"Rishi & Ishani: Folk's Queer Cradles"],
+      [780,840,14,"NVV Dj"],
+      [780,870,15,"Frankson"],
+      [800,840,0,"Kotoa"],
+      [800,830,5,"Nathaniel Taberner"],
+      [810,900,6,"Annie Nolan"],
+      [840,880,1,"SETWUN"],
+      [840,990,2,"REEK0 & Camille Munn"],
+      [840,930,9,"Magdalena Moursy & Alexanderos"],
+      [840,900,10,"Ellie Talebian: From the Streets to the Studio"],
+      [840,960,11,"Re:ni & Biggabush"],
+      [840,960,12,"Sonido Tupinamba"],
+      [840,900,14,"Plays At 45"],
+      [840,900,16,"Brother James"],
+      [870,960,15,"Dan Medhurst"],
+      [880,930,0,"The Zawose Queens"],
+      [900,960,4,"The Return Of She"],
+      [900,930,5,"Shadow & The Sol"],
+      [900,960,6,"Juliet Cromwell"],
+      [900,1020,7,"ARI (Pirate Material) b2b Lila (Rinse FM)"],
+      [900,990,8,"Lemon Lounge Players"],
+      [900,960,10,"Rohan Rakhit: PIND"],
+      [900,960,14,"Nae Style"],
+      [900,960,16,"Barry's Here"],
+      [900,960,17,"Is Mental Health A Disability"],
+      [900,960,19,"News From the Future: Talk & Workshop with Benita Matofska"],
+      [900,960,23,"Open Ceremony: Feeling Held with Frankie Rechere"],
+      [920,980,1,"Audrey Powne"],
+      [930,1020,9,"Zaereo"],
+      [945,990,5,"Manfredo Lament"],
+      [960,1010,0,"Tom Skinner"],
+      [960,1050,4,"Marvin Jupiter"],
+      [960,1050,6,"Levi Bussue & Chris Welch"],
+      [960,1020,10,"Pia Collada: Skate, Surf & Sound"],
+      [960,1050,11,"V.I.V.E.K"],
+      [960,1080,12,"Al Wootton"],
+      [960,1020,14,"Al Richards"],
+      [960,1020,15,"Joe Muggs"],
+      [960,1020,16,"Taxi"],
+      [960,990,19,"Author Signing: Micha Frazer-Carroll"],
+      [960,1020,22,"Yoga"],
+      [975,1035,17,"Home and Abroad: Political Lessons from Migration, Movement and Music"],
+      [975,1035,23,"The Sanctuary of the Heart"],
+      [990,1110,2,"Lefto Early Bird (Live AV)"],
+      [990,1080,8,"Iko Cherie"],
+      [990,1050,19,"The BookLove Community Cookbook: Every Recipe Tells a Story"],
+      [1005,1030,5,"Yasmina Sadiki"],
+      [1005,1050,13,"Yasmin Rai (live)"],
+      [1010,1060,1,"Keiyaa"],
+      [1020,1110,7,"Benny Salvador"],
+      [1020,1080,9,"Natural Information Society (live)"],
+      [1020,1080,10,"Kate Hutchinson: No Wave"],
+      [1020,1080,14,"Jelly Records"],
+      [1020,1140,15,"Giles Hanh"],
+      [1020,1080,16,"Molly Pop"],
+      [1040,1080,23,"Embodied Breath: Posture, Presence & Liberation"],
+      [1050,1110,0,"Butcher Brown"],
+      [1050,1140,4,"Toribio"],
+      [1050,1095,5,"Noah Ojumu"],
+      [1050,1110,6,"Fairhurst"],
+      [1050,1140,11,"Mystic State"],
+      [1050,1260,13,"The Mighty Zaf, Jake Love Vinyl, St Lukez"],
+      [1050,1125,17,"Hidden Poets Collective"],
+      [1050,1110,19,"The Nun Who Nurtured Reggae"],
+      [1080,1230,3,"Powder"],
+      [1080,1170,8,"Soph & Annida"],
+      [1080,1170,9,"Love Sun Days"],
+      [1080,1140,10,"Mariam: Iran's Underground Sound of Resistance"],
+      [1080,1200,12,"Ruf Dug"],
+      [1080,1200,14,"Groove Junction"],
+      [1080,1140,16,"Jo Dressler"],
+      [1100,1160,1,"Speakers Corner Quartet Celebrates The Music of Arthur Russell"],
+      [1110,1230,2,"Femi Koleoso"],
+      [1110,1200,6,"Sorcha Bridge b2b MIKE"],
+      [1110,1200,7,"Danniella Dee"],
+      [1120,1165,5,"Naima Adams"],
+      [1125,1170,19,"Meet the Poets - Poetry Extravaganza"],
+      [1140,1320,4,"Bradley Zero"],
+      [1140,1200,10,"BBE w/ Karim Bitar: 30 Years of Breaking Even"],
+      [1140,1230,11,"Introspekt"],
+      [1140,1230,15,"Dan Formless"],
+      [1140,1200,16,"An Lawton"],
+      [1160,1230,0,"Digable Planets"],
+      [1170,1230,8,"AliA"],
+      [1170,1230,9,"James Alexander Bright (live)"],
+      [1190,1235,5,"Genevieve Namazzi"],
+      [1200,1350,6,"Giles Smith & Alexander Nut"],
+      [1200,1440,7,"Trojan Sound System b2b Nightmares On Wax b2b Daddy G + guests"],
+      [1200,1260,10,"Jacob Robinson: Loud in the Dark"],
+      [1200,1320,12,"Sarahtonin"],
+      [1200,1260,14,"Me Gusta Collective"],
+      [1200,1260,16,"Andrew Devine"],
+      [1220,1280,1,"Actress"],
+      [1230,1350,2,"Juls"],
+      [1230,1320,3,"Ehua"],
+      [1230,1320,8,"Sosi & Maxwell Owin"],
+      [1230,1320,9,"Koshari"],
+      [1230,1320,11,"Henry Greenleaf"],
+      [1230,1320,15,"Sticky Ricky"],
+      [1260,1305,5,"Lara Jones"],
+      [1260,1320,10,"Tilda: Jungle, Pirate Radio & Resistance"],
+      [1260,1380,13,"Irfan Rainy"],
+      [1260,1320,14,"Robert Luis"],
+      [1260,1320,16,"Kev Mac"],
+      [1280,1380,0,"HVYWGHT & The Outlook Orchestra"],
+      [1320,1380,3,"Lone"],
+      [1320,1440,4,"Glenn Underground"],
+      [1320,1380,8,"DJ Plead"],
+      [1320,1440,9,"Melomaniacs"],
+      [1320,1380,10,"Blissy E: Plastic People"],
+      [1320,1440,11,"ANZ b2b Commodo"],
+      [1320,1440,12,"Tornado Wallace"],
+      [1320,1440,14,"Timo-G & Ben GC"],
+      [1320,1380,15,"HSWRK"],
+      [1320,1380,16,"Mike BC"],
+      [1330,1380,5,"Future Bubblers Showcase"],
+      [1350,1440,2,"Jamz Supernova"],
+      [1350,1440,6,"Atjazz"],
+      [1380,1440,3,"Barker (live)"],
+      [1380,1440,5,"DJ Lovellious b2b Allexa Nava"],
+      [1380,1440,16,"Missy A"],
+      // ---- ACTION STATION (Thu) ----
+      [840,930,27,"Banner Painting with Ellen Green / New Deal Rising"],
+      [945,1005,27,"Ethical Consumer Magazine: No Ethical Listening Under Capitalism?"],
+      [1030,1115,27,"Make Music Matter [MMM] Presents: We Are Still Here: Collage a Reflection to Students in Gaza"],
+      [1130,1160,27,"MMM: Rawan Roshni Live"]
+    ]
+  },
+  {
+    "dn": "Fri",
+    "dd": "21",
+    "date": "2026-08-21",
+    "ev": [
+      [555,600,24,"Sound Heal Grow: Restorative Sound Journeys"],
+      [600,660,17,"Revive The Dancefloor: Reimagining Future Dancefloor Communities"],
+      [600,660,18,"Kankyo Ongaku: Japanese Ambient Hour"],
+      [600,660,19,"Songwriting Workshop with Rifka"],
+      [600,660,20,"Life Drawing with Studio Eden"],
+      [600,660,22,"Yoga"],
+      [600,660,25,"5k Run"],
+      [615,675,24,"Thai Yoga Massage"],
+      [660,780,4,"Gilles Peterson"],
+      [660,750,6,"Hannah Sherlock (LITM)"],
+      [660,780,7,"Lena C"],
+      [660,720,8,"Zesty Zumba"],
+      [660,720,9,"Balearadelica (RSL) (live)"],
+      [660,780,10,"Luke Una: A Worldwide Breakfast"],
+      [660,720,14,"Art of Soul"],
+      [660,720,16,"Sam Haughton"],
+      [660,720,18,"Digit Music: Accessibility Music Workshop"],
+      [660,690,19,"Author Signing: Colleen 'Cosmo' Murphy"],
+      [660,750,25,"Water Works - A Moment to Pause, Reflect and Connect"],
+      [675,735,17,"Bush Magic: Sonic Hunger"],
+      [675,765,20,"Nerikomi Pottery with Plop Pottery"],
+      [675,735,22,"FOUND presents Get Pressed! Seaweed pressing"],
+      [690,720,5,"The Clore"],
+      [690,735,19,"BookLove x Crafty Fox Market: Meet the Makers"],
+      [690,750,24,"Nuff Yoga"],
+      [720,780,8,"Zawose Queens (live)"],
+      [720,810,9,"Claudia TCZ"],
+      [720,810,11,"WIP (Carhartt Team)"],
+      [720,840,12,"Room Service"],
+      [720,780,14,"Bodie and Andy Pyett"],
+      [720,780,15,"DJ Emerald (Disco Mums)"],
+      [720,780,16,"Stoaty"],
+      [720,780,18,"Audio-Technica x Time Capsule: Ecophony Rinne"],
+      [735,810,19,"Meet the Author: Amy Abdelnoor"],
+      [740,780,0,"Bel Cobain"],
+      [740,770,5,"Finka"],
+      [750,810,6,"Sophie Callis"],
+      [750,810,17,"Developing A Care Practice with Black Fish and Baytna"],
+      [750,810,22,"The Lemon Lounge Fan Club"],
+      [765,885,21,"Weave Out Here with Freya Gronow"],
+      [770,810,1,"Olive Jones"],
+      [780,900,4,"Channel One"],
+      [780,900,7,"Alexander Nut"],
+      [780,840,8,"Fraser The Eraser"],
+      [780,840,10,"TW: Jazz through generations"],
+      [780,840,14,"Don Nelson"],
+      [780,840,15,"Steve Taylor"],
+      [780,840,16,"Ni Maxine (DJ set)"],
+      [780,840,18,"Point Blank: Break the Break workshop"],
+      [780,840,24,"We Earth - Raw Pigment Painting"],
+      [780,840,25,"Mindful Creative Writing"],
+      [790,830,5,"JAM"],
+      [795,855,20,"Analogue Collage Club with Kinship Club"],
+      [805,855,0,"Cleo Reed"],
+      [810,870,6,"Love Wins"],
+      [810,870,9,"Zena (live)"],
+      [810,900,11,"Isha"],
+      [810,820,19,"Author Signing: Speech Debelle"],
+      [825,885,17,"Around Sound (Live Recording) with Anaiis & Tayo Rapaport"],
+      [825,840,19,"Author Signing: Amy Abdelnoor"],
+      [825,885,22,"DIY Pleasure Workshop"],
+      [840,930,8,"Kay Suzuki"],
+      [840,900,10,"Bubble Club: Inclusive Nightlife"],
+      [840,960,12,"Wasted Space & Grace"],
+      [840,900,14,"WSA Records"],
+      [840,900,15,"Social DJs - Dave O, Charlie Beck & Si Fi"],
+      [840,900,16,"Conduit"],
+      [840,900,18,"Industry Insider: Future of Music Consumption"],
+      [840,900,19,"Meet the Author and signing: Amman Brar"],
+      [840,900,25,"Seed Ball Workshop"],
+      [850,910,1,"The Heliocentrics"],
+      [855,895,5,"Holly Reinhardt"],
+      [855,915,24,"Eye to Eye"],
+      [870,930,6,"Red City Solidarity Disco"],
+      [870,960,9,"Rachel"],
+      [870,975,20,"Rag Crochet with Raggedy Nannie"],
+      [890,960,0,"Dave Okumu presents DVTN: A Prayer For D'Angelo"],
+      [900,960,2,"Yoofee"],
+      [900,1020,4,"Iration Steppas"],
+      [900,1260,7,"Mr Scruff, DJ Spinna & Vanessa Freeman"],
+      [900,960,10,"Emma Warren: Sounds Like Unity"],
+      [900,1020,11,"Another Place"],
+      [900,960,14,"Matt Baila"],
+      [900,960,15,"Matt Triggs & Loz Triggs"],
+      [900,960,16,"No Fakin'"],
+      [900,960,17,"Seeds Of Change: Food, Purpose and Restoration"],
+      [900,960,18,"Point Blank: Beginners Guide to DJing"],
+      [900,960,19,"Dance Workshop: On The Move"],
+      [900,960,22,"Zesty Mosaic"],
+      [920,960,5,"LOWXND"],
+      [930,990,6,"Jimpster"],
+      [930,990,8,"Danniella Dee"],
+      [930,990,24,"Healing Sounds"],
+      [930,990,25,"Yoga In the Wild"],
+      [960,1010,1,"John Glacier"],
+      [960,1050,2,"Greentea Selecta"],
+      [960,1020,9,"Speakers Corner Quartet: Arthur Russell"],
+      [960,1020,10,"SOPHIA: Music Beyond the Buffer Zone"],
+      [960,1080,12,"DJ Subaru"],
+      [960,1020,13,"Auntie Flo (Plants Can Dance - live set)"],
+      [960,1020,14,"Jeff Daniels"],
+      [960,1020,15,"Jimmy Turnbull"],
+      [960,1020,16,"Anti Social Jazz Club"],
+      [960,1020,18,"Point Blank: Reese's In Pieces workshop"],
+      [960,990,19,"Author Signing: Aniefiok Ekpoudom"],
+      [975,1035,17,"Casual Readers Club: Read + Reflect"],
+      [975,1035,22,"A Lemon Called Quest: Hunt for the Hidden Squeeze"],
+      [985,1025,5,"C-se"],
+      [990,1080,6,"Rosie From The Block"],
+      [990,1050,8,"Chunky"],
+      [990,1005,19,"Author Signing: Lola Olufemi"],
+      [990,1050,20,"Lino Print with Olivia Bell"],
+      [1000,1050,0,"corto.alto"],
+      [1005,1050,19,"Generation Share"],
+      [1020,1140,4,"Simon Scott w/ Chunky"],
+      [1020,1110,9,"Kate Hutchinson"],
+      [1020,1080,10,"Gaby D'Annunzio: Sounds from Afghanistan"],
+      [1020,1110,11,"Gbosa; Cocobops"],
+      [1020,1110,13,"Echo Juliet"],
+      [1020,1080,14,"Chris P Cuts"],
+      [1020,1080,15,"Kickin Pigeon"],
+      [1020,1080,16,"Siofra McComb"],
+      [1020,1080,18,"Point Blank: Creative DJ Techniques"],
+      [1050,1100,1,"Yukimi"],
+      [1050,1140,2,"Marcia Carr"],
+      [1050,1110,8,"Credable & MC Stiffler"],
+      [1050,1110,17,"Soft Skills, Hard Truths: Power, Survival and Self-hood"],
+      [1050,1065,19,"Author Signing: Benita Matofska"],
+      [1050,1110,22,"Date my Mate"],
+      [1055,1095,5,"Jobsearch"],
+      [1065,1095,19,"Author Signing: Amy Abdelnoor"],
+      [1080,1140,6,"Chris Astrojazz"],
+      [1080,1140,10,"Kabom: Wealth Redistribution"],
+      [1080,1200,12,"Nadia Ksaiba"],
+      [1080,1170,14,"Go Sista"],
+      [1080,1140,15,"Miss Jackson"],
+      [1080,1140,16,"Mark Broadbent"],
+      [1080,1140,18,"Qobuz presents: Homeland To Here ft Eat Ethio"],
+      [1090,1150,0,"Anaiis"],
+      [1110,1200,8,"Zwana b2b Joe Cotch"],
+      [1110,1200,9,"Cosmo Sofi & Sanoy"],
+      [1110,1200,11,"DJ Polo"],
+      [1110,1200,13,"Kojay & P Lucas"],
+      [1125,1170,5,"Nu Establishment"],
+      [1125,1185,17,"Underground Resistance: Ageing and Visibility For Women DJs"],
+      [1140,1230,2,"Nightmares On Wax"],
+      [1140,1290,4,"Beatrice M. & Alia"],
+      [1140,1200,6,"Otra (formerly Dharma Collective)"],
+      [1140,1200,10,"Felix Mufti: Protect Scouse Dolls"],
+      [1140,1200,15,"Kath McDermott"],
+      [1140,1200,16,"KSlice"],
+      [1150,1200,1,"Sampa The Great"],
+      [1170,1260,14,"Dru Skillz"],
+      [1190,1250,0,"Joy Crookes"],
+      [1200,1290,3,"Jeff Higgins"],
+      [1190,1240,5,"Plumm"],
+      [1200,1320,6,"Big Squeeze Soul"],
+      [1200,1260,8,"Lagoon"],
+      [1200,1260,9,"Yukimi (live)"],
+      [1200,1260,10,"Home Radio w/ Scenius: Broken Beat & Jungle"],
+      [1200,1260,11,"Thempress"],
+      [1200,1320,12,"Babyschon"],
+      [1200,1290,13,"Helena Star"],
+      [1200,1260,15,"Il Bosco"],
+      [1200,1260,16,"Chris Wheatley"],
+      [1230,1410,2,"Tama Sumo & Lakuti"],
+      [1240,1310,1,"Adam F"],
+      [1260,1305,5,"Knats"],
+      [1260,1350,7,"Blissy E & Drey"],
+      [1260,1320,8,"Bruce"],
+      [1260,1350,9,"Lil' Minx"],
+      [1260,1320,10,"Zuri: 15 years of Principe Discos"],
+      [1260,1350,11,"160 Unity: Craic David, Sohotsospicy & Seb"],
+      [1260,1350,14,"DJ Bobafatt"],
+      [1260,1320,15,"Il Bosco (Red Laser / DJ Absolutely Shit)"],
+      [1260,1320,16,"Noni Mouse"],
+      [1290,1380,3,"Pete BBE"],
+      [1290,1410,4,"Pariah"],
+      [1290,1380,13,"Giles Smith"],
+      [1300,1370,0,"Thundercat"],
+      [1320,1410,6,"Bristol Northern Soul Club"],
+      [1320,1380,8,"Yushh"],
+      [1320,1380,10,"Donut"],
+      [1320,1440,12,"Alex Kassian"],
+      [1320,1380,15,"Metrodome"],
+      [1320,1380,16,"Sweetpea"],
+      [1340,1380,1,"ROGE"],
+      [1350,1470,7,"Errol & Alex Rita"],
+      [1350,1440,9,"Matthew Herbert"],
+      [1350,1410,11,"160 Unity: DJ Spinn"],
+      [1350,1440,14,"Sarah Love"],
+      [1380,1470,3,"The Mighty Zaf"],
+      [1380,1470,5,"DJ Perception"],
+      [1380,1500,16,"Monobrow (Sound Records, Stroud)"],
+      [1410,1530,2,"Palms Trax"],
+      [1410,1470,4,"Josey Rebelle"],
+      [1410,1500,6,"Love Injection"],
+      [1410,1470,11,"160 Unity: Khadija Al Hanafi"],
+      [1440,1560,9,"Ellie & Naima Adams"],
+      [1440,1560,12,"Yu Su"],
+      [1440,1500,14,"Dom Servini"],
+      [1470,1590,3,"Kenny Dope"],
+      [1470,1590,4,"Facta & K-LONE"],
+      [1470,1560,5,"Winona"],
+      [1470,1590,7,"Shy One"],
+      [1470,1560,11,"Zora Jones"],
+      [1500,1620,6,"Mr. Disco Kid"],
+      [1500,1590,14,"Handson Family"],
+      [1500,1560,16,"Nisha Duggal"],
+      [1530,1680,2,"Luke Una"],
+      [1560,1680,5,"Wookie"],
+      [1560,1620,16,"Tekin"],
+      [1590,1680,3,"Johnny Reckless"],
+      [1590,1680,4,"Tasha"],
+      [1590,1680,7,"Sammseed"],
+      [1590,1680,14,"Eva May & Alex Attias"],
+      [1620,1680,6,"Sonido Tupinamba"],
+      [1620,1680,16,"Woody"],
+      [900,960,13,"Talk: TBC"],
+      // ---- ACTION STATION (Fri) ----
+      [600,660,27,"Seeds of Revolution: Guerrilla Tactics for a People's Garden"],
+      [690,720,27,"MMM: Marwan Halabi Live"],
+      [735,795,27,"Fairtrade Foundation & Adeche Atelier Present 'Fair Futures': Mural Painting Workshop"],
+      [810,870,27,"Conversations with the Far Right"],
+      [870,930,27,"Communitea"],
+      [930,990,27,"Lola Olufemi and Carys Afoko in Conversation"],
+      [1005,1065,27,"MMM: The Radical Bookshelf"],
+      [1080,1140,27,"The Nerve Present 'Radical Women & Resistance – Using Your Voice to Urge Change'"]
+    ]
+  },
+  {
+    "dn": "Sat",
+    "dd": "22",
+    "date": "2026-08-22",
+    "ev": [
+      [540,600,23,"Gong Bath Meditation"],
+      [600,660,17,"Pleasure Land: Reclaiming Joy, Desire and Collective Well-Being"],
+      [600,660,18,"Kankyo Ongaku: Japanese Ambient Hour"],
+      [600,660,19,"Comic Book Takeover!"],
+      [600,660,20,"Magical Moths & Face Painting with Four Acre Farm"],
+      [600,660,22,"Yoga"],
+      [600,660,25,"Strength, Power, Flow"],
+      [615,675,23,"Somatic Restorative Yoga"],
+      [660,720,6,"Polymaas"],
+      [660,780,7,"Love Injection"],
+      [660,720,8,"Afromerm (live)"],
+      [660,720,9,"Alex Intas"],
+      [660,780,10,"Colleen 'Cosmo' Murphy: Balearic Breakfast"],
+      [660,720,14,"jim-R"],
+      [660,675,17,"We Out Here Wander [meeting time]"],
+      [660,720,18,"Digit Music: Accessibility Music Workshop"],
+      [660,705,19,"Comics, Ska and Tragedy: The Don Drummond Story"],
+      [675,735,17,"Finding Albion: Searching for the Spirit of Britain"],
+      [675,765,20,"Zine-Making with Pier Journal"],
+      [675,735,22,"Roots in the Cup: Connecting to Ancestral Wisdom"],
+      [690,730,5,"Tomorrow's Warriors Frontline"],
+      [690,750,23,"Jiggle For Joy"],
+      [690,750,25,"Orakle Qi Gong"],
+      [700,740,1,"Barney Keen"],
+      [705,735,19,"Author Signing: Adam Reeves"],
+      [720,770,0,"Amaro Freitas"],
+      [720,780,6,"Mafe Maracuyeah"],
+      [720,780,8,"Linett Kamala (talk)"],
+      [720,780,9,"Soph"],
+      [720,810,11,"Thempress"],
+      [720,840,12,"Room Service"],
+      [720,780,14,"VDS London x Tokyo"],
+      [720,840,15,"Big Fish Little Fish [Family Rave]"],
+      [720,840,16,"Euan McGinty (Time Capsule Records)"],
+      [720,780,18,"Point Blank: Beginners Guide to DJing"],
+      [735,765,19,"Author Signing: Zakia Sewell"],
+      [750,810,17,"Casual Readers Club: Read + Reflect"],
+      [750,810,22,"Dopamine Menu Zine-Making w/ sweet-thang zine"],
+      [755,795,5,"Ciara O Sextet"],
+      [765,825,19,"Back To The Rave"],
+      [765,885,21,"Weave Out Here with Freya Gronow"],
+      [780,840,6,"Rhys Baker"],
+      [780,900,7,"Trafford (Nick Williams Celebration Set)"],
+      [780,840,8,"Linett Kamala (DJ)"],
+      [780,840,9,"Dave Okumu & Tom Skinner"],
+      [780,840,10,"Santa Leticia: Radio Against Silence"],
+      [780,840,14,"DJ Himitsu"],
+      [780,840,18,"King Britt in conversation with Sope Soetan"],
+      [795,855,20,"Life Drawing with Studio Eden"],
+      [810,860,0,"Momoko Gill"],
+      [810,930,11,"Stone"],
+      [810,870,23,"Ambient Arkana Ritual - Heart Opening Yoga"],
+      [810,870,25,"Stretch & Restore Yoga"],
+      [820,860,5,"Klara Devlin"],
+      [825,885,17,"Community Radio and Social Power"],
+      [825,855,19,"Author Signing: Sara Kenney"],
+      [825,885,22,"Flash Folk"],
+      [840,930,4,"Scientist"],
+      [840,900,6,"NAM"],
+      [840,900,8,"Alexander Nut"],
+      [840,870,9,"Donut"],
+      [840,900,10,"Admin, Living Room Dance Club & Yadava: Britfunk"],
+      [840,960,12,"Selassie TBC"],
+      [840,900,14,"J Felix"],
+      [840,930,15,"Will Rowe b2b DJ Emma"],
+      [840,960,16,"Leewok, Curly Waters & Fanta Shandy (Strange Brew, Bristol)"],
+      [840,900,18,"Audio-Technica: How to Build a Sound System"],
+      [850,900,1,"Steam Down"],
+      [870,960,9,"Valentine Comar"],
+      [870,930,23,"sweet-thang zine: zine-making with Candice Hoyes"],
+      [885,975,20,"Heatpressing 101 with Beth Brickman"],
+      [890,950,0,"Jamie Woon"],
+      [890,950,5,"BXL x LDN Interplay III"],
+      [900,1020,2,"Selectacee"],
+      [900,960,6,"Taina"],
+      [900,1020,7,"Poly-Ritmo"],
+      [900,960,8,"Mr Gibbon"],
+      [900,960,10,"Giovanna Boffa: What's the Point? w/ El'Zabar & Everett"],
+      [900,960,14,"Liberation Records"],
+      [900,960,17,"What We Keep: Archiving and the Legacy of Objects"],
+      [900,960,18,"Point Blank: Creative DJ Techniques"],
+      [900,960,22,"All things Dabke with Juzour Dance Collective"],
+      [900,960,25,"Portals of Care Singing Circle"],
+      [900,930,26,"Matthew Herbert [record signing]"],
+      [915,975,19,"What Does Music Look Like?"],
+      [930,1020,4,"Shy One"],
+      [930,1020,11,"Architect"],
+      [930,1020,15,"Tintin"],
+      [940,990,1,"Aja Monet"],
+      [945,1005,23,"Bass InCarnate: Somatic Dance Journey"],
+      [960,1020,6,"Woody Boase"],
+      [960,1020,8,"Coco Maria"],
+      [960,1020,9,"Bel Cobain"],
+      [960,1020,10,"Amaka: Nigerian communities & highlife"],
+      [960,1080,12,"Cami Laye Okun"],
+      [960,1020,13,"Marysia Osu (live)"],
+      [960,1020,14,"Alfie Panaiotis & Tall Nico"],
+      [960,1020,16,"Si Kilmo (Hush Club)"],
+      [960,1020,18,"Point Blank: Pokesamples, Gotta Catch 'Em All"],
+      [960,990,26,"IZCO [record signing]"],
+      [975,1035,17,"Each One Teach One with Where Are The Black Designers?"],
+      [975,1035,22,"Lemons Den: Business Inzestments"],
+      [975,1035,25,"Capoeira"],
+      [980,1040,0,"Jazzanova (live)"],
+      [980,1025,5,"Cube Legacy Band"],
+      [990,1050,20,"Paper Flower-Making with shiftED"],
+      [1020,1140,2,"Sweetpea"],
+      [1020,1200,4,"King Britt"],
+      [1020,1080,6,"Avi Del Mono"],
+      [1020,1140,7,"Rohan Rakhit"],
+      [1020,1080,8,"Lightfoot"],
+      [1020,1095,9,"Tyson & Selassie TBC"],
+      [1020,1080,10,"LUPINI: We Live Here"],
+      [1020,1110,11,"Lagoon"],
+      [1020,1080,13,"Bob Hill"],
+      [1020,1080,14,"Jungalice"],
+      [1020,1110,15,"Dipod"],
+      [1020,1080,16,"Sway of the Verses"],
+      [1020,1080,18,"Audio-Technica x Time Capsule: Japanese Reggae Pop"],
+      [1020,1050,26,"Aja Monet [record signing]"],
+      [1050,1095,5,"Kassa GJ Quartet"],
+      [1050,1110,17,"Escaping Babylon: How Thirty Years of Black Music Reshaped Britain"],
+      [1050,1110,22,"How Low Can You Go? Lemon Limbo"],
+      [1070,1130,0,"Musclecars (live)"],
+      [1080,1200,6,"JMG Collective"],
+      [1080,1170,8,"Alicia"],
+      [1080,1140,10,"Neighbourhood: Notes from Belfast"],
+      [1080,1200,12,"Macca"],
+      [1080,1140,13,"Rachel Craddock"],
+      [1080,1140,14,"Dave Forde"],
+      [1080,1140,16,"NIIX"],
+      [1080,1140,18,"Qobuz Presents: Music from my Homeland Series 2"],
+      [1095,1125,9,"Isaiah Collier"],
+      [1110,1200,11,"Norsicaa"],
+      [1110,1200,15,"Anonymous Funk Odyssey"],
+      [1110,1140,19,"Author Signings: Jesse Bernard and Lanre Bakare"],
+      [1125,1170,5,"Mali Sheard"],
+      [1125,1200,9,"In Flames"],
+      [1125,1185,17,"How to Exist in Anti-Culture Capture w/ Dance Policy & Huck"],
+      [1130,1190,1,"MIKE"],
+      [1140,1260,2,"DJ Flight"],
+      [1140,1260,7,"Eves'Drop Collective"],
+      [1140,1200,10,"Kate Magic: Free party/rave"],
+      [1140,1215,13,"Tier (Shakara Soul)"],
+      [1140,1200,14,"Ruby Francis"],
+      [1140,1200,16,"Jeet"],
+      [1140,1260,18,"Audio Gold DJs"],
+      [1140,1185,19,"Kids Bedtime Yoga with Spectral Floetry"],
+      [1170,1230,8,"DJ Spanish Fly (live)"],
+      [1180,1260,0,"Arthur Verocai with Nu Civilisation Orchestra"],
+      [1185,1215,19,"Book at Bedtime with BookLove"],
+      [1200,1320,3,"I-Sha"],
+      [1200,1290,4,"Brighter Days Family"],
+      [1200,1240,5,"The CJP Band"],
+      [1200,1290,6,"GENA DJ set feat. Liv.e & Karriem Riggins"],
+      [1200,1260,9,"Your Brothers Keeper (w/ Gary Bartz)"],
+      [1200,1260,10,"Tasha: Neighbourhood"],
+      [1200,1290,11,"Bushbby"],
+      [1200,1320,12,"Esa"],
+      [1200,1290,14,"Daniele Mizar (CAM Soundsystem)"],
+      [1200,1290,15,"Faide b2b Rej"],
+      [1200,1380,16,"Shai Space LDN Deep Listening Takeover"],
+      [1215,1290,13,"Liminal People"],
+      [1230,1290,1,"Kofi Stone"],
+      [1230,1290,8,"*"],
+      [1260,1350,2,"Silva Snipa"],
+      [1260,1315,5,"Elliott Skinner"],
+      [1260,1380,7,"Toribio"],
+      [1260,1350,9,"Marina & Yazmin Lacey"],
+      [1260,1380,10,"Lovie: 1976"],
+      [1290,1380,4,"Lev & Faro"],
+      [1290,1380,6,"Brown Excellence"],
+      [1290,1380,8,"Ceephax Acid Crew (live)"],
+      [1290,1380,11,"JD Reid"],
+      [1290,1380,13,"Micky & Rich (Passenger)"],
+      [1290,1350,14,"Cami Laye Okun"],
+      [1290,1380,15,"Lize"],
+      [1300,1370,0,"Peven Everett"],
+      [1320,1380,3,"Shackleton (live)"],
+      [1320,1440,12,"Make A Dance"],
+      [1340,1380,5,"Salimata"],
+      [1350,1470,2,"Alix Perez ft. SP:MC"],
+      [1350,1440,9,"Rohan Rakhit"],
+      [1350,1530,14,"Overjoyed: Mr Thing, Gilla & Russ Ryan"],
+      [1380,1500,3,"Re:ni"],
+      [1380,1560,4,"Ge-ology"],
+      [1380,1560,5,"Lucy Locket & Michael Upson"],
+      [1380,1470,6,"Cosmo Sofi"],
+      [1380,1530,7,"Colleen 'Cosmo' Murphy"],
+      [1380,1470,11,"DJ Lag"],
+      [1380,1500,16,"Daksh"],
+      [1440,1560,9,"IZCO"],
+      [1440,1560,12,"Paula Tape"],
+      [1470,1590,2,"Calibre ft. SP:MC"],
+      [1470,1560,6,"JKriv"],
+      [1470,1560,11,"Guedra Guedra"],
+      [1500,1560,3,"Blawan (live)"],
+      [1500,1680,16,"Joe Muggs' Ambient Zone"],
+      [1530,1680,7,"DJ Nori"],
+      [1530,1605,14,"Karl Roscoe"],
+      [1560,1680,3,"Nono Gigsta"],
+      [1560,1680,4,"Sadar Bahar"],
+      [1560,1680,5,"Rroxymore"],
+      [1560,1680,6,"DJ TARA"],
+      [1590,1680,2,"Ivy Lab"],
+      [1605,1680,14,"Jon Packman"],
+      [900,960,13,"Talk: TBC"],
+      [760,800,1,"Kahil El'Zabar Ethnic Heritage Ensemble"],
+      // ---- ACTION STATION (Sat) ----
+      [600,660,27,"Kites4Palestine Kite Making and Flying Workshop"],
+      [690,780,27,"Gaza Biennale"],
+      [810,870,27,"Communitea & Tawlah Workshop"],
+      [900,960,27,"Behind the Campaign"],
+      [975,1035,27,"The Future of a Free Palestine"],
+      [1050,1110,27,"The Art of Resistance"]
+    ]
+  },
+  {
+    "dn": "Sun",
+    "dd": "23",
+    "date": "2026-08-23",
+    "ev": [
+      [600,660,19,"Seeing the Big Picture with Helen Sanson"],
+      [600,660,20,"Carnival Ready: Wear Your Heritage with Working Studio"],
+      [600,660,22,"Calibraid: Morning Meditation / Breathwork"],
+      [660,720,6,"Miss Mash"],
+      [660,1440,7,"Another Sunday Afternoon At Dingwall's - Patrick Forge, Gilles Peterson, Colin Curtis & Coco Maria"],
+      [660,720,8,"Beholder (live)"],
+      [660,720,9,"Andrea Trout & Cyndi (Handson Family)"],
+      [660,780,10,"Coco Maria: A Worldwide Breakfast"],
+      [660,720,14,"Euan McGinty"],
+      [660,780,16,"Throb Hall (Soundsystem Residents)"],
+      [660,720,18,"Kankyo Ongaku: Japanese Ambient Hour"],
+      [660,705,19,"Sanjiv Ahluwalia — “It’s Better To Travel”"],
+      [675,735,17,"The Log Books: Voices of Queer Britain"],
+      [675,765,20,"Gelli Printing with Painted Palms"],
+      [675,735,22,"Yoga"],
+      [690,720,5,"New Gen Jazz"],
+      [705,735,19,"BookLove Mission: Why Multicultural Books STILL matter"],
+      [720,780,0,"Da Lata"],
+      [720,780,6,"Dean Sunshine Smith"],
+      [720,810,8,"Club WIP (talk)"],
+      [720,780,9,"Roberta Cutolo"],
+      [720,810,11,"WIP (Carhartt Team)"],
+      [720,840,12,"Room Service"],
+      [720,780,14,"Leroy from Kudos"],
+      [720,840,15,"Activate [DJ Competition Final]"],
+      [720,780,18,"How To Make A Catalogue Contemporary w/ Cam Records"],
+      [735,750,19,"Author Signings: Tash Walker, Adam Zmith and Liv Little"],
+      [745,785,5,"Tomorrow's Warriors Junior Band"],
+      [750,810,17,"Trans In Words: Resisting In Literature"],
+      [750,810,19,"Meet the Author: Courttia Newland"],
+      [750,810,22,"Roda de Capoeira"],
+      [770,820,1,"Papaya Noon"],
+      [780,890,4,"Charlie Dark"],
+      [780,840,6,"Pegasvs"],
+      [780,840,9,"Klash and Brown"],
+      [780,840,10,"Helena Star: Therapy Presents - An Ode to Parents"],
+      [780,840,14,"Fingaz"],
+      [780,840,16,"Nathan Worm (Hot Wax Bristol / Worm Disco Club)"],
+      [795,855,20,"Still Life Pastels with Kinship Club"],
+      [810,870,0,"Joshua Idehen"],
+      [810,930,2,"Ella Knight"],
+      [810,850,5,"Tomorrow's Warriors Youth Ensemble"],
+      [810,870,8,"Rikette Genesis"],
+      [810,900,11,"Tara Lily (Shakti Jazz)"],
+      [810,825,19,"Author Signings: Travis Alabanza and Dylin Hardcastle"],
+      [825,900,17,"Hammer and Tongue Poetry Slam"],
+      [825,840,19,"Author Signing: Courttia Newland"],
+      [825,885,22,"DIY PANTS with EL BRAS"],
+      [840,900,6,"Loz Track"],
+      [840,930,9,"Papaoul"],
+      [840,900,10,"Aneesha Kotwani: Behind Every Woman, a village"],
+      [840,960,12,"United Freedom Collective"],
+      [840,900,14,"Rhys Baker"],
+      [840,900,15,"Jacana People"],
+      [840,900,16,"Triximo"],
+      [840,900,18,"Digit Music: Interactive Live Production Workshop"],
+      [840,870,19,"More Tomorrows: Prostate Preservation"],
+      [860,910,1,"Natural Information Society"],
+      [870,960,8,"Dare Balogun"],
+      [870,915,19,"BookLove x Crafty Fox Market: Meet the Makers"],
+      [875,920,5,"Christ-Stephane Boizi"],
+      [885,975,20,"Pinch Pot Pottery with Plop Pottery"],
+      [890,970,4,"Lovie"],
+      [900,960,0,"Zena x Mereba x Kibrom Birhane"],
+      [900,960,6,"Mithun"],
+      [900,960,10,"Mo Ayoub & Muzikawi: Censored Ethiopian Rare Groove"],
+      [900,1020,11,"Nina Yamada"],
+      [900,960,14,"Kieran Jandu b2b Silasthedon"],
+      [900,975,15,"Jaime Rosso"],
+      [900,960,16,"Casual Max"],
+      [900,960,18,"The Audio-Technica J-Jazz Hour"],
+      [900,960,22,"Pin It With Purpose: Resistance Badge Workshop"],
+      [915,975,17,"Ladies Music Pub: Radical care in the music industry"],
+      [915,975,19,"Write it out: Protest Poetry Workshop"],
+      [930,1035,2,"Dr Banana"],
+      [930,1020,9,"Kamar"],
+      [945,990,5,"Warriors Alumni Jam"],
+      [950,1000,1,"Shabaka"],
+      [960,1020,6,"Lily London"],
+      [960,1020,8,"Shy One"],
+      [960,1020,10,"Fen: Sawtuha - Arabic Women & Resistance"],
+      [960,1080,12,"Coco Maria"],
+      [960,1020,14,"sammybennis"],
+      [960,1020,16,"Aethher (Sun Palace Soundsystem)"],
+      [960,1020,18,"Qobuz Presents: Music from my Homeland Series 3"],
+      [970,1060,4,"Tone B. Nimble"],
+      [975,1110,15,"Tayo & Frank Tope"],
+      [975,990,19,"Author Signing: Mira Mookerjee"],
+      [975,1035,22,"Community radio and you!"],
+      [990,1050,0,"Ana Frango Eletrico"],
+      [990,1050,13,"Tara Lily (live)"],
+      [990,1050,17,"Raising The Culture: Shaping Music Futures Across Generations"],
+      [990,1035,19,"Poetry Reading with Sam Berkson and Keith Jarret"],
+      [990,1050,20,"Life Drawing with Studio Eden"],
+      [1020,1140,6,"Drifty b2b Ell.iot"],
+      [1020,1080,8,"Borge"],
+      [1020,1080,9,"Oscar Jerome"],
+      [1020,1080,10,"Zaereo: Polska scena"],
+      [1020,1110,11,"Wilfy D"],
+      [1020,1080,14,"Aidy West"],
+      [1020,1140,16,"Haze"],
+      [1020,1140,18,"Audio Gold DJs"],
+      [1030,1070,5,"Tomorrow's Warriors Big Band"],
+      [1035,1140,2,"Lady Passion"],
+      [1040,1100,1,"Herbert & Momoko"],
+      [1050,1110,13,"Sadeedo"],
+      [1050,1080,19,"BookLove Bedtime Story"],
+      [1050,1110,22,"Crafting Connections"],
+      [1060,1180,4,"Eves'Drop Collective"],
+      [1065,1125,17,"What Makes Us, Us? An Anlo-Ewe Intercultural Experience"],
+      [1080,1140,0,"Kahil El'Zabar presents A Love Supreme"],
+      [1080,1170,3,"Winston Hazel & Josey Rebelle & MC Chickaboo"],
+      [1080,1110,8,"The Rub"],
+      [1080,1140,9,"Tambourine Hands"],
+      [1080,1140,10,"Kamar: Under the Hood of Post-Punk Dub"],
+      [1080,1200,12,"Ruby Savage"],
+      [1080,1140,14,"La Rumba"],
+      [1110,1170,5,"A Grime Supreme"],
+      [1110,1170,8,"Romaal Kultan"],
+      [1110,1170,11,"Ivy Lab"],
+      [1110,1200,13,"Almass Badat"],
+      [1140,1190,1,"James K"],
+      [1140,1260,2,"Salute"],
+      [1140,1230,6,"Jonjo Jury"],
+      [1140,1200,9,"Santa Leticia"],
+      [1140,1200,10,"Wade Dao & Whiles: Melting Part - Surrounded by Water"],
+      [1170,1230,14,"Steffi Bricks"],
+      [1140,1200,16,"Rose"],
+      [1170,1230,0,"Stereolab"],
+      [1170,1230,3,"Double O"],
+      [1170,1230,8,"Ri Mistry"],
+      [1170,1290,11,"Baile Ijo"],
+      [1180,1260,4,"Emma-Jean Thackray"],
+      [1200,1240,5,"Madeleine"],
+      [1200,1260,9,"Ana Frango Eletrico"],
+      [1200,1260,10,"Aethher & Josh Aitman: It Takes A Village"],
+      [1200,1320,12,"Low Life w/ Bill Brewster & Frank Broughton"],
+      [1200,1260,13,"Orii Club"],
+      [1200,1290,15,"Mikey D.O.N"],
+      [1200,1260,16,"El Fadil"],
+      [1230,1290,1,"Yazmin Lacey"],
+      [1230,1320,3,"Bryan Gee (old skool set)"],
+      [1230,1320,6,"Greg Wilson"],
+      [1230,1320,8,"MI-EL"],
+      [1260,1380,2,"Special Guest"],
+      [1260,1350,4,"Selassie TBC"],
+      [1260,1350,9,"Paul Camo"],
+      [1260,1320,10,"yeahitsRenee: Soca & The Sound of Home"],
+      [1260,1320,13,"Plentyppl"],
+      [1260,1320,16,"Love Sun Days"],
+      [1265,1305,5,"LIIM"],
+      [1275,1350,0,"Gary Bartz"],
+      [1290,1350,11,"Silva Snipa"],
+      [1290,1350,14,"Wheel Up"],
+      [1290,1380,15,"E Double D"],
+      [1320,1380,3,"Mantra"],
+      [1320,1440,6,"Lou Hayter"],
+      [1320,1380,8,"UK Hunky"],
+      [1320,1380,10,"Lady Passion: Raised on Rewind"],
+      [1320,1440,12,"Prosumer"],
+      [1320,1380,13,"Mr Redley"],
+      [1320,1380,16,"Pamoja Disco Club"],
+      [1340,1380,5,"Georgie Sweet"],
+      [1350,1440,4,"Mad Professor"],
+      [1350,1440,9,"Joe Lye & Katie Barber"],
+      [1350,1440,11,"Dr Banana"],
+      [1350,1440,14,"Dance Regular w/ EVM128 & Matica"],
+      [1380,1440,2,"Gilles Peterson & Friends"],
+      [1380,1440,3,"dBridge"],
+      [1380,1440,16,"DJ Cutterz"],
+      [900,960,13,"Talk: TBC"],
+      [1110,1200,15,"Saige Sounds"],
+      // ---- ACTION STATION (Sun) ----
+      [600,660,27,"Protest Song Session"],
+      [870,930,27,"Communitea feat. Letter Writing with Lex Doj and Vanessa Brier"],
+      [930,990,27,"Palestine, Power and Protest: Why Are We Being Attacked?"],
+      [1005,1065,27,"MMM: Activism on the Frontline"],
+      [1080,1140,27,"MMM: Censorship: Navigating the British Cultural Sector's Silencing of Support for Palestine"]
+    ]
+  }
+];
+var STAGES = ["Main Stage", "Lush Life", "Rhythm Corner", "The Grove", "The Bowl", "Tomorrow's Warriors Big Top", "Roller Rink", "Love Dancin'", "Lemon Lounge", "Brawnswood", "Worldwide FM: WOH Radio", "Carhartt WIP", "Beat Hotel x Ilegal Mezcal", "Passenger: Ground Tempo", "Near Mint Record Store", "Love-Serve Bar", "Once In A Blue Moon", "Talks Tent", "The Knowledge", "BookLove", "Craftwerk", "Craftwerk: Outdoors", "Lemon Lounge Workshops", "The Sanctuary", "Wellbeing Tent", "Wellness Tent: The Clearing", "Near Mint Record Signings", "Action Station"];
+var NMAIN = 6;
+var NMUSIC = 17;
+var NSETS = 747;
+var SCRAPED = '15 Aug, 11am'; 
+function stampHTML(){
+  return '<div class="stamp">Times as of <b>'+SCRAPED+'</b> — the festival is still '+
+    'changing them daily.<br>⭐ Action Station programme now included · Check the official '+
+    '<b>Woov</b> app for the latest.</div>';
+}
+// Placeholder logo – a tiny Melomaniacs-style diamond (gold on dark)
+var LOGO='data:image/png;base64,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IIBeoijWFwShrqIoUTabLRCACcAZHYBVgvmsVutgs9n8yS+//KINHDhQzcjIEDmLcYeo0Vk8ePBgzJo164qUK0endVlZWQUR7e7ujry8PKiqikceeQSrVq2C2WxGWVkZioqKrgAgAMyZMwdxcXGIiorClClT8O6776JFixZ46623sHnzZvz888+oXbs29u7di+DgYPz444+oX78+vL29KzjCOTN36NCBPvvsMykyMjKjoKDgYR8fn2MG9ePvPt6SZbmZPobZoiieZ4wlKIoSD2A1gMTrIS1uKjaFww4tHx8f0h3WOQB8b2Oc8boMDiJi6enpNYioZN++farJZFKh115x3PUWEhJC/fr1o23btlVaLXXKlCm0evVqe3V93oDxwIED9r9//fVXWr58uf3ve++913593rLWWIdGURRavXq1vaXXzp07aejQodfVPsy4/XXq1KnUrVs3ezssIvopIyMj0mDx/50HA4CwsDBnAElRUVFyaGioiit393V0wNdVGVADgNq1a586depURo8ePfwef/xx1KpVS6hduzbLyMgQ6tev76NpWk0diH+XE1pgjCmqqn4EwGXgwIGKLMsSF6eqqqJ69eqIiIiAh4cHZs+ejaioKLsYNYpk/prjDrnQ0FBs2rQJwcHBICKEhYUhNjYWrq6uSE5ORs2aNREeHo7BgwejU6dO9viukVEfe+wx+99HjhxBtWrV7KLemMTA9c/Dhw+jSZMm9kwZboQ4OTmp7du3FwG8yRib4WB4/d0ApMzMzOoAQr7++muxXr16dOrUKTp//rz2/fff04oVK0r9/f2PZWVlwdEQka6i+7Fz584VAUhs3rx50MCBA1VusLi7uyshISFSSkrK/wRB+EPTNPY3sJ+ZMWYrLCx8WBCEnh988IFy4sSJCuBr3Lix9tNPPwlffvklkpOTYbFY7OK4suwT7obholpVVTz88MO4dOkS5s6di4KCAoiiCBcXF5w+fRp169ZF79697elYlWXP8HvZuXMnNm7ciJMnT+Krr76y3wN/v81mg81mg5ubG+rWrXtFdo3NZrP7KkVRPKwbHNIddrdciwg0m81W38vLS4yOjlZdXFzERo0aoVGjRiwzM1NcsWJFamZmZqb+PHQ9RohIRAqAo9u3b285fvx44qEqk8mE+vXrIyUlpQVjbOHfAD7GGLOdOnUq0t3d/ePk5GSaMGGCwCdNVVXcc8892q+//iq4urraA+GlpaUQRfGaiQNGRuQ65Msvv3zN++FGzNXCfJIkwWq1onnz5pg5c6b9O4w/i4uLkZWVhdq1a8PV1dUeFuRxbJ0tmc6ujDFGRFRVMtC55Ghep04deHl5EbfkzWaztnXrVgHAcZPJpOniV70eNwyfiH0JCQmwWq125ygAoVWrVgDQXFGUOyp+iUhijJEsy5Oio6OPAoh48cUXUVpaKvCMlpCQENq+fbvg6up6CIDV1dUVxcXFf5poyrNcHLOSeUYQj3Q4ZgpJkoQDBw6grKzM/pox/EZE6NKlC/r06VMBdEaG8/HxQe3ate3gT0pKQlpaml38OoC8rKqFPPX7atWiRQsAYKqq8sQJHDt2DAD2XS1kezUAanosdH96ejodP37cqDiyNm3aAEC0p6dnpE6pd6Ilg4kxplit1qckSXp75cqVrq1atdI2btzIuO5GROoPP/zA/Pz8dmzcuLEDgOw2bdpo69ev13i0AVd/4Arld4072gRBQG5uLuLj4+25g1xv279/P7p168Y3jsPIxDyNizOl8bpXY2AAiIqKQnh4uP1zejY0d0CXVyHwMQBUrVq1QAAN2rZtWwFT586dE86fPw8Ae/WxpxtyRH/wwQcnACTv2rXLuOmINW3aVPX19TUVFha2+SvNiP+iu0XOzc1tYDabPzpw4ICyb98+rWPHjryPGYiIhg4dKjRt2jQrLS1tYPfu3fNkWf64TZs2Qq9evdQzZ85cIWKNB8/tc4wXG1mKZ/kagVqnTh3ExcXh66+/xpQpUxAfH283RkRRxKlTpzBv3rwKG6IqnclK9Eeu/ymKApPJxBwYsCoE4UXGGC5cuNDSxcXFrVWrVsYABe3Zs0dQFCW3YcOGR/TnuaFIiDhy5EgrgD/0vDSNM427uzvpYrizoYfGbXO3MMbUwsLCOt7e3r/k5ub69evXT4iJiRFefvllmM1mFBcXg4jIy8uLASj6/fffM4iImc3mDzRNW7do0SLTli1blIyMjArWpXGiuYh1NFDKy8uvWpycMQZXV1fUqVMHM2bMgCiKWL58Od544w1MmDABo0ePxrvvvotFixahsLDwmgvgqqGFy1EQ0r9Ps1qtVYkB+Zh0bty4MYKCgsjgW9X0ihMH4uPj83GV9h3XYi6mr9gtv//+O8rLy41KvPjQQw8BwP29evVyu12hOV6CLCkpycfd3X19bm5uwJNPPqnOnz9fyMvLg5eXF3bu3Il3330XS5YsYfreU4/evXtbdEWdHTt2rB+AA8OGDZPmzp2rWq3WSjOVuQXtyFLnzp2zO5mvJrpVVUVBQQEuXrwILy8vNGrUCM2aNcPzzz+PZcuW4ccff7TrcDeSvs/vJzk5GXop4Lzjx49XlZ2IDID6xx9/mAB06tKlC6DXh9EXMe3YsQMAtupjesNSUgAADw+PmgBsugNX03t/0YULF1S9p1oXXQyLtwGAvAL+ciKirl27yry1ltHpm5mZSSNHjlS+/PJLIqLv+Wf551NTU8OJKGPfvn00ZcoU1VjZlP/88MMPaePGjfaiipU5iw8dOnTN9q/l5eW0fv16mjlzJukV8G/o4A0UeT8WIqLs7Gwym83y6dOniYjWVBHns92hLElSS0EQ6PDhwxovX0xEdPDgQY0xpplMpsaVOaCvhwE1AKygoOAcgCMbNmwALqdqQdM0VK9eXdPLrj6ui+HbEmbLz89vCuCpDz/8UG3fvr3UvXt3e/YIVwm2bdtmF3FGPYMxphKRGBoamlRUVNS7adOmSkxMDObPn0/GzUqcATVNs1/bMaSmO+crrd3C32exWNC9e3eMGjUKvXv3vmaJNs5uRquai3nejyUpKQlvvfWW8sEHH0i1atVS8vLyJlWh6qhM900+Vq9ePTRs2FA1PKe2adMmRkRnbTbbUc6Wf+VLeJvOCdHR0UREMi86SETanDlzCMClLl26eNzqsJyh/cJMq9Wq9e3bV+YrzNj5iP8eHx+vjB07lohoH/cXOl6rrKxsCBHR5MmTlXnz5hk7+dC8efNo/fr1NHv27Ovqsv5nITRjSM7IbNfqX2yz2ej8+fP07bff0rhx4+jll1+m3377TS/yb+1rVEuqgPjlzQvPvfvuu8RbeuiSQ27WrBkB+EhfsH+5cCm3MhsCUHft2qUZxVZaWpqid8x+gnvnbwMAP1BVlXr27Cn/8ssvVwCPT+jOnTuVcePGaUS0s7KJIiKT/vP7srIyEkVRiYuLs19vwYIFtG7dOvrwww8rNOW+GTF6LbClpaXRb7/9pi1dupRGjBhBPXv2pKioKHJ2dqb333+fjh49qhFRCRFtLikpaVaFRC8Xp0wUxU6SJNHJkycrqDUJCQmqXhW27bXE7/UgUwPASkpKjjLGDq9ataqxbmqLqqoiODgYnTt3xtq1a581mUyrcGuTITUiYsXFxUvd3Nyef//9911effVVzdnZWQgMDETNmjVhtVphsViQlpaG6dOnq+PGjRMBnDAsHs2hbrQJwBknJydIkkR9+vTBwYMHK2S8GMtKXK+RYKxm4GhoqKqKtLQ0nD17ls6dO0dJSUlUVFREZrOZBQQEiIGBgXTkyBHoe2UBADt27FBGjx7N93i8WoXivsbQJWma9my7du1Qu3ZtTdM0e7bzt99+K6iqenb//v27mzZtetN1g7gYfj00NJTKy8tlI9o3bdqkAZDd3Nzq4Bb3CeYrvqSkpBdvr9qjRw/l6aefVsaMGaPNnTuXiouL6YEHHlB0diwoLi5uaKyfXMk11+Tm5pLFYlEAUKtWrYiI6IsvvqDvvvuOPvroIyosLKyU2bh4vVoXdqvVSmfPntU2b96szp8/Xxk3bpz86quvyvxef/nlF0pOTq6QjMN/ef755zUAvFm2qhtDSfv37/esYt2TBAAsJCSkGoCSFStWaLyZERe/MTExBOC962leya7zC7WQkJBqaWlpp9asWePcq1cvUhSF6T41pW7dutLp06fnMsZe1TRNwi3cI8JXvizL8yRJeg6Aafv27Th06BB27typ6O25zA8++OCBrKysfgEBAac58Bhjqs1mu9dkMr2Ly+ljBwA8tmLFCu/+/fuTk5MTKy8vx6RJkxATEwNBEJCcnIz+/fvD29u70jot/CgtLUViYiKdPXuWLly4oKWnp8NqtTJXV1cxPDwcderUQZ06dYw744pxOR/uBIBjVqv1eFFR0QknJ6f/OTs7LyEiS/PmzXH48GHGGENYWJh68eJFEUBvxthqPQxZFfbeSIIgKAAmBAcHv3v27FnFYrFIvMzItm3b6MEHH1Td3NwaFhcXJ8CwAekmGfdyJ+xOnToRERnbdGpz5szRAORGR0f74f9TsG+lRcwAID8/P9Jms71ORH8QUZnVauXNXU4b8uPspcJyc3PbEFFObm4uzZ49295yKzo62t7L4+mnn6ZNmzYprVq10rZs2UKff/653ZXAj+LiYi0+Pl5ds2aNMm3aNHn48OHyK6+8or3zzju0dOlS2rNnD+Xm5trJkohSiGg7EX1CRM+Vlpbem5CQEHy15ysqKupNRPTjjz+q+P8K/vKZM2c0IlrAK+BXFeOjf//+rgBSJkyYQA79BJUnnnhCA7BV9wUK13PB61U6VVEUOzDGthw5ckSrU6eOwFFfUlKiREVFSdnZ2W8BmHqrWdAQEbGvpPT09HpBQUGPALh05syZVdHR0YWGNK067u7uswB0TUlJwfPPP6926dKF7d+/X0tNTRW3bdvGuOP56NGjqFu3LrZs2YKVK1cqycnJ7JFHHoEoipSVlYXc3Fymqqro7e2NqKgo1K1bF1FRUXy/RpHOaicBHAFwrKio6PTu3buTO3fuXHINtcJek1EPZ8lEtFqW5cfCw8PVS5cuiQDUL7/8Uuzfv/8Oxlj7vznl3s5+jDGFMfaCq6vrp2fOnFEDAgJEnkuZmpqqRkdHizabrbemaav1RXPLcMD0wTv8wgsvODatUSdMmKABSNddMrecBTkIr6YPceYrLi7uSkQF2dnZ9Oyzz6q9evXSOnfuTLt376bc3Fzy8/PjG3e01157jYiovKio6HW9PRbt2LGDfvrpJ9q/fz8lJiZSUVER1/nSiehXIvqUiF4korbJyclhlek4ug5qJiIn/bTonTB5Hw+BZ3RzdUGW5YVERC1btpR1YGqfffaZRkS5NpvteUfX0t/EfoLeVPHsK6+8cgUGxo0bpwE4p7/nlmOANyZ52t3dnTIyMiq07srOzla8vb1JEIQ70jXJ0E1S2r9/v0mPeMQQUemuXbuoQ4cO8tq1a+1idP/+/XT+/HlKTk4mV1dX+t///qfo7pYZAFBQUBBNRO/pPdo2EtEXRPQ6EXUgopDb+BxMluWeRERr165VfX197R2UmjdvTkuWLOGP8KYOWBMH8N/AfjCZTM+7uLjQxYsXK8x/UVGRHBAQQIIgvH49xsdflv96281E3eemGvxd2qRJkzQAWTExMb64Qw0MDT3i2hHRmaKiImrfvr1y8eJFu79QVVUqKyujfv36UVpaGv3+++80cuRIlYgoNTU15mrXnjlzpmtKSko1m83WlIi6EtEAIhpGRGOIaCIRzSCiWbquN89wfkJEHxDRVCIaT0TDiWhIeXn5Y0VFRQ9cunSp4ZkzZ6rFxcV56c/wzs6dO6lXr17yzp076dChQ5SQkEB79+6l1157Tfnss88UIjpyFaYV7xT76brfRb0tl5H9tA8++EADkNWmTRvv2yUBjSz4qre3N2VnZ9tXgaqqVFRUJIeEhBBjbJa+CsQ7wIIsPz8/SlXVkjNnzlCHDh1UHoe1Wq2O0RLq378/paenU58+fbTCwkKZiEYR0atE9JHe5HA3EZ0molwikq8WsSguLrb3H87IyLCfOTk5lJ+fT6Wlpdd0RBNRmS7W9xHRkZycHLrvvvu0t956y27Q7N+/nx599FH1/fffJyJKXLx4sXtZWVkUETXWxT/uUHRE0jO0x3l5eVFmZmaFeS8tLZVDQ0OJMTbxdrFfBRbs3bu3G4CkMWPGXMGCixYtUgGU+/r61r7VfsFrREveJiLq37+/9aGHHqJz586RpmkVEgo4GLZs2ULNmjWjn376iVusRESUn59PR48epfXr19OcOXNo1KhR9NRTT9GDDz5IjRs3ViMjI5WgoCDF09NTtlgssiiKsr4n44qTMSZLkiS7uLjIPj4+cmhoqBwTEyO3bt1aefjhh9WXXnqJZsyYQStXrqQ9e/bQxYsXac+ePdS3b18qLCy0h/IKCgro5MmTpHdW1/SewtxEL9It7d4GNrwdrCMAYLVq1QoFUDBjxgx7v0A+5zNmzNAAZN8uL8jVVsNQNzc3Sk1Nta8Gboo3btyYAGzSXTfiHQDgCEVR6I033pAnT55M+/fvt4fEuBNZlmWy2WyUk5NDPXr0oI8++ogGDhxILVq0UAMDA2VBEDiAFD1wzpst366Ghvz6iiRJqiiKNGXKlAoZOvzo0aMH/fHHH/TDDz/Qq6++Si+99JI2fPhwWr16NX/LktsIQkmP8Hxdq1YtslqtCg81qqpK+fn5sp+fHwmCMPZ2s18FfWDChAlmACcGDx7syIK0e/duBQA5OTn1+bNY4K3Q/3Tjw7ZgwQLtlVde0bgIriypYNeuXX/aoNqxqyVvRC0Igr0L5o2c/LP8WsZrG5tiL1iwoMJ984Xz1Vdf0QMPPEDPPvusmpiYqOXn59P58+e1efPmKS+99BJ/yKULFy7kBsqtAqEIAK6urh0B0I8//qhwacLbr44cOVIDkKRLxTvWM1oEALPZ3FMQBNq/f/8VN/bCCy+oANJatmzpc7sMEuOKJ6Ld8fHxNGbMGOWNN96gsrIyuwhOSUmhL774gr799ltq0qQJiaJIFoulAgiut3n17TglSSLGGC1YsMDeX9cx6WLixInGjuqUmZlJa9asodatW9Njjz1m1V8eY5QMt4BoxO7du7sAOPPEE09UIBpN0+j06dOKxWIhk8k0SPd8iH9Fvv+VgyckrNM07edhw4bZt9vp+YLC+++/TxEREcF//PHHHEEQtFsNQA48xhjZbLaxAGq7u7tr58+fF/gGcp67WFxcDHd3d5SXlyMgIACqqsJms9k3DlXWIPBOH0SEwsJC8O5OPFcQ+P9ScbwJzNatW/HMM88gNjYWoaGhiIuLE9euXasBeIgnBNwKkhEEQf3xxx+n+/n51Zw7d66maZpg2NGnvvbaa6LVav3DZrN9pVvjdzRZQgDAfH19YwCUL1y4UOFBaS6KN2/eLAMgV1fXJ7k+cavAFxsbKxKRaLPZVhERLV++nKpVq0YAaP369XTp0iX7SnU85s+fX0Gk/l3MZxT9jDFq1aoV7dy5ky5dunTVXMPk5GTq06cPDRs2jJ555hnatGkTvf3228rnn39ORBR3i6xi3qi8MwCKjY2VHSSc9u233yoAVA8Pj2a3U826LgVVkqQJXl5elJaWJnPln3vHX3vtNRVAXkRERPWbZF3HcBZ0Pxu99tprVqPBwDNcuKJszM8zpuDjDnROvxEANmrUiGbOnEkTJ06kqVOn0pIlS2jv3r1UVFRkB+H48ePp6aefpldffdX+LMOGDZP3799PRPTNLRDBAgDWoEGDAABpAwcO1Hi8l49lfn6+HBwcTKIofnwn3G1/qifoBsnh7t27ExEpPDVHn3BuFe+Ki4uT9JtlNwE+AQAuXrwYQkRlq1evVgFoJpOpgkK/bNmyK9KpjIo9EVHDhg3tAPg7AciNFXd3d3rwwQdpzJgxtGDBAvr0009p4sSJNGrUKHrvvfdo6tSp9MILL9DQoUPtz/X222/TM888oxKRtaio6H7jAv2L8ynp3osfo6Ojqbi4WOHA46TSv39/DcC5du3a3VHD45p07evr2xQA99prxry5c+fOyR4eHiSK4ic3a6rzwS0oKOiuaRp17dpV4ZYlB5MgCOTn50fZ2dn0xx9/2BnEuBFJ0zR677337EbA382ClZ0xMTH01FNP0XvvvUeLFy+mRYsWUb9+/Wjv3r20adMm6tixIwFQx40bR0SU1rt3b/NNxoxNerhtssViocOHD8vcEOJq1erVq2UA5Onp2eHvFL2V+gbNZvPbLi4udPr06Stu/IcffpABkLOz89CbiRVzAObn53ciInryySdVAGQymewTx1mwe/futHPnTnruuefo/PnzdtbgQFy2bFmVA6AgCHar2Pi6i4sLeXt7k6urq13X1U/lhx9+UIkoPi4uTroJ8Em6y+UJXYLIRiLRNI1SU1NlHx8fEkXxwzsR779hUaw/fFyjRo1IlmWFGwE8Xvjee+8pAFQfH5+Of9Uo4a6XCxcueBFR9qFDh1RRFFVHIHEQDhkyhA4ePEjDhw+nxYsXU1JSEpWVlVF6ejp17dq1yuiBVxPN3Hd4NWf28OHDbXrYceBNiF8JAAIDA1sAKBs1apRqzHLW509p164dATioq1wiqlh7DgEAi4qKqgYg67nnntOMO6W4/vD0009rAPJDQ0Mb3AQIRQCwWq2DiYjWrVunuLu7K3zSOINwQLZu3Zo2bNhAn3/+OU2ePJlmz55NgwcPtk9yVQRfZUA0LDDNy8tLXrhwIWf0WTdh/YoAUK1atSgAGY8++miFHW58B+To0aNVAEXBwcExt8qYvG36oIeHRxcAtHDhQplvZudGCREpXbp0IQDJ4eHhNf6qHsFBWF5e/gYRUXJyMvXu3ZuH0ezizGKx2CfywQcfpLfeeou++uorGjt2rF35r4qA46LYgf1UHx8fedSoUVyvLSorKxt2s+CrV69eIIBT9957L5WXlytc5HJVZeXKldyd9kRV0vv+TB8cI4oi7dixw2ZU/DVNo9LSUqVVq1YE4LTOmDcFwrKysk5EdJiIePBeCwwMlA0x3atOdFWwfo0hQAfAaQBUi8Uid+jQQV22bBlnJCsRfZmZmRl9s+Br0qSJH4BD9evXp9zcXMVRdz906JDN2dmZRFGcXtX0vusJYC/18fGhM2fOyEa/nJ59ojRq1IgAnDKA8C+L49jYWLPVah1ERLu4sbF582Z64YUXKCYmhicbXAFIo3j7s9jvjYDKEVyOMearuH40PRlCjoyMVAYMGECxsbH2vSxEdJaI3k9LS6vr+Pw3Ab4DtWrVooyMDNmYP6nnSsqhoaEE4HuD94L9EwDIAIgLFy40AdhWs2ZNysrKugKEOTk5MgehQRz/ZRDyIycnpxURzSSiozzlKjMzkzZs2EBjx46ljh07qtWqVZMlSTJmv1yTLa8FshtgUp4Bo3KgeXh4yHXr1lUefvhhmjBhAm3YsIHS09ON2zaPEdFHZWVlHZcsWeJkfOa/yHwSANStWzcIwMHo6GhKSUm5Ym4KCwsV3U+6v2PHjq63y993O9EsANDq16/vfezYsR1Nmzatv337dsXV1VXiFagEQUBBQYHStWtXaffu3UmhoaE9UlNTj+JyKwj5BkHIcLlesTEeyXJycu7x8fFpBeBeAI0ARAJwA4Di4mIkJibi3LlzOHfuHBITE5Gamor09HQtNzeXCgoKqKSkBGVlZX9aYbUCvYginJyc4OzsDFdXV+bj4wN/f38hNDSURUREICoqClFRUahevTqCgytslssGcA7AYQB7cnJy/vDz8zsJQyUsPcqh/cUNShIud9usmZKSsqFBgwa1N2/erAQGBkq8No1eLF3t1KmTuH379vMxMTFtTp48mY5btL3y77CMUbNmzTAA59u2bUslJSWKI9WXlJRwwyTX09PzQcNg/aUFcq1tjImJicGlpaVtiWgoEX1IRD8Q0QEiStVLYVxxlJSUUE5ODqWmptLFixfp9OnT9vPUqVN07tw5Sk5OprS0NMrJyaHi4uKrZUNbiegSER0nop/0LZejiOjRoqKiBjt37vS+yvNIt2BzugkAAgICWgFIa9OmjV3n48ynG4pKt27dCEB6SEhI7dttdNwJeS4CUPVVt6Ndu3YhmzZtUl1cXEQjE6qqqg0ZMkRYunSpYrFYXrLZbIsM/em0vwhE/nlBF51XzdaYOXOma8+ePb38/f19nZ2d/Z2cnHxweTO7FwAPAK4AnPWFYTGwEtPFKW9RVQagFJe3bBYByFUUJc9ms2UVFhbmHDp0KPehhx4q/JN75hOu4ebbbwnA5eKWFovlyfLy8i8ee+wx5xUrVqgWi8VxDtRHHnlE3LBhQ66/v3+HrKysw5w18Q8/RAAICgqqCyClbdu2VFxcbNc7DOnzqr6xiQDMNug4t7LoEeMMeYuY5S/HtB3uQbgN9yFycAGYBIBGjx5tLwlilEJWq1Xp3r07Acjx9fVtdqvHvcqAMCQkJBrA+WbNmlFmZqZsdNHwVJ/Vq1crnp6eBGCbIYvmtlpghnoyggNAKztFh1O6jvcLtwlkV5NsRmNjvbOzMy1ZskQhIs0gbrnBId9///0EIN3f3/9//0bwVQBhZGRkOICj0dHR9rixY8XSEydOyE2bNiUAl5ydnXsb6rOIuHv86RgzxuDi4vIQgKS6devSwYMHKyx2Ps4pKSncE3HWEOWQ/vUDpO8djvP396ft27dXOjhWq1UZNmwYd2F8pu855dcQ7mLtCl1PBAB9f8ZsAPTMM89QUVGRUtn47t+/36YnNuzVd73968FXQTHWg9pfSpJECxcuVCvTTYhIW7dunVq9enUCcM5sNvcysOE/xjF6J8StIAiwWCxdAMQHBQXRN998c8WY6uOqrVixQnF2diYA3+l5ff856WLv5SsIwlsA6MUXXyRZlpVK9ELKzc2Vn3vuOc6GsSEhIdGGQpD/RSAyo7itXr16BIClAOipp56yRzYcMpKIiJTRo0fzcZxuWMzCf3X1iowxODs7Pwwgu2XLlnTy5MkKnnmDT03dsmWL2qRJE9JdHJNbtmzp8x8Dop3xGGPo2bOnO4BxAHLq1atH69evt7MeBx8fv4sXL8oPPPAAASh0cnLqp4+bgLtS5PKAhoWF1QSww8PDgxYtWqTxgXRkQ1VVlTlz5lBISAgBSAIwvGfPnu4OQPy3rWjBCLwJEyY4ARgK4Iyfnx/NmDGDysvLKziWDaynfvPNN6q/vz8B2BcQEFD/v6Tv3RAI9bjuZADaY489RqmpqTJ3HTiwoZaTkyOPHz+efHx8CJdDWCNatmzp4yBWxH/wCudi1u7P08vfvQggwd3dnV5//XVKS0tTeMzbuBGLiCgrK0seNGgQF7mzBw0a5HQXfNde5YwxBjc3t3YAjvr7+9Nnn31GRKRcRSxrKSkpyptvvkkBAQEEIBXAVD8/v2jeVNAw4P8EMHLQ2dlOFEUEBgbWADABQKK3tzeNGDGCzp8/rxilhAPrKcuXL9fCwsIIwGkXF5euhrG460G4HjbUd+VPA2Dr0KED7du371oDrmZmZiozZsyg2rVrEy6HxL4D8Ej//v1dHcAoVjFXjmAEHWc7Xcw+BOAbAEWRkZE0ceJESk1NVYx6nuM4HDt2jMdzNQAfN2zY0Mvw3OwuvG7AX8gYg4eHR1MAv4iiSC+88AJPH7L3LDHu99UzsOXVq1dT9+7dycnJiQBcADAHwAMjRoxwdgAjV+qlO6SQM4M+ZzeaONPpzV/aAPgAwBmTyUSdOnWiFStWUGlpqWwEnuNzZ2ZmyiNHjuRZ4L+5ubm1cVh0d4+/avHpe1X7ATjp4+NDb7/9NuXk5MhG3cdxQohIOXPmjDpjxgxq2bIlzzY+D+BzAE94eXlF8EbVDk0EjWJQMrAlB+ifnYIDq0mOFjoHnCRJCAsLCwXQC8CnAE4DoCZNmtDkyZMpISFB1dWPqy64wsJCeerUqaQ3NDwPYIgh5HeX9W6VbggAenLk6wCSg4OD6d1336X09HTF6HCVZdmxn4dKRPKxY8e0WbNmUadOncjb25sAlADYC2AugAEAGrRu3drd2D2dN5/5S6tHz6/j/d8kSULHjh1dTSZTPQB9cTlasQtAkYeHB7Vv356mTZtGBw8e1PTimFc8k9EllZubK8+YMYMiIiIIwCUAbz/44IOe+v2yu6x3G8WyXnXrTQBJvr6+NHz4cIqPj7+CLfhpqBGjEpGcmZmpbNiwgcaMGUPt27fnBgwBSNdB8aWu9A8C8CCA/3l6elavWbOmf7t27dw+/vhjC69PTUTSxx9/bGnXrp1bdHS0n5eXVwSABgA66MAerzuJf9ONJPLz86P77ruPRo0aRWvXruWLSDY2rzHev5HVz549q7z55psUHBxMADIAvFuvXr3Af6K4/SdSM1/ZCmMMbdu29dqxY8cAAENNJtM93bp1wzPPPIMuXbooJpPJXhZOURR7BSzObvj/NHkqKipiZ86cERMSEhAfH4/Tp0/j4sWLyMjIQF5eHkpLS4HLOX+lAMpxOWPbhv9vuWACYAbgBMAFgNnZ2Rne3t4IDAxEeHg4oqOjUbduXdxzzz2Ijo5W9YwfLrKZsSIWF9G8A6imadrmzZulJUuWYP369SgrKzsNYHHNmjWXnjt3Lkt/NhH/v63gLgDvJBD37dtnatq0aXcATwPoXKtWLXOvXr3w2GOPUbNmzVSDXmYvyWani/8HZAVQAoDVakVOTo6Qm5sr5ObmorCwEMXFxSgtLYWiKPYu6KIowsXFBW5ubvDw8ICPjw98fHw0X19fjZdVc9QViahCqr9eeZb/qQHQDh8+LH7//fds9erVSEhIUAFsBbBkwoQJaydNmlSuA0/C/29H/cdN4r/BULEDURAEODs7xxQXF/cG8DiABo0bN8ZDDz2ELl26oHnz5orJZGJGvdKxRiC/TiX6H13l98rG09guFpqmVfodhv7DBEBTVZX2798v/fzzz9i4cSP27dsHIjoB4DtXV9dV5eXlxwzX+ccC798EQEf3BgHQ9BRzgTHWEsAjALoAqF+jRg3ce++9aN++PVq0aEExMTGqoa1UhQLbt6J45VXAbNwlhxMnToh79+5lO3bswG+//YYzZ84Al3vK/Qzgh/379//evHlzWWdtfp/aPxl4/0YAOlrNAvS9DDoYmdlsbijL8v0AHgDQhDEWXKNGDdSvXx+NGzdGw4YNUatWLapWrZrm7u5ODmKzsvFi12BEcgAbSkpKkJycLJ49e5YdPXoUBw8exNGjR3H+/HmoqpoJ4CCAOEmStsmyfFgURYWIjGzHt3X+q1jj3+5H5IxhB6MgCGjcuLHH3r177wHQHEBTAPUA1GCMefr7+yMkJATVqlVDWFgYQkJCEBAQAF9fX3h4eMDFxQVOTk7Qu4USY4xpmoby8nKUlJSgqKgIOTk5yMrKQlpaGlJSUpCcnIy0tDRkZmZC0zTeY+44Lnfw3Fu/fv3jJ06cyOOiWj8kR5303zhB/yWnNgekhst7a2E8w8PDA86fP18DQJR+VgcQCsAfgA8u7yd20a1dsRIGVHXLuAyX27PmAcjSXS8XcTlh4mx4eHhiWlpaOmc3A8sJhvujfyvo7h4VjRfJ6DerzHksSRJiY2PNDRs29PL19Q2xWCyRZrM5RmfNxgDqmc3mOhaLJdLHxye0fv363rGxsWb+WW5lO3ZTd/h+9l+dhLtH5SLb6A65GTZybFHxrxapdwF4+8eqMkPkWgbI3eMax/8BEI50rc6ecJwAAAAASUVORK5CYII=';   // Melomaniacs mark, inlined once
+
+var COL=['#ef6fae','#5ad9c8','#f2a95e','#8f9df0','#b9d95c','#f5776f',
+         '#6ed49a','#dba55f','#a98cf2','#4fbdea','#cfdd57','#ff9470',
+         '#83dcae','#cf8ff7','#5ccdb5','#f7b3d4','#9fabff',
+         /* wider programme */
+         '#c9a227','#7fb069','#d98880','#6c8ebf','#b39ddb',
+         '#8dbf9e','#d4a373','#9fb8ad','#c0a3c7','#a8b545'];
+function col(i){return COL[i%COL.length]}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function hhmm(t){t=((t%1440)+1440)%1440;var h=(t/60)|0,m=t%60,a=h<12?'am':'pm',x=h%12||12;
+  return m?x+':'+(m<10?'0':'')+m+a:x+a}
+
+/* ===== state ===== */
+var tab='now', day=0, view='t', on=STAGES.map(function(){return true}), fav={}, q='';
+
+var STORE_OK=true;
+try{localStorage.setItem('_t','1');localStorage.removeItem('_t')}catch(e){STORE_OK=false}
+
+// Detect standalone mode (home screen app)
+var STANDALONE = window.navigator.standalone === true ||
+  (window.matchMedia && matchMedia('(display-mode: standalone)').matches);
+
+var IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+  (navigator.platform==='MacIntel' && navigator.maxTouchPoints>1);
+var IOS_TAB = IOS && !STANDALONE;   // iPhone in browser tab, plan at risk
+var warnedIOS = false;
+
+function loadFav(){if(!STORE_OK)return;try{fav=JSON.parse(localStorage.getItem('woh26fav')||'{}')||{}}catch(e){fav={}}}
+var touched={};
+function saveFav(){
+  if(!STORE_OK)return;
+  try{
+    var disk={};
+    try{disk=JSON.parse(localStorage.getItem('woh26fav')||'{}')||{}}catch(e){}
+    for(var k in disk) if(!touched[k]) fav[k]=disk[k];
+    localStorage.setItem('woh26fav',JSON.stringify(fav));
+  }catch(e){}
+}
+function loadFilt(){if(!STORE_OK)return;try{var v=JSON.parse(localStorage.getItem('woh26filt')||'null');
+  if(v&&v.length===STAGES.length)on=v}catch(e){}}
+function saveFilt(){if(!STORE_OK)return;try{localStorage.setItem('woh26filt',JSON.stringify(on))}catch(e){}}
+function eid(d,e){return d+'|'+e[2]+'|'+e[0]}
+function favCount(){var n=0;for(var k in fav)if(fav[k])n++;return n}
+
+/* ===== clock ===== */
+var TZ = 'Europe/London', _ukFmt = null, _tzOK = false;
+try{
+  _ukFmt = new Intl.DateTimeFormat('en-GB', {timeZone:TZ, year:'numeric', month:'2-digit',
+           day:'2-digit', hour:'2-digit', minute:'2-digit', hour12:false});
+  _tzOK = true;
+}catch(e){ _tzOK = false; }
+
+function z2(n){return (n<10?'0':'')+n}
+
+function ukNow(){
+  var d = new Date();
+  if(!_tzOK) return {y:d.getFullYear(), mo:d.getMonth()+1, d:d.getDate(),
+                     h:d.getHours(), mi:d.getMinutes()};
+  var p = {};
+  _ukFmt.formatToParts(d).forEach(function(x){ p[x.type] = x.value });
+  return {y:+p.year, mo:+p.month, d:+p.day, h:(+p.hour)%24, mi:+p.minute};
+}
+
+function awayFromUK(){
+  try{ return Intl.DateTimeFormat().resolvedOptions().timeZone !== TZ }catch(e){ return false }
+}
+
+function nowMin(){var u=ukNow(), t=u.h*60+u.mi; return t<360 ? t+1440 : t}
+
+function liveDay(){
+  var u=ukNow(), y=u.y, mo=u.mo, d=u.d;
+  if(u.h<6){
+    var p=new Date(Date.UTC(y, mo-1, d)); p.setUTCDate(p.getUTCDate()-1);
+    y=p.getUTCFullYear(); mo=p.getUTCMonth()+1; d=p.getUTCDate();
+  }
+  var s=y+'-'+z2(mo)+'-'+z2(d);
+  for(var i=0;i<DATA.length;i++) if(DATA[i].date===s) return i;
+  return -1}
+
+function daysUntil(){
+  var u=ukNow(), today=Date.UTC(u.y, u.mo-1, u.d);
+  var s=DATA[0].date.split('-'), first=Date.UTC(+s[0], +s[1]-1, +s[2]);
+  return Math.round((first-today)/864e5)}
+
+/* ===== row builders ===== */
+function clashWith(d,e){
+  var day=DATA[d].ev, id=eid(d,e);
+  for(var i=0;i<day.length;i++){var o=day[i];
+    if(eid(d,o)===id)continue;
+    if(fav[eid(d,o)] && o[0]<e[1] && e[0]<o[1]) return o[3]}
+  return null}
+
+var MELO=/Melomaniacs/i;
+var REC=/Ahluwalia|Sway of the Verses/i;
+
+function rowHTML(d,e,opt){
+  opt=opt||{};
+  var id=eid(d,e), live=opt.live===undefined?-1:opt.live;
+  var playing=live>=0&&e[0]<=live&&e[1]>live, past=live>=0&&e[1]<=live;
+  var pct=playing?Math.round((live-e[0])/(e[1]-e[0])*100):0;
+  var meta=[];
+  if(opt.showStage!==false)meta.push('<b style="color:'+col(e[2])+'">'+esc(STAGES[e[2]])+'</b>');
+  if(opt.showDay)meta.push(DATA[d].dn+' '+DATA[d].dd);
+  var clash=opt.clash!==undefined?opt.clash:(fav[id]?null:clashWith(d,e));
+  var lbl=(fav[id]?'Remove ':'Add ')+e[3]+(fav[id]?' from':' to')+' my plan';
+  var melo=MELO.test(e[3]), rec=!melo&&REC.test(e[3]);
+  return '<div class="row'+(playing?' playing':'')+(past&&!playing?' past':'')+
+    (melo?' melo':'')+(rec?' rec':'')+'" style="--sc:'+col(e[2])+'">'+
+    '<div class="tm"><b>'+hhmm(e[0])+'</b><i>'+hhmm(e[1])+'</i></div>'+
+    '<div class="bd"><div class="nm">'+
+      (melo?'<img class="mb" src="'+LOGO+'" alt="">':'')+
+      esc(e[3])+'</div>'+
+    (melo?'<div class="ours">★ Unmissable</div>':'')+
+    (rec?'<div class="ours tip">★ Recommended</div>':'')+
+    (meta.length?'<div class="mt">'+meta.join(' · ')+'</div>':'')+
+    (clash?'<div class="clash'+(fav[id]?'':' soft')+'">⚠ CLASHES WITH '+
+       esc(clash).toUpperCase()+'</div>':'')+
+    '</div>'+
+    '<button class="star'+(fav[id]?' on':'')+'" data-f="'+id+'" type="button"'+
+      ' aria-pressed="'+(fav[id]?'true':'false')+'" aria-label="'+esc(lbl)+'">'+
+      (fav[id]?'★':'☆')+'</button>'+
+    (playing?'<i class="prog" style="width:'+pct+'%"></i>':'')+'</div>'}
+
+function bigHTML(d,e,live){
+  var pct=Math.round((live-e[0])/(e[1]-e[0])*100), left=e[1]-live;
+  var id=eid(d,e), melo=MELO.test(e[3]), rec=!melo&&REC.test(e[3]);
+  return '<div class="big'+(melo?' melo':'')+(rec?' rec':'')+'" style="--sc:'+col(e[2])+'">'+
+    (melo?'<img class="mb big-mb" src="'+LOGO+'" alt="">':'')+
+    '<div class="nm">'+esc(e[3])+'</div>'+
+    (melo?'<div class="ours">★ Unmissable — on now</div>':'')+
+    (rec?'<div class="ours tip">★ Recommended — on now</div>':'')+
+    '<div class="st" style="color:'+col(e[2])+'">'+esc(STAGES[e[2]])+'</div>'+
+    '<div class="tm">'+hhmm(e[0])+' – '+hhmm(e[1])+'</div>'+
+    '<div class="bar"><i style="width:'+pct+'%"></i></div>'+
+    '<div class="left">'+left+' MIN LEFT'+(fav[id]?' · ★ ON YOUR PLAN':'')+'</div></div>'}
+
+/* ===== views ===== */
+function offCount(){var n=0;for(var i=0;i<on.length;i++)if(!on[i])n++;return n}
+function hiddenBar(){
+  var off=offCount(); if(!off)return '';
+  return '<div class="hid">Hiding '+off+' of '+on.length+' areas'+
+    '<button id="showAll" type="button">Show everything</button></div>'}
+
+function vNow(){
+  var live=liveDay(), h='';
+  if(live<0){
+    var n=daysUntil();
+    h+='<div class="cd"><div class="n">'+(n>0?n:'—')+'</div><div class="l">'+
+       (n>1?'days to go':n===1?'day to go':n===0?'today':'that’s a wrap')+'</div></div>';
+    h+=stampHTML();
+    h+='<div class="note">'+(n>0?'The NOW screen goes live on Thursday 20 August.<br>':'')+
+       'Until then, browse the full line-up or build your plan.</div>';
+    // Only show the "Add to home screen" box if NOT in standalone mode
+    if(!STANDALONE){
+      h+='<div class="keep" style="margin:8px 2px 14px"><b>Add to your home screen — do that first</b>'+
+         (IOS_TAB
+           ? 'On iPhone the home screen version keeps its own saved plan, so anything you '+
+             'star in Safari beforehand won’t come across. Add it now, then star. It works '+
+             'offline either way.'
+           : 'It works offline either way, but adding it to your home screen means it opens '+
+             'like an app and your saved plan won’t disappear.')+
+         '<br><br><b class="in">iPhone:</b> Share → Add to Home Screen'+
+         '<span class="sep">|</span><b class="in">Android:</b> Chrome ⋮ → Install '+
+         '<i style="font-style:normal;color:var(--dim2)">(not Create shortcut)</i></div>';
+    }
+    h+='<button class="jump" id="goThu" type="button">See Thursday’s line-up →</button>';
+    h+=hiddenBar();
+    h+='<div class="sect">How Thursday opens</div>';
+    var pk=DATA[0].ev.filter(function(e){return on[e[2]]}).slice(0,8);
+    if(!pk.length)h+='<div class="note">No areas showing.</div>';
+    for(var i=0;i<pk.length;i++)h+=rowHTML(0,pk[i],{});
+    return h}
+  var t=nowMin(), d=DATA[live], evs=d.ev;
+  var playing=evs.filter(function(e){return e[0]<=t&&e[1]>t&&on[e[2]]});
+  var soon=evs.filter(function(e){return e[0]>t&&e[0]<=t+90&&on[e[2]]});
+  var off=offCount();
+  h+=stampHTML();
+  h+=hiddenBar();
+  if(off>0) h += '<div style="font-size:11px;color:var(--dim2);text-align:center;margin:6px 0 12px 0;">Showing your selected areas. Tap <b style="color:var(--acc2);font-weight:600;">Areas</b> in LINE‑UP to change.</div>';
+  h+='<div class="sect live">On now · '+d.dn+' '+d.dd+' Aug</div>';
+  if(!playing.length)h+='<div class="note">'+(off?
+     'Nothing on in the areas you’re showing.<br>Tap <b style="display:inline">Show everything</b> above to see the lot.':
+     'Nothing playing right now.')+'</div>';
+  playing.sort(function(a,b){return a[2]-b[2]});
+  for(var i=0;i<playing.length;i++)h+=bigHTML(live,playing[i],t);
+  h+='<div class="sect">Starting in the next 90 minutes</div>';
+  if(!soon.length)h+='<div class="note">Nothing new starting soon.</div>';
+  soon.sort(function(a,b){return a[0]-b[0]||a[2]-b[2]});
+  for(i=0;i<soon.length;i++)h+=rowHTML(live,soon[i],{live:t});
+  return h}
+
+function vLine(){
+  var d=DATA[day], list=d.ev.filter(function(e){return on[e[2]]});
+  list.sort(function(a,b){return a[0]-b[0]||a[2]-b[2]});
+  var live=(liveDay()===day)?nowMin():-1, h='', i;
+  if(!list.length)return '<div class="note"><b>Nothing to show</b>Tap <b style="display:inline">Areas</b> to turn some back on.</div>';
+  if(view==='t'){
+    var lastH=null;
+    for(i=0;i<list.length;i++){var e=list[i],hr=((e[0]/60)|0)*60;
+      if(hr!==lastH){h+='<div class="hh'+(live>=0&&hr+60<=live?' grey':'')+'">'+hhmm(hr)+'</div>';lastH=hr}
+      h+=rowHTML(day,e,{live:live})}
+  }else{
+    for(var s=0;s<STAGES.length;s++){
+      if(!on[s])continue;
+      var sub=list.filter(function(e){return e[2]===s});
+      if(!sub.length)continue;
+      h+='<div class="hh" style="color:'+col(s)+'">'+esc(STAGES[s])+'</div>';
+      for(i=0;i<sub.length;i++)h+=rowHTML(day,sub[i],{live:live,showStage:false})}
+  }
+  h+='<div class="foot">'+d.dn+' '+d.dd+' August · '+list.length+' events<br>'+
+     'Wimborne St Giles, Dorset · times as of '+SCRAPED+'<br>'+
+     '⭐ Action Station programme now included · Still changing daily — check the official Woov app</div>';
+  return h}
+
+function printLinks(){
+  return '<div class="prints"><div class="ph">Want it on paper?</div>'+
+    '<div class="stamp" style="margin:0 0 12px 0;text-align:left;border-color:var(--live);">'+
+      '<b style="color:var(--live)">⚠️ Static snapshot as of 11 August</b><br>'+
+      'These PDFs were generated from the schedule available on 11 August and do NOT include recent changes. '+
+      'The interactive app has been updated, but these printouts are a fixed backup. '+
+      'For the absolute final live times, please use the official <b>Woov</b> app.'+
+    '</div>'+
+    '<a href="we-out-here-2026-set-times.pdf" target="_blank" rel="noopener">'+
+      'Printable set times<i>All the music · 8 pages, print double-sided</i></a>'+
+    '<a href="we-out-here-2026-wider-programme.pdf" target="_blank" rel="noopener">'+
+      'Printable wider programme<i>Talks, workshops, wellbeing · 4 pages</i></a>'+
+    '<div class="pn">Download them before you set off — there’s no signal on site.</div></div>'}
+
+function vPrint(){
+  return '<div class="sect">Printable programme</div>'+
+    '<div class="note">PDF versions you can print at home and take to the festival.</div>'+
+    printLinks()+
+    '<div class="note" style="margin-top:18px">'+
+    '<b>Printing tip:</b> Set times are designed for double-sided printing — '+
+    'front shows the 6 main stages, back shows the other 11 areas. '+
+    'Flip on the short edge so front and back are the same day.</div>'}
+
+function icsStamp(dateStr,mins){
+  var p=dateStr.split('-');
+  var ms=Date.UTC(+p[0],+p[1]-1,+p[2]) - 60*60000 + mins*60000;
+  var d=new Date(ms), z=function(v){return (v<10?'0':'')+v};
+  return d.getUTCFullYear()+z(d.getUTCMonth()+1)+z(d.getUTCDate())+'T'+
+         z(d.getUTCHours())+z(d.getUTCMinutes())+'00Z'}
+
+function buildICS(){
+  var L=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//We Out Here 2026//EN',
+         'CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:We Out Here 2026'];
+  var stamp=icsStamp(DATA[0].date,0), k=0;
+  for(var d=0;d<DATA.length;d++){
+    var picks=DATA[d].ev.filter(function(e){return fav[eid(d,e)]});
+    picks.sort(function(a,b){return a[0]-b[0]});
+    for(var i=0;i<picks.length;i++){
+      var e=picks[i];
+      var esc2=function(s){return String(s).replace(/[\\;,]/g,function(m){return '\\'+m})
+        .replace(/\n/g,'\\n')};
+      L.push('BEGIN:VEVENT',
+        'UID:woh26-'+d+'-'+e[2]+'-'+e[0]+'@weouthere',
+        'DTSTAMP:'+stamp,
+        'DTSTART:'+icsStamp(DATA[d].date,e[0]),
+        'DTEND:'+icsStamp(DATA[d].date,e[1]),
+        'SUMMARY:'+esc2(e[3]),
+        'LOCATION:'+esc2(STAGES[e[2]]+', We Out Here, Wimborne St Giles'),
+        'DESCRIPTION:'+esc2(STAGES[e[2]]),
+        'BEGIN:VALARM','TRIGGER:-PT15M','ACTION:DISPLAY',
+        'DESCRIPTION:'+esc2(e[3]+' starts in 15 minutes'),'END:VALARM',
+        'END:VEVENT');
+      k++}}
+  L.push('END:VCALENDAR');
+  return {text:L.join('\r\n'),count:k}}
+
+function exportICS(){
+  var r=buildICS();
+  if(!r.count)return;
+  try{
+    var blob=new Blob([r.text],{type:'text/calendar;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='we-out-here-2026-my-plan.ics';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1500);
+  }catch(err){
+    alert('Could not create the file here. Try opening this page in Chrome rather than a file preview.')}}
+
+function vPlan(){
+  var n=favCount();
+  if(!n)return '<div class="note"><b>Your plan is empty</b>'+
+    'Tap the ☆ next to any event in the line-up and it’ll show up here, '+
+    'sorted by time with clashes flagged.'+
+    (STORE_OK?'':'<br><br>Heads up: this browser isn’t letting the page save, so your picks will clear when you close the tab.')+'</div>';
+  var h='', any=false;
+  for(var d=0;d<DATA.length;d++){
+    var picks=DATA[d].ev.filter(function(e){return fav[eid(d,e)]});
+    if(!picks.length)continue;
+    any=true;
+    picks.sort(function(a,b){return a[0]-b[0]});
+    var live=(liveDay()===d)?nowMin():-1;
+    h+='<div class="hh">'+DATA[d].dn+' '+DATA[d].dd+' August · '+picks.length+'</div>';
+    for(var i=0;i<picks.length;i++){
+      var e=picks[i], cl=null;
+      for(var j=0;j<picks.length;j++){var o=picks[j];
+        if(j!==i&&o[0]<e[1]&&e[0]<o[1]){cl=o[3];break}}
+      h+=rowHTML(d,e,{live:live,clash:cl})}
+  }
+  h+='<button class="ics" id="icsBtn" type="button">'+
+     '⤓ Add these '+n+' to my phone calendar</button>'+
+     '<div class="foot">Downloads a calendar file with a 15-minute reminder before each one.<br>'+
+     'Alerts fire with no signal.</div>';
+  // Warn about Safari vs home screen split only if NOT standalone and on iOS
+  if(IOS_TAB && !STANDALONE){
+    h += '<div class="keep warn"><b>These are saved in Safari, not on your home screen</b>'+
+         'If you add this to your home screen later, it opens with an empty plan — iPhone '+
+         'keeps the two apart. Worth adding it now and starring there, while there are '+
+         'only '+n+'.'+
+         '<br><br><b class="in">iPhone:</b> Share → Add to Home Screen</div>';
+  }
+  if(!STANDALONE){
+    h += '<div class="keep"><b>Keeping your picks safe</b>'+
+         'Your '+n+' are saved on this phone, and survive closing the browser or the battery '+
+         'dying. But iPhones wipe a website’s saved data if you don’t open it for 7 days.'+
+         '<br><br><b>Three ways round it, any is enough:</b>'+
+         '<br>• <b class="in">iPhone:</b> Share → Add to Home Screen. Skips the 7-day rule '+
+         'and it opens like an app.'+
+         '<br>• <b class="in">Android:</b> Chrome ⋮ → Install. Not Create shortcut — '+
+         'that only makes a bookmark.'+
+         '<br>• Or tap the calendar button above — once your picks are in your calendar '+
+         'they can’t be lost.</div>';
+  }
+  return h}
+
+function vFind(){
+  var s=q.trim().toLowerCase();
+  if(s.length<2)return '<div class="note"><b>Find anything</b>Type at least two letters to search '+
+    NSETS+' events across all four days and '+STAGES.length+' areas.</div>';
+  var h='', hits=0;
+  for(var d=0;d<DATA.length;d++){
+    var m=DATA[d].ev.filter(function(e){
+      return e[3].toLowerCase().indexOf(s)>=0||STAGES[e[2]].toLowerCase().indexOf(s)>=0});
+    if(!m.length)continue;
+    h+='<div class="hh">'+DATA[d].dn+' '+DATA[d].dd+' August</div>';
+    for(var i=0;i<m.length;i++){h+=rowHTML(d,m[i],{});hits++}
+  }
+  if(!hits)return '<div class="note"><b>No matches</b>Nothing for "'+esc(q)+'". Try fewer letters.</div>';
+  return h+'<div class="foot">'+hits+' match'+(hits===1?'':'es')+'</div>'}
+
+/* ===== render ===== */
+function render(){
+  var el=document.getElementById('view');
+  el.innerHTML = (tab==='now'?vNow() : tab==='line'?vLine() : tab==='plan'?vPlan() : tab==='print'?vPrint() : vFind())
+    + '<div class="made">'
+    + '<img src="'+LOGO+'" alt="Melomaniacs">'
+    + '<span>Made by <i><a href="https://www.instagram.com/godfrey_phil/" target="_blank" rel="noopener noreferrer">Bitasuite</a></i> <br><em>for the Melomaniacs</em></span>'
+    + '<span class="mx"><a href="https://www.mixcloud.com/MelomaniacsCollective/" target="_blank" rel="noopener noreferrer">mixcloud.com/MelomaniacsCollective</a></span>'
+    + '<span class="mx"><a href="https://www.instagram.com/mel0maniacs/" target="_blank" rel="noopener noreferrer">instagram.com/mel0maniacs</a></span>'
+    + '</div>';
+  document.getElementById('days').className='days'+(tab==='line'?'':' hide');
+  document.getElementById('subbar').className='subbar'+(tab==='line'?'':' hide');
+  document.getElementById('srchbar').className='srch'+(tab==='find'?'':' hide');
+  var b=document.getElementById('planBadge'), n=favCount();
+  b.textContent=n; b.className='badge'+(n?'':' hide');
+  var nb=document.getElementById('nav').getElementsByTagName('button');
+  for(var i=0;i<nb.length;i++)nb[i].className=(nb[i].getAttribute('data-t')===tab?'on':'');
+}
+function drawDays(){var h='';
+  for(var i=0;i<DATA.length;i++)h+='<div class="day'+(i===day?' on':'')+'" data-d="'+i+'">'+
+    '<div class="dn">'+DATA[i].dn+'</div><div class="dd">'+DATA[i].dd+'</div></div>';
+  document.getElementById('days').innerHTML=h}
+function drawChks(){var h='';
+  for(var i=0;i<STAGES.length;i++){
+    if(i===0)h+='<div class="grp">Music areas</div>';
+    if(i===NMUSIC)h+='<div class="grp">Wider programme · talks, workshops, wellbeing</div>';
+    h+='<div class="chk'+(on[i]?' on':'')+'" data-s="'+i+'">'+
+      '<i style="background:'+col(i)+'"></i>'+esc(STAGES[i])+'<b>&#10003;</b></div>'}
+  document.getElementById('chks').innerHTML=h}
+var lastKey='';
+function tick(){var c=document.getElementById('clock'), ld=liveDay();
+  var u=ukNow(), t=z2(u.h)+':'+z2(u.mi)+(awayFromUK()?' UK':'');
+  c.textContent=ld>=0?t:'20–23 AUG';
+  c.className='clock'+(ld>=0?' live':'');
+  var key=ld+'|'+(ld>=0?nowMin():daysUntil());
+  if(tab==='now'&&key!==lastKey){lastKey=key;render()}}
+
+/* ===== events ===== */
+document.getElementById('nav').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(!b)return;
+  tab=b.getAttribute('data-t');
+  if(tab==='line'&&liveDay()>=0)day=liveDay();
+  render(); window.scrollTo(0,0);
+  if(tab==='find')setTimeout(function(){document.getElementById('q').focus()},60)});
+
+/* ---------- swipe between tabs ---------- */
+var TABS=['now','line','plan','print','find'];
+(function(){
+  var sx,sy,tracking;
+  document.addEventListener('touchstart',function(e){
+    var t=e.touches[0]; sx=t.clientX; sy=t.clientY; tracking=true},{passive:true});
+  document.addEventListener('touchmove',function(e){
+    if(!tracking)return;
+    var dx=e.touches[0].clientX-sx, dy=e.touches[0].clientY-sy;
+    if(Math.abs(dy)>Math.abs(dx)){tracking=false}},{passive:true});
+  document.addEventListener('touchend',function(e){
+    if(!tracking)return; tracking=false;
+    var dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)<50)return;
+    var i=TABS.indexOf(tab);
+    if(dx<0&&i<TABS.length-1)i++;
+    else if(dx>0&&i>0)i--;
+    else return;
+    tab=TABS[i];
+    if(tab==='line'&&liveDay()>=0)day=liveDay();
+    render(); window.scrollTo(0,0);
+    if(tab==='find')setTimeout(function(){document.getElementById('q').focus()},60)})
+})();
+
+document.getElementById('days').addEventListener('click',function(e){
+  var b=e.target.closest('.day'); if(!b)return;
+  day=+b.getAttribute('data-d'); drawDays(); render(); window.scrollTo(0,0)});
+
+// ---- Easter egg: tap Melomaniacs card 5 times ----
+function showSpinningLogo() {
+  if (document.getElementById('meloOverlay')) return;
+  var overlay = document.createElement('div');
+  overlay.id = 'meloOverlay';
+  overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;';
+  overlay.innerHTML = '<img src="'+LOGO+'" style="width:120px;height:120px;animation:spin 3s linear infinite;filter:drop-shadow(0 0 30px var(--gold));">' +
+                      '<p style="color:var(--dim);margin-top:24px;font-size:14px;letter-spacing:1px;">⚡ Melomaniacs ⚡</p>' +
+                      '<p style="color:var(--dim2);font-size:12px;margin-top:6px;">tap to dismiss</p>';
+  overlay.onclick = function() { this.remove(); };
+  document.body.appendChild(overlay);
+}
+
+document.getElementById('view').addEventListener('click',function(e){
+  if(e.target.closest('#icsBtn')){exportICS();return}
+  if(e.target.closest('#showAll')){
+    on=on.map(function(){return true});
+    saveFilt(); syncFiltPill(); render(); window.scrollTo(0,0); return}
+  if(e.target.closest('#goThu')){
+    day=0; tab='line'; drawDays(); render(); window.scrollTo(0,0); return}
+
+  // Easter egg: catch tap on Melomaniacs card (ignore star)
+  var meloRow = e.target.closest('.row.melo, .big.melo');
+  if (meloRow && !e.target.closest('.star')) {
+    if (!window._meloClicks) window._meloClicks = 0;
+    window._meloClicks++;
+    if (window._meloClicks === 5) {
+      showSpinningLogo();
+      window._meloClicks = 0;
+    }
+    return;
+  }
+
+  var b=e.target.closest('.star'); if(!b)return;
+  var id=b.getAttribute('data-f');
+  fav[id]=!fav[id]; touched[id]=true; saveFav();
+  if(IOS_TAB && fav[id] && !warnedIOS){
+    warnedIOS=true;
+    offPill('<b>iPhone: add to Home Screen first</b>Stars saved in Safari won’t carry over',
+            7000, 'warnp');
+  }
+  var bd=document.getElementById('planBadge'), n=favCount();
+  bd.textContent=n; bd.className='badge'+(n?'':' hide');
+  var y=window.pageYOffset||document.documentElement.scrollTop||0;
+  render(); window.scrollTo(0,y)});
+
+document.getElementById('vTime').onclick=function(){view='t';
+  this.className='on';document.getElementById('vStage').className='';render()};
+document.getElementById('vStage').onclick=function(){view='s';
+  this.className='on';document.getElementById('vTime').className='';render()};
+
+var sheet=document.getElementById('sheet');
+document.getElementById('filt').onclick=function(){
+  drawChks(); sheet.className='sheet open';
+  var first=sheet.querySelector('.chk'); if(first){first.setAttribute('tabindex','0');first.focus()}};
+document.getElementById('qDone').onclick=closeSheet;
+sheet.addEventListener('click',function(e){if(e.target===sheet)closeSheet()});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'&&sheet.className.indexOf('open')>=0)closeSheet()});
+function syncFiltPill(){
+  var f=document.getElementById('filt'), all=!offCount();
+  f.className='pill'+(all?'':' act');
+  f.textContent=all?'Areas':'Areas ('+on.filter(Boolean).length+')'}
+function closeSheet(){sheet.className='sheet';saveFilt();
+  document.getElementById('filt').focus();
+  syncFiltPill();
+  render()}
+document.getElementById('chks').addEventListener('click',function(e){
+  var c=e.target.closest('.chk'); if(!c)return;
+  var i=+c.getAttribute('data-s'); on[i]=!on[i];
+  c.className='chk'+(on[i]?' on':'')});
+document.getElementById('qAll').onclick=function(){on=on.map(function(){return true});drawChks()};
+document.getElementById('qNone').onclick=function(){on=on.map(function(){return false});drawChks()};
+document.getElementById('qMain').onclick=function(){on=on.map(function(_,i){return i<NMAIN});drawChks()};
+document.getElementById('qMusic').onclick=function(){on=on.map(function(_,i){return i<NMUSIC});drawChks()};
+document.getElementById('qWider').onclick=function(){on=on.map(function(_,i){return i>=NMUSIC});drawChks()};
+
+var searchTimer=null;
+document.getElementById('q').addEventListener('input',function(){
+  var v=this.value;
+  clearTimeout(searchTimer);
+  searchTimer=setTimeout(function(){q=v;render()},180)});
+
+window.addEventListener('storage', function(e){
+  if(e.key!=='woh26fav') return;
+  try{ fav=JSON.parse(e.newValue||'{}')||{} }catch(err){ fav={} }
+  touched={};
+  var bd=document.getElementById('planBadge'), n=favCount();
+  bd.textContent=n; bd.className='badge'+(n?'':' hide');
+  var y=window.pageYOffset||0; render(); window.scrollTo(0,y);
+});
+
+/* ===== offline ===== */
+var offTimer;
+function offPill(msg,hold,cls){
+  var p=document.getElementById('offp'); if(!p) return;
+  clearTimeout(offTimer);
+  p.innerHTML=msg; p.className='on'+(cls?' '+cls:'');
+  offTimer=setTimeout(function(){p.className=''}, hold||4200);
+}
+(function(){
+  if(!('serviceWorker' in navigator)) return;
+  var h=location.hostname;
+  if(location.protocol!=='https:' && h!=='localhost' && h!=='127.0.0.1') return;
+  var said=false;
+  function ready(hold){ if(said) return; said=true; offPill('<b>✓ Ready to use offline</b>', hold) }
+  navigator.serviceWorker.addEventListener('message', function(e){
+    if(e.data && e.data.type==='offline-ready') ready(5000);
+  });
+  navigator.serviceWorker.register('sw.js').then(function(reg){
+    if(navigator.serviceWorker.controller && reg.active) ready(3200);
+  }).catch(function(){ /* nothing useful to tell the user */ });
+})();
+
+if(navigator.storage && navigator.storage.persist){
+  try{ navigator.storage.persist() }catch(e){}
+}
+
+/* ===== boot ===== */
+loadFav(); loadFilt();
+var ld=liveDay(); if(ld>=0)day=ld;
+drawDays(); tick(); render();
+syncFiltPill();
+setInterval(tick,20000);
+</script></body></html>
