@@ -486,7 +486,7 @@ var DATA = [
 var STAGES = ["Main Stage", "Lush Life", "Rhythm Corner", "The Grove", "The Bowl", "Tomorrow's Warriors Big Top", "Roller Rink", "Love Dancin'", "Lemon Lounge", "Brawnswood", "Worldwide FM: WOH Radio", "Carhartt WIP", "Beat Hotel x Ilegal Mezcal", "Passenger: Ground Tempo", "Near Mint Record Store", "Love-Serve Bar", "Once In A Blue Moon", "Talks Tent", "The Knowledge", "BookLove", "Craftwerk", "Craftwerk: Outdoors", "Lemon Lounge Workshops", "The Sanctuary", "Wellbeing Tent", "Wellness Tent: The Clearing", "Near Mint Record Signings", "Action Station"];
 var NMAIN = 6;
 var NMUSIC = 17;
-var NSETS = 747;
+var NSETS = 754;
 var SCRAPED = '18 Aug, 4:45pm'; 
 function stampHTML(){
   return '<div class="stamp">Times correct as of <b>'+SCRAPED+'</b> — the festival is still '+
@@ -514,8 +514,8 @@ var LOGO = 'melomaniacs-304.gif';
    service worker. Bumping VER in sw.js does nothing for that cache; only a URL
    it has never seen is guaranteed fresh. The ?v= hash covers a same-day
    rebuild, where the filename would otherwise repeat. */
-var PDF_SET   = 'we-out-here-2026-set-times-2026-08-18.pdf?v=e2650fad';
-var PDF_WIDER = 'we-out-here-2026-wider-programme-2026-08-18.pdf?v=a8842bc4';
+var PDF_SET   = 'we-out-here-2026-set-times-2026-08-18.pdf?v=5ce21ca6';
+var PDF_WIDER = 'we-out-here-2026-wider-programme-2026-08-18.pdf?v=b605e221';
 
 var COL=['#ef6fae','#5ad9c8','#f2a95e','#8f9df0','#b9d95c','#f5776f',
          '#6ed49a','#dba55f','#a98cf2','#4fbdea','#cfdd57','#ff9470',
@@ -566,7 +566,7 @@ function saveFav(){
  * data.json changes, list the keys that moved here. The tag stops it re-running.
  */
 var FAVMOVED = {
-  '1|24|930': '1|24|915',   // Healing Sounds w/ Lloyd D'Monk - moved 15 min earlier
+  '1|24|930': '1|24|915',   // Healing Sounds w/ D'Monk - moved 15 min earlier
   '0|5|945':   '0|5|950',    // Manfredo Lament
   '0|27|1030': '0|27|1020',  // MMM Presents: We Are Still Here
   '1|2|1410':  '1|2|1380',   // Palms Trax
@@ -1198,22 +1198,33 @@ function shareCopyFallback(msg){
   var h=location.hostname;
   if(location.protocol!=='https:' && h!=='localhost' && h!=='127.0.0.1') return;
   var said=false;
+  /* A stored version means this device has loaded the app before, so a worker
+     takeover later is a genuine update and not a first install. Read once at
+     boot: seenVer() and the controllerchange guard both use it. */
+  var hadVer=null;
+  try{ hadVer=localStorage.getItem('woh26ver') }catch(e){}
   function ready(hold){ if(said) return; said=true; offPill('<b>✓ Ready to use offline</b>', hold) }
 
   /* The worker is cache-first, so the page you are reading was served from the
      old cache and a new version can only take effect on the next load. Saying
      nothing made that look like the update had failed - the only pill was
      "Ready to use offline", which appears at exactly the wrong moment. So when
-     the version actually changes, offer the reload instead. */
+     the version actually changes, offer the reload instead.
+
+     updated() deliberately OVERRIDES a ready() pill already on screen. On a
+     revisit the register() callback below shows "Ready to use offline" the
+     moment the new worker finishes installing - before the offline-ready
+     message arrives - and with a naive one-shot guard that would swallow the
+     refresh prompt forever. The update has to win the screen. */
   function updated(){
-    if(said) return; said=true;
+    clearTimeout(offTimer);
+    said=true;
     offPill('<b>Updated set times</b> <u>Tap to refresh</u>', 15000, 'tapp');
     var p=document.getElementById('offp');
-    if(p) p.addEventListener('click', function(){ location.reload() }, {once:true});
+    if(p && !p._upd){ p._upd=true; p.addEventListener('click', function(){ location.reload() }, {once:true}); }
   }
   function seenVer(v){
-    var prev=null;
-    try{ prev=localStorage.getItem('woh26ver') }catch(e){}
+    var prev=hadVer;
     try{ if(v) localStorage.setItem('woh26ver', v) }catch(e){}
     // No stored version means this is a first install, not an update.
     if(prev && v && prev!==v) updated(); else ready(5000);
@@ -1221,8 +1232,11 @@ function shareCopyFallback(msg){
   navigator.serviceWorker.addEventListener('message', function(e){
     if(e.data && e.data.type==='offline-ready') seenVer(e.data.ver);
   });
-  // Belt and braces: a worker taking over mid-session is always an update.
-  navigator.serviceWorker.addEventListener('controllerchange', function(){ updated() });
+  // Belt and braces: a worker taking over mid-session is an update - but only
+  // if the app was installed before. On a first install the controller change
+  // is just the new worker claiming the page, and "Updated set times" would
+  // be wrong.
+  navigator.serviceWorker.addEventListener('controllerchange', function(){ if(hadVer) updated() });
   navigator.serviceWorker.register('sw.js').then(function(reg){
     if(navigator.serviceWorker.controller && reg.active) ready(3200);
   }).catch(function(){ /* nothing useful to tell the user */ });
