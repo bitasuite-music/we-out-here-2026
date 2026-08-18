@@ -14,7 +14,7 @@
  * timeout, so the cached copy always wins. When there IS signal the fetch
  * still runs and refreshes the cache for next time.
  */
-var VER = '236497a230';  // built 2026-08-17
+var VER = 'e5d60c2412';  // built 2026-08-18
 var CACHE = 'woh26-' + VER;
 
 var ASSETS = [
@@ -27,9 +27,9 @@ var ASSETS = [
   './icon-maskable-512.png',
   './melomaniacs-304.gif',
   './we-out-here-2026-set-times.pdf',
-  './we-out-here-2026-set-times-2026-08-17.pdf',
+  './we-out-here-2026-set-times-2026-08-18.pdf',
   './we-out-here-2026-wider-programme.pdf',
-  './we-out-here-2026-wider-programme-2026-08-17.pdf'
+  './we-out-here-2026-wider-programme-2026-08-18.pdf'
 ];
 
 self.addEventListener('install', function (e) {
