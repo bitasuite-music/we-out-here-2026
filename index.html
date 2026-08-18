@@ -1113,7 +1113,7 @@ function offPill(msg,hold,cls){
    via inline onclick because .made is rebuilt on every render. */
 function shareApp(e){
   if(e && e.preventDefault) e.preventDefault();
-  var url=location.href;
+  var url='https://melomaniacs.pages.dev/';   // canonical public link — never the file:// or a sub-path
   var text='We Out Here 2026 set times — offline festival schedule';
   if(navigator.share){
     navigator.share({title:'We Out Here 2026', text:text, url:url}).catch(function(err){
