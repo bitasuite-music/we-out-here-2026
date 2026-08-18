@@ -304,7 +304,13 @@ function stampHTML(){
     'paper and go a lot easier on your ink.</div>';
 }
 // Placeholder logo – a tiny Melomaniacs-style diamond (gold on dark)
-var LOGO = 'Melos gif.gif';
+/* 240px, because the easter-egg overlay renders this at 120px and that needs
+   2x for a retina screen; the footer uses it at 58px and rows at 23px. 60
+   frames across the original 3.6s loop keeps the coin-flip smooth (~17fps).
+   New filename on purpose - the old one is already cached on phones and in the
+   service worker, and overwriting an asset in place is exactly how the stale
+   PDF problem happened. */
+var LOGO = 'melomaniacs-240.gif';
 
 /* Printable PDF filenames. build_pdfs.py rewrites these two lines on every
    build and gives each release a fresh name, because the links below open in a
@@ -313,8 +319,8 @@ var LOGO = 'Melos gif.gif';
    service worker. Bumping VER in sw.js does nothing for that cache; only a URL
    it has never seen is guaranteed fresh. The ?v= hash covers a same-day
    rebuild, where the filename would otherwise repeat. */
-var PDF_SET   = 'we-out-here-2026-set-times-2026-08-17.pdf?v=e38d1e9b';
-var PDF_WIDER = 'we-out-here-2026-wider-programme-2026-08-17.pdf?v=a0d3c868';
+var PDF_SET   = 'we-out-here-2026-set-times-2026-08-17.pdf?v=293d7986';
+var PDF_WIDER = 'we-out-here-2026-wider-programme-2026-08-17.pdf?v=94ef85b7';
 
 var COL=['#ef6fae','#5ad9c8','#f2a95e','#8f9df0','#b9d95c','#f5776f',
          '#6ed49a','#dba55f','#a98cf2','#4fbdea','#cfdd57','#ff9470',
@@ -803,6 +809,26 @@ function showSpinningLogo() {
   document.body.appendChild(overlay);
 }
 
+/* Five taps on ANY Melomaniacs logo - the 23px one in a row, the 44px corner
+   one, the 58px footer one - or on the Melomaniacs card itself, as before.
+   Matching on the src rather than a list of class names means a logo placed
+   anywhere later is included automatically. Delegated from document because the
+   footer is rebuilt on every render. The run resets after a pause so five
+   unrelated taps spread over an evening do not eventually set it off. */
+var meloTaps = 0, meloTapTimer = null;
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  if (!t || t.nodeType !== 1) return;
+  var isLogo = t.tagName === 'IMG' && t.getAttribute('src') === LOGO &&
+               !t.closest('#meloOverlay');
+  var isCard = !!t.closest('.row.melo, .big.melo') && !t.closest('.star');
+  if (!isLogo && !isCard) return;
+  meloTaps++;
+  clearTimeout(meloTapTimer);
+  meloTapTimer = setTimeout(function () { meloTaps = 0 }, 2500);
+  if (meloTaps >= 5) { meloTaps = 0; clearTimeout(meloTapTimer); showSpinningLogo() }
+});
+
 document.getElementById('view').addEventListener('click',function(e){
   if(e.target.closest('#icsBtn')){exportICS();return}
   if(e.target.closest('#showAll')){
@@ -810,18 +836,6 @@ document.getElementById('view').addEventListener('click',function(e){
     saveFilt(); syncFiltPill(); render(); window.scrollTo(0,0); return}
   if(e.target.closest('#goThu')){
     day=0; tab='line'; drawDays(); render(); window.scrollTo(0,0); return}
-
-  // Easter egg: catch tap on Melomaniacs card (ignore star)
-  var meloRow = e.target.closest('.row.melo, .big.melo');
-  if (meloRow && !e.target.closest('.star')) {
-    if (!window._meloClicks) window._meloClicks = 0;
-    window._meloClicks++;
-    if (window._meloClicks === 5) {
-      showSpinningLogo();
-      window._meloClicks = 0;
-    }
-    return;
-  }
 
   var b=e.target.closest('.star'); if(!b)return;
   var id=b.getAttribute('data-f');
