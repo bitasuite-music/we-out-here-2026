@@ -871,12 +871,6 @@
       ],
       [
         660,
-        780,
-        10,
-        "Luke Una: A Worldwide Breakfast"
-      ],
-      [
-        660,
         720,
         14,
         "Art of Soul"
@@ -2146,6 +2140,12 @@
         1140,
         27,
         "The Nerve Present 'Radical Women & Resistance – Using Your Voice to Urge Change'"
+      ],
+      [
+        900,
+        960,
+        13,
+        "Outside is a Vibe"
       ]
     ]
   },
@@ -3242,7 +3242,7 @@
       ],
       [
         1350,
-        1470,
+        1440,
         2,
         "Alix Perez ft. SP:MC"
       ],
@@ -3313,8 +3313,8 @@
         "Paula Tape"
       ],
       [
-        1470,
-        1590,
+        1440,
+        1560,
         2,
         "Calibre ft. SP:MC"
       ],
@@ -3379,7 +3379,7 @@
         "DJ TARA"
       ],
       [
-        1590,
+        1560,
         1680,
         2,
         "Ivy Lab"
@@ -3431,6 +3431,12 @@
         1080,
         1,
         "GENA FEAT. LIV.E & KARRIEM RIGGINS"
+      ],
+      [
+        900,
+        960,
+        13,
+        "The Power of Bird Song with Lira Valencia"
       ]
     ]
   },
@@ -4216,7 +4222,7 @@
       [
         1080,
         1170,
-        26,
+        14,
         "La Rumba"
       ],
       [
@@ -4548,6 +4554,18 @@
         1440,
         16,
         "DJ Cutterz"
+      ],
+      [
+        900,
+        960,
+        13,
+        "Beyond the Algorithm with Wordplay Magazine"
+      ],
+      [
+        600,
+        660,
+        18,
+        "Point Blank Music School: Electronic Orchestra"
       ]
     ]
   }
