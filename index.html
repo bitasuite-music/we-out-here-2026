@@ -213,6 +213,9 @@ nav .badge{position:absolute;top:5px;left:50%;margin-left:6px;background:var(--g
 .made .mx{margin-top:7px;font-size:9px;letter-spacing:1.1px;text-transform:none;color:var(--acc2);opacity:.7}
 .made .mx a{color:var(--acc2);text-decoration:none;opacity:1}
 .made span i a{color:var(--acc);text-decoration:none;opacity:1}
+.made .shr{margin-top:13px;font-size:11.5px;letter-spacing:.3px;text-transform:none}
+.made .shr a{color:var(--acc);text-decoration:none;opacity:1;font-weight:700;cursor:pointer}
+.made .shr a:hover{text-decoration:underline}
 .made:active img{opacity:.85}
 .made:active .mx{opacity:1}
 
@@ -926,6 +929,7 @@ function render(){
     + '<span>Made by <i><a href="https://www.instagram.com/godfrey_phil/" target="_blank" rel="noopener noreferrer">Bitasuite</a></i> <br><em>for the Melomaniacs</em></span>'
     + '<span class="mx"><a href="https://www.mixcloud.com/MelomaniacsCollective/" target="_blank" rel="noopener noreferrer">mixcloud.com/MelomaniacsCollective</a></span>'
     + '<span class="mx"><a href="https://www.instagram.com/mel0maniacs/" target="_blank" rel="noopener noreferrer">instagram.com/mel0maniacs</a></span>'
+    + '<span class="shr"><a href="#" onclick="shareApp(event);return false">Share this with your crew &rarr;</a></span>'
     + '</div>';
   document.getElementById('days').className='days'+(tab==='line'?'':' hide');
   document.getElementById('subbar').className='subbar'+(tab==='line'?'':' hide');
@@ -1102,6 +1106,42 @@ function offPill(msg,hold,cls){
   p.innerHTML=msg; p.className='on'+(cls?' '+cls:'');
   offTimer=setTimeout(function(){p.className=''}, hold||4200);
 }
+
+/* Share the app. On phones this opens the native share sheet (Messages,
+   WhatsApp, AirDrop...); on desktop, where that rarely exists, it copies the
+   link to the clipboard and flashes a pill instead. Wired from the footer link
+   via inline onclick because .made is rebuilt on every render. */
+function shareApp(e){
+  if(e && e.preventDefault) e.preventDefault();
+  var url=location.href;
+  var text='We Out Here 2026 set times — offline festival schedule';
+  if(navigator.share){
+    navigator.share({title:'We Out Here 2026', text:text, url:url}).catch(function(err){
+      if(err && err.name!=='AbortError') shareCopy(url,text);   // real failure, not a cancel
+    });
+  } else {
+    shareCopy(url,text);
+  }
+}
+function shareCopy(url,text){
+  var msg=text+'\n'+url;
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(msg).then(function(){
+      offPill('<b>✓ Link copied</b> Paste it to your crew', 2800);
+    }).catch(function(){ shareCopyFallback(msg); });
+  } else {
+    shareCopyFallback(msg);
+  }
+}
+function shareCopyFallback(msg){
+  var ta=document.createElement('textarea');
+  ta.value=msg; ta.style.position='fixed'; ta.style.top='-1000px'; ta.style.opacity='0';
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand('copy'); offPill('<b>✓ Link copied</b>', 2800); }
+  catch(err){ prompt('Copy this link:', msg); }
+  document.body.removeChild(ta);
+}
+
 (function(){
   if(!('serviceWorker' in navigator)) return;
   var h=location.hostname;
