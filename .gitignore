@@ -7,6 +7,12 @@
 CLAUDE.md
 CLAUDE.local.md
 
+# Build tools live outside this repo (../tools/) because Pages serves the repo
+# root publicly. Listed here so a stray copy can never be committed back in.
+check-updates.py
+build_pdfs.py
+extract_data.py
+
 # Build scratch
 *.raw.gif
 __pycache__/
