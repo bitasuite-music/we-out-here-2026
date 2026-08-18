@@ -14,7 +14,7 @@
  * timeout, so the cached copy always wins. When there IS signal the fetch
  * still runs and refreshes the cache for next time.
  */
-var VER = '42870101e2';  // built 2026-08-17
+var VER = '236497a230';  // built 2026-08-17
 var CACHE = 'woh26-' + VER;
 
 var ASSETS = [
@@ -25,8 +25,10 @@ var ASSETS = [
   './icon-512.png',
   './apple-touch-icon.png',
   './icon-maskable-512.png',
-  './melomaniacs-240.gif',
+  './melomaniacs-304.gif',
+  './we-out-here-2026-set-times.pdf',
   './we-out-here-2026-set-times-2026-08-17.pdf',
+  './we-out-here-2026-wider-programme.pdf',
   './we-out-here-2026-wider-programme-2026-08-17.pdf'
 ];
 
@@ -73,9 +75,24 @@ self.addEventListener('fetch', function (e) {
         if (res && res.ok && res.type === 'basic') c.put(r, res.clone());
         return res;
       }).catch(function () {
-        // Offline and nothing matched: a navigation still gets the app shell
-        // rather than the browser's dinosaur.
+        // Offline and nothing matched.
         if (hit) return hit;
+        // A dated PDF filename this cache does not know about - the page was
+        // served from an older cache and is linking to a previous release's
+        // filename. Strip the date and use the stable copy, which is always
+        // precached, so a printout is never unavailable offline.
+        var undated = url.pathname.replace(
+          /(we-out-here-2026-(?:set-times|wider-programme))-\d{4}-\d{2}-\d{2}\.pdf$/,
+          '$1.pdf');
+        if (undated !== url.pathname) {
+          return c.match(undated, { ignoreSearch: true }).then(function (alt) {
+            if (alt) return alt;
+            if (r.mode === 'navigate') return c.match('./index.html');
+            return Response.error();
+          });
+        }
+        // A navigation still gets the app shell rather than the browser's
+        // dinosaur.
         if (r.mode === 'navigate') return c.match('./index.html');
         return Response.error();
       });

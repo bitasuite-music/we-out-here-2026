@@ -304,13 +304,16 @@ function stampHTML(){
     'paper and go a lot easier on your ink.</div>';
 }
 // Placeholder logo – a tiny Melomaniacs-style diamond (gold on dark)
-/* 240px, because the easter-egg overlay renders this at 120px and that needs
-   2x for a retina screen; the footer uses it at 58px and rows at 23px. 60
-   frames across the original 3.6s loop keeps the coin-flip smooth (~17fps).
+/* 304px - the artwork's native size, so no resampling. That costs nothing:
+   304px and 240px both come out at 194KB, because resizing introduces
+   anti-aliased greys that compress worse than the original two-tone line art.
+   The overlay renders it at 160px, so this covers a 2x screen. The footer uses
+   it at 58px and rows at 23px. 60 frames across the original 3.6s loop keeps
+   the coin-flip smooth (~17fps).
    New filename on purpose - the old one is already cached on phones and in the
    service worker, and overwriting an asset in place is exactly how the stale
    PDF problem happened. */
-var LOGO = 'melomaniacs-240.gif';
+var LOGO = 'melomaniacs-304.gif';
 
 /* Printable PDF filenames. build_pdfs.py rewrites these two lines on every
    build and gives each release a fresh name, because the links below open in a
@@ -319,8 +322,8 @@ var LOGO = 'melomaniacs-240.gif';
    service worker. Bumping VER in sw.js does nothing for that cache; only a URL
    it has never seen is guaranteed fresh. The ?v= hash covers a same-day
    rebuild, where the filename would otherwise repeat. */
-var PDF_SET   = 'we-out-here-2026-set-times-2026-08-17.pdf?v=2fdf44dd';
-var PDF_WIDER = 'we-out-here-2026-wider-programme-2026-08-17.pdf?v=d9d2900a';
+var PDF_SET   = 'we-out-here-2026-set-times-2026-08-17.pdf?v=0ec31e02';
+var PDF_WIDER = 'we-out-here-2026-wider-programme-2026-08-17.pdf?v=5cf0a334';
 
 var COL=['#ef6fae','#5ad9c8','#f2a95e','#8f9df0','#b9d95c','#f5776f',
          '#6ed49a','#dba55f','#a98cf2','#4fbdea','#cfdd57','#ff9470',
@@ -802,7 +805,11 @@ function showSpinningLogo() {
   var overlay = document.createElement('div');
   overlay.id = 'meloOverlay';
   overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;flex-direction:column;cursor:pointer;';
-  overlay.innerHTML = '<img src="'+LOGO+'" style="width:120px;height:120px;animation:spin 3s linear infinite;filter:drop-shadow(0 0 30px var(--gold));">' +
+  /* No CSS animation here on purpose. The gif is already a coin flip - adding
+     a 2D rotate on top gave it two unrelated motions at once and read as a
+     wobble. The @keyframes spin rule is left in place, just unapplied, in case
+     it is wanted again. */
+  overlay.innerHTML = '<img src="'+LOGO+'" style="width:160px;height:160px;filter:drop-shadow(0 0 34px var(--gold));">' +
                       '<p style="color:var(--dim);margin-top:24px;font-size:14px;letter-spacing:1px;">⚡ Melomaniacs ⚡</p>' +
                       '<p style="color:var(--dim2);font-size:12px;margin-top:6px;">tap to dismiss</p>';
   overlay.onclick = function() { this.remove(); };
