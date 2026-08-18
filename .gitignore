@@ -1,3 +1,12 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# macOS
 .DS_Store
+
+# Working notes for AI coding sessions. Deliberately not tracked: Cloudflare
+# Pages serves the repo root as static files, so anything committed here is
+# publicly readable at melomaniacs.pages.dev/<filename>.
+CLAUDE.md
+CLAUDE.local.md
+
+# Build scratch
+*.raw.gif
+__pycache__/

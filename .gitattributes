@@ -1,0 +1,8 @@
+# Normalise line endings. This line was previously sitting in .gitignore, where
+# it does nothing - it is a .gitattributes directive.
+* text=auto
+
+# Treat build outputs as binary so git does not try to diff or normalise them.
+*.pdf binary
+*.gif binary
+*.png binary
