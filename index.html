@@ -319,9 +319,12 @@ function stampHTML(){
 }
 /* Travel alert — A31 New Forest closure (National Highways, 19 Aug 2026):
    stays closed until the weekend at the earliest, not reopening Thu 20 Aug as
-   earlier suggested. Shown at the top of the NOW screen in every state while
-   the festival is on. Remove once National Highways reopens the road. */
+   earlier suggested. Shown at the top of the NOW screen in every state.
+   Auto-hides from 8pm UK time on Thu 20 Aug (Phil's call, 19 Aug); the helper
+   and this constant can be deleted after that date. */
+var A31_ALERT_UNTIL = Date.UTC(2026,7,20,19,0); // Thu 20 Aug 2026, 20:00 UK (BST = UTC+1)
 function travelAlertHTML(){
+  if(Date.now() >= A31_ALERT_UNTIL) return '';
   return '<div class="keep warn"><b>⚠️ Heads up — travel to site</b>'+
     'The A31 through the New Forest stays closed until the weekend at the '+
     'earliest (National Highways), so allow extra time and check your route '+
