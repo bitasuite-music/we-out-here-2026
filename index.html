@@ -787,8 +787,16 @@ function tick(){var c=document.getElementById('clock'), ld=liveDay();
 /* ===== events ===== */
 document.getElementById('nav').addEventListener('click',function(e){
   var b=e.target.closest('button'); if(!b)return;
-  tab=b.getAttribute('data-t');
-  if(tab==='line'&&liveDay()>=0)day=liveDay();
+  var t=b.getAttribute('data-t'), d=day;
+  if(t==='line'&&liveDay()>=0)d=liveDay();
+  /* Same-tab tap: skip the rebuild - tapping the tab you're already on was the
+     slow interaction in the Cloudflare INP data (it rebuilt the whole view for
+     nothing). Keep the two side-effects that matter: Line still snaps to the
+     live day at a day rollover, Find still re-focuses the search box. */
+  if(t===tab&&d===day){
+    if(t==='find')setTimeout(function(){document.getElementById('q').focus()},60);
+    return}
+  tab=t; day=d;
   render(); window.scrollTo(0,0);
   if(tab==='find')setTimeout(function(){document.getElementById('q').focus()},60)});
 
