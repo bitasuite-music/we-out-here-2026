@@ -317,6 +317,16 @@ function stampHTML(){
     'The <b>printable set times</b> on the PRINT tab match the app, and the share link '+
     'at the bottom sends the whole thing to your crew.</div>';
 }
+/* Travel alert — A31 New Forest closure (National Highways, 19 Aug 2026):
+   stays closed until the weekend at the earliest, not reopening Thu 20 Aug as
+   earlier suggested. Shown at the top of the NOW screen in every state while
+   the festival is on. Remove once National Highways reopens the road. */
+function travelAlertHTML(){
+  return '<div class="keep warn"><b>⚠️ Heads up — travel to site</b>'+
+    'The A31 through the New Forest stays closed until the weekend at the '+
+    'earliest (National Highways), so allow extra time and check your route '+
+    'before you set off.</div>';
+}
 // Placeholder logo – a tiny Melomaniacs-style diamond (gold on dark)
 /* 304px - the artwork's native size, so no resampling. That costs nothing:
    304px and 240px both come out at 194KB, because resizing introduces
@@ -549,6 +559,7 @@ function vNow(){
     for(var fi=0;fi<finalEvents.length;fi++) if(finalEvents[fi][1]>finalEnd) finalEnd=finalEvents[fi][1];
     if(nowMin()>=finalEnd) live=-1;
   }
+  h+=travelAlertHTML();
   if(live<0){
     var n=daysUntil();
     h+='<div class="cd"><div class="n">'+(n>0?n:'—')+'</div><div class="l">'+
