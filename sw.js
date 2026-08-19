@@ -14,7 +14,7 @@
  * timeout, so the cached copy always wins. When there IS signal the fetch
  * still runs and refreshes the cache for next time.
  */
-var VER = 'bac5fbc5d5';  // built 2026-08-19
+var VER = 'f3d9c862e1';  // built 2026-08-19
 var CACHE = 'woh26-' + VER;
 
 var ASSETS = [
@@ -92,8 +92,12 @@ self.addEventListener('fetch', function (e) {
           });
         }
         // A navigation still gets the app shell rather than the browser's
-        // dinosaur.
-        if (r.mode === 'navigate') return c.match('./index.html');
+        // dinosaur. Match by the absolute precache URL: requests added during
+        // install are stored against their resolved URL, and some browsers do
+        // not resolve './index.html' relative to this page request here.
+        if (r.mode === 'navigate') return c.match(
+          new URL('./index.html', self.registration.scope).href
+        );
         return Response.error();
       });
       return hit || net;

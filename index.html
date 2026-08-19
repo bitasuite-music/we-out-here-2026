@@ -541,6 +541,14 @@ function hiddenBar(){
 
 function vNow(){
   var live=liveDay(), h='';
+  /* Once Sunday's programme has actually ended, show the wrap screen straight
+     away instead of keeping a red "live" clock and an empty Sunday NOW screen
+     until the general 6am festival-day rollover. */
+  if(live===DATA.length-1){
+    var finalEnd=0, finalEvents=DATA[live].ev;
+    for(var fi=0;fi<finalEvents.length;fi++) if(finalEvents[fi][1]>finalEnd) finalEnd=finalEvents[fi][1];
+    if(nowMin()>=finalEnd) live=-1;
+  }
   if(live<0){
     var n=daysUntil();
     h+='<div class="cd"><div class="n">'+(n>0?n:'—')+'</div><div class="l">'+
@@ -778,11 +786,22 @@ function drawChks(){var h='';
   document.getElementById('chks').innerHTML=h}
 var lastKey='';
 function tick(){var c=document.getElementById('clock'), ld=liveDay();
+  /* The festival is over as soon as the final day's last event ends; do not
+     leave an empty Sunday NOW screen marked live until Monday's 6am rollover. */
+  if(ld===DATA.length-1){
+    var end=0, evs=DATA[ld].ev;
+    for(var i=0;i<evs.length;i++) if(evs[i][1]>end) end=evs[i][1];
+    if(nowMin()>=end) ld=-1;
+  }
   var u=ukNow(), t=z2(u.h)+':'+z2(u.mi)+(awayFromUK()?' UK':'');
   c.textContent=ld>=0?t:'20–23 AUG';
   c.className='clock'+(ld>=0?' live':'');
   var key=ld+'|'+(ld>=0?nowMin():daysUntil());
-  if(tab==='now'&&key!==lastKey){lastKey=key;render()}}
+  if((tab==='now'||tab==='line'||tab==='plan')&&key!==lastKey){
+    lastKey=key;
+    if(tab==='line'&&ld>=0&&day!==ld){day=ld;drawDays()}
+    render()
+  }}
 
 /* ===== events ===== */
 document.getElementById('nav').addEventListener('click',function(e){
@@ -927,7 +946,8 @@ document.getElementById('view').addEventListener('click',function(e){
 
   var b=e.target.closest('.star'); if(!b)return;
   var id=b.getAttribute('data-f');
-  fav[id]=!fav[id]; touched[id]=true; saveFav();
+  if(fav[id]) delete fav[id]; else fav[id]=true;
+  touched[id]=true; saveFav();
   if(IOS_TAB && fav[id] && !warnedIOS){
     warnedIOS=true;
     offPill('<b>iPhone: add to Home Screen first</b>Stars saved in Safari won’t carry over',
