@@ -14,7 +14,7 @@
  * timeout, so the cached copy always wins. When there IS signal the fetch
  * still runs and refreshes the cache for next time.
  */
-var VER = 'c8e2d5a7f0';  // built 2026-08-19
+var VER = '71f62da37c';  // bumped 2026-08-20: NOW stamp removed
 var CACHE = 'woh26-' + VER;
 
 var ASSETS = [

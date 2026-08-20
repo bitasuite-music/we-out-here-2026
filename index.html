@@ -311,12 +311,6 @@ var NMAIN = 6;
 var NMUSIC = 17;
 var NSETS = 757;
 var SCRAPED = '19 Aug, 4:13pm'; 
-function stampHTML(){
-  return '<div class="stamp">Times correct as of <b>'+SCRAPED+'</b> — sets can still move. '+
-    'Double-check on the official website or the <b>Woov</b> app if a time matters to you.<br>'+
-    'The <b>printable set times</b> on the PRINT tab match the app, and the share link '+
-    'at the bottom sends the whole thing to your crew.</div>';
-}
 /* Travel alert — A31 New Forest closure (National Highways, 19 Aug 2026):
    stays closed until the weekend at the earliest, not reopening Thu 20 Aug as
    earlier suggested. Shown at the top of the NOW screen in every state.
@@ -567,7 +561,6 @@ function vNow(){
     var n=daysUntil();
     h+='<div class="cd"><div class="n">'+(n>0?n:'—')+'</div><div class="l">'+
        (n>1?'days to go':n===1?'day to go':n===0?'today':'that’s a wrap')+'</div></div>';
-    h+=stampHTML();
 h+='<div class="note">'+(n>0?'The NOW screen goes live on Thursday 20 August.<br>':'')+
    'When it does, you\'ll see what\'s playing right now across the whole festival – '+
    'with a progress bar showing how long is left, plus everything starting in the next 90 minutes. '+
@@ -596,7 +589,6 @@ h+='<div class="note">'+(n>0?'The NOW screen goes live on Thursday 20 August.<br
   var playing=evs.filter(function(e){return e[0]<=t&&e[1]>t&&on[e[2]]});
   var soon=evs.filter(function(e){return e[0]>t&&e[0]<=t+90&&on[e[2]]});
   var off=offCount();
-  h+=stampHTML();
   h+=hiddenBar();
   if(off>0) h += '<div style="font-size:11px;color:var(--dim2);text-align:center;margin:6px 0 12px 0;">Showing your selected areas. Tap <b style="color:var(--acc2);font-weight:600;">Areas</b> in LINE‑UP to change.</div>';
   h+='<div class="sect live">On now · '+d.dn+' '+d.dd+' Aug</div>';
