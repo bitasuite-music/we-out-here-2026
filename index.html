@@ -155,6 +155,8 @@ main{padding:8px 12px calc(var(--nav) + env(safe-area-inset-bottom) + 26px)}
   text-align:center;margin:14px 0 4px}
 .cd .n{font-size:34px;font-weight:800;letter-spacing:-1px;color:var(--acc)}
 .cd .l{font-size:12px;letter-spacing:1.6px;text-transform:uppercase;color:var(--dim);margin-top:3px}
+.wrapnote{text-align:center;font-size:13px;line-height:1.6;color:var(--dim);margin:14px 2px 0}
+.wrapnote a{color:var(--acc2);font-weight:600;text-decoration:none}
 
 .srch{display:flex;gap:9px;padding:0 12px 11px}
 .srch input{flex:1;background:var(--card);border:1px solid var(--line);border-radius:12px;
@@ -561,6 +563,8 @@ function vNow(){
     var n=daysUntil();
     h+='<div class="cd"><div class="n">'+(n>0?n:'—')+'</div><div class="l">'+
        (n>1?'days to go':n===1?'day to go':n===0?'today':'that’s a wrap')+'</div></div>';
+    if(n<=0)h+='<div class="wrapnote">Thank you for using my app. If you have any comments or would like to get in touch, '+
+      'please send me an email at <a href="mailto:phil@phcapability.co.uk">phil@phcapability.co.uk</a>.</div>';
 h+='<div class="note">'+(n>0?'The NOW screen goes live on Thursday 20 August.<br>':'')+
    'When it does, you\'ll see what\'s playing right now across the whole festival – '+
    'with a progress bar showing how long is left, plus everything starting in the next 90 minutes. '+
@@ -622,8 +626,8 @@ function vLine(){
       for(i=0;i<sub.length;i++)h+=rowHTML(day,sub[i],{live:live,showStage:false})}
   }
   h+='<div class="foot">'+d.dn+' '+d.dd+' August · '+list.length+' events<br>'+
-     'Wimborne St Giles, Dorset · times as of '+SCRAPED+'<br>'+
-     '⭐ Action Station programme now included · Still changing daily — check the official Woov app</div>';
+     'Wimborne St Giles, Dorset · times as of 8am Thurs 20 Aug<br>'+
+     'All times correct as of 8am Thurs 20 Aug</div>';
   return h}
 
 function printLinks(){
